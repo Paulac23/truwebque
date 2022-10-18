@@ -1,7 +1,7 @@
 #importar lo que haga falta luego
 
 
-class BaseApp:
+class Base:
     """
     Clase administradora de la Base... 
     """
@@ -10,7 +10,7 @@ class BaseApp:
     #creacion de la data base
     #creacion de la conexion
 
-class Usuarios(BaseApp):
+class Usuarios(Base):
     """
     Clase con la tabla de usuarios
     """
@@ -19,7 +19,7 @@ class Usuarios(BaseApp):
     #crear funcion de la tabla
 
 
-class UsuarioRoles(BaseApp):
+class UsuarioRoles(Base):
     """
     Clase con la tabla de usuarios_roles
     """
@@ -28,7 +28,7 @@ class UsuarioRoles(BaseApp):
     #crear funcion de la tabla
    
     
-class Roles(BaseApp):
+class Roles(Base):
     """
     Clase con la tabla de roles
     """
@@ -37,7 +37,7 @@ class Roles(BaseApp):
     #crear funcion de la tabla
 
 
-class Ciudades(BaseApp):
+class Ciudades(Base):
     """
     Clase con la tabla de ciudades
     """
@@ -46,7 +46,7 @@ class Ciudades(BaseApp):
     #crear funcion de la tabla
    
     
-class Provincias(BaseApp):
+class Provincias(Base):
     """
     Clase con la tabla de provincias
     """
@@ -55,7 +55,7 @@ class Provincias(BaseApp):
     #crear funcion de la tabla
     
     
-class Envios(BaseApp):
+class Envios(Base):
     """
     Clase con la tabla de envios
     """
@@ -64,7 +64,7 @@ class Envios(BaseApp):
     #crear funcion de la tabla
     
     
-class Comentarios(BaseApp):
+class Comentarios(Base):
     """
     Clase con la tabla de comentarios
     """
@@ -73,7 +73,7 @@ class Comentarios(BaseApp):
     #crear funcion de la tabla
     
     
-class Productos(BaseApp):
+class Productos(Base):
     """
     Clase con la tabla de productos
     """
@@ -82,7 +82,7 @@ class Productos(BaseApp):
     #crear funcion de la tabla
    
     
-class Carrito(BaseApp):
+class Carrito(Base):
     """
     Clase con la tabla de carritos
     """
@@ -91,7 +91,7 @@ class Carrito(BaseApp):
     #crear funcion de la tabla
 
 
-class Ordenes(BaseApp):
+class Ordenes(Base):
     """
     Clase con la tabla de ordenes
     """

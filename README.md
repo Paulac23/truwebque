@@ -1,5 +1,3 @@
-# Proyecto Módulo Full Stack TSDWAD 2022
-
 <img src="ispc.png">
 <h1>Proyecto TRUEQUE</h1>
 <h2>TUTOR: Alvarado Yamil</h2>

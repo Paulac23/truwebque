@@ -96,16 +96,18 @@ footer ol{
   display: flex;
   flex-direction: wrap;
   align-items:center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 
 footer ol li{
   list-style: none;
   padding: 0.1em;
- 
 }
 
+footer ol li a:hover{
+  color:red;
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -136,12 +138,10 @@ footer ol li{
 
   footer ol{
     font-size: 2em;
-    padding: 0px;
-    display: flex;
-    flex-flow: row wrap;
-    align-items:center;
-    justify-content: space-between;
     flex-direction: column;
+  }
+  footer>p{
+    font-size: 1em;
   }
     
 }
@@ -149,11 +149,9 @@ footer ol li{
 
   footer ol{
     font-size: 1em;
-    padding: 0px;
-    display: flex;
     flex-flow: row wrap;
-    align-items:center;
-    justify-content: space-between;
   }
-    
+  footer>p{
+    font-size: 0.5em;
+  } 
 }

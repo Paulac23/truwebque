@@ -131,10 +131,24 @@ footer ol li{
 
 /*QUERIES*/
 
+
+@media (min-width:0px){
+
+  footer ol{
+    font-size: 2em;
+    padding: 0px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items:center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+    
+}
 @media (min-width:576px){
 
   footer ol{
-    font-size: 5em;
+    font-size: 1em;
     padding: 0px;
     display: flex;
     flex-flow: row wrap;
@@ -142,18 +156,4 @@ footer ol li{
     justify-content: space-between;
   }
     
-}
-
-@media (min-width:768px){
-
-  footer{
-      font-size: 3vw;   
-  }    
-}
-
-@media (min-width:992px){
-
-  footer{
-      font-size: 2vw;   
-  }    
 }

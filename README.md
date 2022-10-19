@@ -18,4 +18,4 @@
 <p>Descripción: </p>
 
 >Consta de una página para realizar trueques entre personas de la misma zona. En ella se podrán publicar objetos o productos para ser intercambiados; siempre enmarcados en normas que deben ser cumplidas para tal fin.
-El objetivo que persigue es promover la economía circular, donde lo que no utilizamos pueda ser transformdo en recursos que reingresan al sistema productivo. De esta manera, reducimos nuestros desechos y extraemos menos bienes naturales del planeta, buscando preservar y generar conciencia sobre el medio ambiente
+El objetivo que persigue es promover la economía circular, donde lo que no utilizamos pueda ser transforamdo en recursos que reingresan al sistema productivo. De esta manera, reducimos nuestros desechos y extraemos menos bienes naturales del planeta, buscando preservar y generar conciencia sobre el medio ambiente

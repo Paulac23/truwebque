@@ -5,7 +5,7 @@ footer{
     align-items:center;
     justify-content: center;
     font-size: 3vw;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bolder;
   
   }
@@ -65,14 +65,14 @@ footer{
   
 
   .formulario {
-    color: #36A0FF;
-    font-size: 27px;
+    color: #2068a7;
+    font-size: 1px;
     padding: 10px;
 }
 
 .bigicon {
     font-size: 35px;
-    color: #36A0FF;
+    color: #194b77;
 }
 
 .formu{

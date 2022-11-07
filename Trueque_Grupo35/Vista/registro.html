@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>TRUwEbQUE</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/carousel/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/Trueque_Grupo35/Vista/bootstrap/docs/4.3/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/Trueque_Grupo35/Vista/bootstrap/docs/4.3/dist/css/registro.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/Trueque_Grupo35/Vista/bootstrap/docs/4.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/Trueque_Grupo35/Vista/bootstrap/docs/4.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/Trueque_Grupo35/Vista/bootstrap/docs/4.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/Trueque_Grupo35/Vista/bootstrap/docs/4.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/Trueque_Grupo35/Vista/bootstrap/docs/4.3/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="/Trueque_Grupo35/Vista/bootstrap/docs/4.3/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/Trueque_Grupo35/Vista/bootstrap/docs/4.3/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+    <link href="/Trueque_Grupo35/Vista/bootstrap/estilos.css" rel="stylesheet" type="text/css">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="/Trueque_Grupo35/Vista/bootstrap/carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">TRUWEBQUE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/Trueque_Grupo35/Vista/bootstrap/o35index.html">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Categoria</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Carrito</a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
+</header>
+
+<main role="main">
+
+  <div class="container marketing">
+
+    <!-- START THE FEATURETTES -->
+    <br>
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Registrate y empezá a TRUwEbQUEAR<span class="text-muted">.</span></h2>
+        <p class="lead">Para tu seguridad y la de todos los que forman la comunidad de <strong>TRUwebQUEAR</strong> debemos recolectar tus datos personales como parte del registro. Completá el formulario para empezar a intercambiar todo aquello que ya no uses, no solo conseguiras lo que necesitas, ayudaras a otros en el proceso. !Empecemos¡</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="/Trueque_Grupo35/Vista/bootstrap/registro4.png" width="500" height="300" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" role="img"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+    
+
+  </div><!-- /.container -->
+
+  <!-- /Aqui empieza el formulario -->
+
+  <form action="" class="formulario" id="formulario">
+    <!-- Grupo: Usuario -->
+    <div class="formulario__grupo" id="grupo__usuario">
+      <label for="usuario" class="formulario__label">Usuario</label>
+      <div class="formulario__grupo-input">
+        <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="john123">
+        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+      </div>
+      <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+    </div>
+
+    <!-- Grupo: Nombre -->
+    <div class="formulario__grupo" id="grupo__nombre">
+      <label for="nombre" class="formulario__label">Nombre</label>
+      <div class="formulario__grupo-input">
+        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="John Doe">
+        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+      </div>
+      <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+    </div>
+
+    <!-- Grupo: Contraseña -->
+    <div class="formulario__grupo" id="grupo__password">
+      <label for="password" class="formulario__label">Contraseña</label>
+      <div class="formulario__grupo-input">
+        <input type="password" class="formulario__input" name="password" id="password">
+        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+      </div>
+      <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+    </div>
+
+    <!-- Grupo: Contraseña 2 -->
+    <div class="formulario__grupo" id="grupo__password2">
+      <label for="password2" class="formulario__label">Repetir Contraseña</label>
+      <div class="formulario__grupo-input">
+        <input type="password" class="formulario__input" name="password2" id="password2">
+        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+      </div>
+      <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+    </div>
+
+    <!-- Grupo: Correo Electronico -->
+    <div class="formulario__grupo" id="grupo__correo">
+      <label for="correo" class="formulario__label">Correo Electrónico</label>
+      <div class="formulario__grupo-input">
+        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+      </div>
+      <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+    </div>
+
+    <!-- Grupo: Teléfono -->
+    <div class="formulario__grupo" id="grupo__telefono">
+      <label for="telefono" class="formulario__label">Teléfono</label>
+      <div class="formulario__grupo-input">
+        <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="4491234567">
+        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+      </div>
+      <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+    </div>
+
+    <!-- Grupo: Lugar de Residencia -->
+    <div class="formulario__grupo" id="grupo__residencia">
+      <label for="residencia" class="formulario__label">Lugar de Residencia</label>
+      <div class="formulario__grupo-input">
+        <label  for="selectProvincias" class="formulario__label">Provincia</label><select class="formulario_grupo-input" id="selectProvincias">
+          <option value="Elige una Provincia">Elige una provincia</option> </select>
+        <label for= "selectDepartamentos" class="formulario__label">Departamento de Residencia: </label><select id="selectDepartamentos">
+          <option value="Elige un Municipio">Elige un Departamento</option>
+        </select>
+    </div>
+
+    <!-- Grupo: Terminos y Condiciones -->
+    <div class="formulario__grupo" id="grupo__terminos">
+      <label class="formulario__label">
+        <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+        Acepto los Terminos y Condiciones
+      </label>
+    </div>
+
+    <div class="formulario__mensaje" id="formulario__mensaje">
+      <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+    </div>
+
+    <div class="formulario__grupo formulario__grupo-btn-enviar">
+      <button type="submit" class="formulario__btn">Enviar</button>
+      <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+    </div>
+  </form>
+
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="main-background">
+    <ol>
+        <li>
+          <a href="#">
+          <p>Ingresar</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+          <p>Publicaciones</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+          <p>Categorias</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+          <p>Quienes somos</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+          <p>Términos y condiciones</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+          <p>Preguntas frecuentes</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+          <p>Contacto</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+          <p>Sumate</p>
+          </a>
+        </li>
+    </ol>
+    <p> <strong>TRU</strong>w<strong>E</strong>b<strong>QUE</strong></p>
+</footer>
+</main>
+
+
+    
+      
+        <script src="/Trueque_Grupo35/Vista/bootstrap/docs/4.3/dist/js/bootstrap.bundle.js"></script>
+        <script src="/Trueque_Grupo35/Vista/bootstrap/docs/4.3/dist/js/forms.js"></script>
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+      
+
+      
+    
+  </body>
+</html>

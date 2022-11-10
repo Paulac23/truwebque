@@ -2,6 +2,7 @@ const d = document;
 const selectProvincias = d.getElementById("selectProvincias");
 const selectDepartamentos = d.getElementById("selectDepartamentos");
 const selectLocalidades = d.getElementById("selectLocalidades");
+//Esta es la conexion con La API del Servicio de Normalización de Datos Geográficos de https://datosgobar.github.io/georef-ar-api/
 
 function provincia() {
     fetch("https://apis.datos.gob.ar/georef/api/provincias")
@@ -36,11 +37,14 @@ function departamentos(provincia) {
 }
 
 selectProvincias.addEventListener("change", e => {
+	selectDepartamentos.removeAttribute('disabled');
     departamentos(e.target.value);
     console.log(e.target.value)
 })
 
-//Validacion de Campos
+
+//Patrones para laValidacion de campos (inputs).
+
 const formulario = d.getElementById ('formulario');
 const inputs= document.querySelectorAll('#formulario input');
 const expresiones= {
@@ -50,13 +54,19 @@ const expresiones= {
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 }
+// Al hacer click en submit se comprobaran los atributos de campos.
+
 const campos = {
 	usuario: false,
 	nombre: false,
 	password: false,
 	correo: false,
-	telefono: false
+	telefono: false,
+	provincia: false,
+	departamento: false
 }
+
+//Esta es la funcion que realizara la validacion propiamente dicha
 
 const validarFormulario = (e) => {
 	switch (e.target.name) {
@@ -81,6 +91,32 @@ const validarFormulario = (e) => {
 		break;
 	}
 }
+
+// Validacion de los Selects 
+selectProvincias.addEventListener("change", e => {
+	if(selectProvincias.value != "Elige una provincia"){
+		document.getElementById('grupo__residencia').classList.remove('formulario__grupo-incorrecto');
+		document.getElementById('grupo__residencia').classList.add('formulario__grupo-correcto');
+		document.querySelector('#grupo__residencia i').classList.add('fa-check-circle');
+		document.querySelector('#grupo__residencia i').classList.remove('fa-times-circle');
+		document.querySelector('#grupo__residencia .formulario__input-error').classList.remove('formulario__input-error-activo');
+		campos.provincia = true;
+	} else {
+		document.getElementById('grupo__residencia').classList.add('formulario__grupo-incorrecto');
+		document.getElementById('grupo__residencia').classList.remove('formulario__grupo-correcto');
+		document.querySelector('#grupo__residencia i').classList.add('fa-times-circle');
+		document.querySelector('#grupo__residencia i').classList.remove('fa-check-circle');
+		document.querySelector('#grupo__residencia .formulario__input-error').classList.add('formulario__input-error-activo');
+		campos.provincia = false;
+	}
+
+})
+
+selectDepartamentos.addEventListener("change", e => {
+	campos.departamento = true;
+})
+
+// Esto agrega los mensajes de Exito/Error a los campos
 
 const validarCampo = (expresion, input, campo) => {
 	if(expresion.test(input.value)){
@@ -121,16 +157,20 @@ const validarPassword2 = () => {
 	}
 }
 
+//Event Listener para desencadenar la funcion de validacion
+
 inputs.forEach((input) => {
 	input.addEventListener('keyup', validarFormulario);
 	input.addEventListener('blur', validarFormulario);
 });
 
+//Boton Submit del formulario
+
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked ){
+	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked && campos.provincia && campos.departamento ){
 		formulario.reset();
 
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');

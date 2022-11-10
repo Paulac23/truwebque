@@ -161,18 +161,25 @@
     </div>
 
     <!-- Grupo: Lugar de Residencia -->
-    <div class="formulario__grupo" id="grupo__residencia">
-      <label for="residencia" class="formulario__label">Lugar de Residencia</label>
-      <div class="formulario__grupo-input">
-        <label  for="selectProvincias" class="formulario__label">Provincia</label><select class="formulario_grupo-input" id="selectProvincias">
+    <div class="formulario__grupo-residencia" id="grupo__residencia">
+        <label  for="selectProvincias" class="formulario__label">Provincia</label>
+        <div class="formulario__grupo-input">
+        <select class=".formulario__select" id="selectProvincias">
           <option value="Elige una Provincia">Elige una provincia</option> </select>
-        <label for= "selectDepartamentos" class="formulario__label">Departamento de Residencia: </label><select id="selectDepartamentos">
-          <option value="Elige un Municipio">Elige un Departamento</option>
-        </select>
+          <i class="formulario__validacion-estado-select fas fa-times-circle"></i>
+        <p class="formulario__input-error">Debes seleccionar una Provincia y un Departamento.</p>
+        </div>
+        <div class="formulario__grupo" id="grupo__residencia">
+        <label for= "selectDepartamentos" class="formulario__label-2">Departamento de Residencia: </label>
+        <div class="formulario__grupo-input">
+        <select disabled class=".formulario__select" id="selectDepartamentos">
+          <option value="Elige un Municipio">Elige un Departamento</option></select>
+        </div>
+        </div>
     </div>
 
     <!-- Grupo: Terminos y Condiciones -->
-    <div class="formulario__grupo" id="grupo__terminos">
+    <div class="formulario__grupo-terminos" id="grupo__terminos">
       <label class="formulario__label">
         <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
         Acepto los Terminos y Condiciones

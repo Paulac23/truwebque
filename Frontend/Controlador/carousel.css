@@ -84,7 +84,6 @@ body {
   .section-white {
      padding: 0.5em 0;
   }
-
 }
 
 @media screen and (min-width: 992px) {
@@ -93,6 +92,8 @@ body {
     max-width: 930px;
   }
 
+}
+
 @media screen and (min-width: 1400px) {
 
   .container {
@@ -100,8 +101,6 @@ body {
   }
 
 }
-
-
 
 
 /* Featurettes
@@ -142,3 +141,4 @@ body {
     margin-top: 7rem;
   }
 }
+

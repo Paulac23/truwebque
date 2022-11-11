@@ -1,7 +1,15 @@
+a:link, a:visited, a:active {
+  text-decoration:none;
+}
 
-
+footer a{
+  color: #454545;
+}
+footer a:hover{
+  color: black;
+}
 footer{
-    background-color: whitesmoke;
+  
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -11,32 +19,39 @@ footer{
     font-weight: bolder;
   
   }
-  
   footer p{
-   padding: 0.1em;
-   margin: 0;
-   text-align: center; 
-   font-size: 0.4em;  
-  }
-  
-  footer ol{
-    font-size: 1em;
-    padding: 0px;
-    display: flex;
-    flex-direction: wrap;
-    align-items:center;
-    justify-content: space-between;
-  }
-  
-  
-  footer ol li{
-    list-style: none;
     padding: 0.1em;
+    margin: 0;
+    text-align: center; 
+    font-size: 0.4em;  
+    color: #454545;
+   }
+
+   footer p:hover{
+    color: whitesmoke;
+    background-color: #454545 ;
+    transition: all 0.2s linear;
+   	border-radius: 5px;
   }
+   
+   footer ol{
+     font-size: 1em;
+     padding: 0px;
+     display: flex;
+     flex-direction: wrap;
+     align-items:center;
+     justify-content: space-between;
+   }
+   
+   
+   footer ol li{
+     list-style: none;
+     padding: 0.1em;
+   }
+
+ 
+
   
-  footer ol li a:hover{
-    color:red;
-  }
 
  /*iconos carousel*/
 

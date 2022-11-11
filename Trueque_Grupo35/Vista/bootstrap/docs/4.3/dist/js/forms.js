@@ -2,6 +2,7 @@ const d = document;
 const selectProvincias = d.getElementById("selectProvincias");
 const selectDepartamentos = d.getElementById("selectDepartamentos");
 const selectLocalidades = d.getElementById("selectLocalidades");
+
 //Esta es la conexion con La API del Servicio de Normalización de Datos Geográficos de https://datosgobar.github.io/georef-ar-api/
 
 function provincia() {
@@ -36,14 +37,15 @@ function departamentos(provincia) {
     })
 }
 
+//Remueve el Disabled al select de Departamentos al elegir una Provincia, y ejecuta la funcion departamentos(provincia)
+
 selectProvincias.addEventListener("change", e => {
 	selectDepartamentos.removeAttribute('disabled');
     departamentos(e.target.value);
-    console.log(e.target.value)
 })
 
 
-//Patrones para laValidacion de campos (inputs).
+//Expresiones usadas para la Validacion de  los campos (inputs).
 
 const formulario = d.getElementById ('formulario');
 const inputs= document.querySelectorAll('#formulario input');
@@ -54,7 +56,7 @@ const expresiones= {
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
 }
-// Al hacer click en submit se comprobaran los atributos de campos.
+// Al hacer click en submit se comprobaran los atributos de campos, si todos son true: El formulario esta llenado correctamente
 
 const campos = {
 	usuario: false,
@@ -63,10 +65,11 @@ const campos = {
 	correo: false,
 	telefono: false,
 	provincia: false,
-	departamento: false
+	departamento: false,
+	edad: false
 }
 
-//Esta es la funcion que realizara la validacion propiamente dicha
+//Esta es la funcion que realizara la validacion propiamente dicha (inputs)
 
 const validarFormulario = (e) => {
 	switch (e.target.name) {
@@ -92,11 +95,15 @@ const validarFormulario = (e) => {
 	}
 }
 
-// Validacion de los Selects 
+// Agrega y Quita los estilos de Validacion de los Selects del grupo__residencia
+
+//Para las Provincias
+
 selectProvincias.addEventListener("change", e => {
 	if(selectProvincias.value != "Elige una provincia"){
 		document.getElementById('grupo__residencia').classList.remove('formulario__grupo-incorrecto');
 		document.getElementById('grupo__residencia').classList.add('formulario__grupo-correcto');
+		document.getElementById('grupo__residencia2').classList.remove('formulario__grupo-correcto');
 		document.querySelector('#grupo__residencia i').classList.add('fa-check-circle');
 		document.querySelector('#grupo__residencia i').classList.remove('fa-times-circle');
 		document.querySelector('#grupo__residencia .formulario__input-error').classList.remove('formulario__input-error-activo');
@@ -104,6 +111,7 @@ selectProvincias.addEventListener("change", e => {
 	} else {
 		document.getElementById('grupo__residencia').classList.add('formulario__grupo-incorrecto');
 		document.getElementById('grupo__residencia').classList.remove('formulario__grupo-correcto');
+		document.getElementById('grupo__residencia2').classList.remove('formulario__grupo-correcto');
 		document.querySelector('#grupo__residencia i').classList.add('fa-times-circle');
 		document.querySelector('#grupo__residencia i').classList.remove('fa-check-circle');
 		document.querySelector('#grupo__residencia .formulario__input-error').classList.add('formulario__input-error-activo');
@@ -112,11 +120,50 @@ selectProvincias.addEventListener("change", e => {
 
 })
 
+//Para los Departamentos
+
 selectDepartamentos.addEventListener("change", e => {
-	campos.departamento = true;
+	if(selectDepartamentos.value != "Elige un departamento"){
+		document.getElementById('grupo__residencia2').classList.remove('formulario__grupo-incorrecto');
+		document.getElementById('grupo__residencia2').classList.add('formulario__grupo-correcto');
+		document.querySelector('#grupo__residencia2 i').classList.add('fa-check-circle');
+		document.querySelector('#grupo__residencia2 i').classList.remove('fa-times-circle');
+		document.querySelector('#grupo__residencia2 .formulario__input-error').classList.remove('formulario__input-error-activo');
+		campos.departamento = true;
+	} else {
+		document.getElementById('grupo__residencia2').classList.add('formulario__grupo-incorrecto');
+		document.getElementById('grupo__residencia2').classList.remove('formulario__grupo-correcto');
+		document.querySelector('#grupo__residencia2 i').classList.add('fa-times-circle');
+		document.querySelector('#grupo__residencia2 i').classList.remove('fa-check-circle');
+		document.querySelector('#grupo__residencia2 .formulario__input-error').classList.add('formulario__input-error-activo');
+		campos.departamento = false;
+	}
+
 })
 
-// Esto agrega los mensajes de Exito/Error a los campos
+// Esta es la validacion de la edad usando la fecha de nacimiento
+//
+//fechaNacimiento.addEventListener("change", e => {
+//	console.log(edad);
+//	if(calcularEdad(this.value) >= 18){
+//		document.getElementById('grupo__fecha').classList.remove('formulario__grupo-incorrecto');
+//		document.getElementById('grupo__fecha').classList.add('formulario__grupo-correcto');
+//		document.querySelector('#grupo__fecha i').classList.add('fa-check-circle');
+//		document.querySelector('#grupo__fecha i').classList.remove('fa-times-circle');
+//		document.querySelector('#grupo__fecha .formulario__input-error').classList.remove('formulario__input-error-activo');
+//		campos.fecha = true;
+//	} else {
+//		document.getElementById('grupo__fecha').classList.add('formulario__grupo-incorrecto');
+//		document.getElementById('grupo__fecha').classList.remove('formulario__grupo-correcto');
+//		document.querySelector('#grupo__fecha i').classList.add('fa-times-circle');
+//		document.querySelector('#grupo__fecha i').classList.remove('fa-check-circle');
+//		document.querySelector('#grupo__fecha .formulario__input-error').classList.add('formulario__input-error-activo');
+//		campos.fecha = false;
+//	}
+//
+//})
+
+// Agrega y Quita los estilos de Validacion de los campos (INPUTS)
 
 const validarCampo = (expresion, input, campo) => {
 	if(expresion.test(input.value)){
@@ -135,6 +182,7 @@ const validarCampo = (expresion, input, campo) => {
 		campos[campo] = false;
 	}
 }
+// Agrega y Quita los estilos de Validacion de los campos de password y los compara para comprobar si son iguales
 
 const validarPassword2 = () => {
 	const inputPassword1 = document.getElementById('password');
@@ -157,7 +205,7 @@ const validarPassword2 = () => {
 	}
 }
 
-//Event Listener para desencadenar la funcion de validacion
+//Event Listener para desencadenar la funcion de validacion: Al sosltar tecla y al perder focus
 
 inputs.forEach((input) => {
 	input.addEventListener('keyup', validarFormulario);
@@ -170,7 +218,7 @@ formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked && campos.provincia && campos.departamento ){
+	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked && campos.provincia && campos.departamento && campos.edad ){
 		formulario.reset();
 
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');

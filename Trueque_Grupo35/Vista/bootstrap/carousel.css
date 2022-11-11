@@ -4,6 +4,10 @@
   padding:0;
 }
 
+.carousel-control-color{
+ color:whitesmoke; 
+}          
+
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
@@ -27,38 +31,40 @@ body {
 /* ------------------- Carousel Styling ------------------- */
 
 .carousel-inner {
-  border-radius: 40px;
+  border-radius: 30px;
 }
 
+
 .carousel-caption {
-  background-color: rgba(228, 228, 228, 0.5);
+  /*background-color: rgba(85, 85, 85, 0.5);*/
   position:absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 1;
   z-index: 10;
-  padding: 0 0 10px 25px;
+  padding: 0px 0px 10px 0x;
   color: #fff;
-  text-align: left;
+  
 }
 
 .carousel-indicators {
   position:absolute;
-  bottom: 1;
+  bottom: 0.5;
   right: 0;
   left: 0;
   width: 100%;
   z-index: 15;
   margin: 0;
   padding: 0 25px 25px 0;
-  text-align: right;
+  
 }
+
+
 
 .carousel-control.left,
 .carousel-control.right {
   background-image: none;
 }
-
 
 /* ------------------- Section Styling - Not needed for carousel styling ------------------- */
 
@@ -70,6 +76,8 @@ body {
   background-color: #fff;
   color: #555;
 }
+
+
 
 @media screen and (min-width: 768px) {
 

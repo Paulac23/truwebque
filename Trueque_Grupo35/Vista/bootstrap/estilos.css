@@ -1,3 +1,5 @@
+
+
 footer{
     background-color: whitesmoke;
     display: flex;
@@ -36,7 +38,18 @@ footer{
     color:red;
   }
 
+ /*iconos carousel*/
 
+  .material-symbols-outlined {
+    font-size: 4rem;
+    color:black;
+    font-weight: 500;
+  }
+    
+  .col-lg-4{
+    position:relative;
+    text-align: center;
+  }
   
 /*QUERIES*/
 
@@ -66,7 +79,7 @@ footer{
 
   .formulario {
     color: #2068a7;
-    font-size: 1px;
+    font-size: 27px;
     padding: 10px;
 }
 

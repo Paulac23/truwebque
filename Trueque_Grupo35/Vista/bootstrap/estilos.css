@@ -1,3 +1,5 @@
+
+
 footer{
     background-color: whitesmoke;
     display: flex;
@@ -5,7 +7,7 @@ footer{
     align-items:center;
     justify-content: center;
     font-size: 3vw;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bolder;
   
   }
@@ -36,7 +38,18 @@ footer{
     color:red;
   }
 
+ /*iconos carousel*/
 
+  .material-symbols-outlined {
+    font-size: 4rem;
+    color:black;
+    font-weight: 500;
+  }
+    
+  .col-lg-4{
+    position:relative;
+    text-align: center;
+  }
   
 /*QUERIES*/
 
@@ -65,14 +78,14 @@ footer{
   
 
   .formulario {
-    color: #36A0FF;
+    color: #2068a7;
     font-size: 27px;
     padding: 10px;
 }
 
 .bigicon {
     font-size: 35px;
-    color: #36A0FF;
+    color: #194b77;
 }
 
 .formu{

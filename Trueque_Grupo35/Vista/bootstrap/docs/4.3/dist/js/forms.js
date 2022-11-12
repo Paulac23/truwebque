@@ -66,7 +66,7 @@ const campos = {
 	telefono: false,
 	provincia: false,
 	departamento: false,
-	edad: false
+	fecha: false
 }
 
 //Esta es la funcion que realizara la validacion propiamente dicha (inputs)
@@ -139,29 +139,37 @@ selectDepartamentos.addEventListener("change", e => {
 		campos.departamento = false;
 	}
 
-})
+});
 
-// Esta es la validacion de la edad usando la fecha de nacimiento
-//
-//fechaNacimiento.addEventListener("change", e => {
-//	console.log(edad);
-//	if(calcularEdad(this.value) >= 18){
-//		document.getElementById('grupo__fecha').classList.remove('formulario__grupo-incorrecto');
-//		document.getElementById('grupo__fecha').classList.add('formulario__grupo-correcto');
-//		document.querySelector('#grupo__fecha i').classList.add('fa-check-circle');
-//		document.querySelector('#grupo__fecha i').classList.remove('fa-times-circle');
-//		document.querySelector('#grupo__fecha .formulario__input-error').classList.remove('formulario__input-error-activo');
-//		campos.fecha = true;
-//	} else {
-//		document.getElementById('grupo__fecha').classList.add('formulario__grupo-incorrecto');
-//		document.getElementById('grupo__fecha').classList.remove('formulario__grupo-correcto');
-//		document.querySelector('#grupo__fecha i').classList.add('fa-times-circle');
-//		document.querySelector('#grupo__fecha i').classList.remove('fa-check-circle');
-//		document.querySelector('#grupo__fecha .formulario__input-error').classList.add('formulario__input-error-activo');
-//		campos.fecha = false;
-//	}
-//
-//})
+// Se usa el widget datepicker de jquery para la fecha de nacimiento.
+//Las fechas validas de nacimiento son hasta 18 años atras de la fecha actual; para solo admitir usuarions mayores de edad.
+
+$("#datepicker").datepicker( {
+	changeMonth: true,
+	changeYear: true,
+	maxDate: "-18y",
+	yearRange: "1904:2022",
+	onSelect: function(d,i){
+		if(d !== i.lastVal){
+			$(this).change();
+		}
+   }
+});
+
+//Validacion de los campos del grupo fecha
+
+$('#datepicker').change(function(){
+	document.getElementById('grupo__fecha').classList.remove('formulario__grupo-incorrecto');
+	document.getElementById('grupo__fecha').classList.add('formulario__grupo-correcto');
+	document.querySelector('#grupo__fecha i').classList.add('fa-check-circle');
+	document.querySelector('#grupo__fecha i').classList.remove('fa-times-circle');
+	document.querySelector('#grupo__fecha .formulario__input-error').classList.remove('formulario__input-error-activo');
+	campos.fecha = true;
+});
+
+	
+
+	
 
 // Agrega y Quita los estilos de Validacion de los campos (INPUTS)
 
@@ -214,11 +222,13 @@ inputs.forEach((input) => {
 
 //Boton Submit del formulario
 
-formulario.addEventListener('submit', (e) => {
+const submitFormulario = d.getElementById("submitFormulario");
+
+submitFormulario.addEventListener('click', (e) => {
 	e.preventDefault();
 
 	const terminos = document.getElementById('terminos');
-	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked && campos.provincia && campos.departamento && campos.edad ){
+	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked && campos.provincia && campos.departamento && campos.fecha ){
 		formulario.reset();
 
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');

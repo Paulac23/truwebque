@@ -22,6 +22,8 @@ main {
 }
 
 .formulario__label {
+	color: #36A0FF;
+    font-size: 27px;
 	display: block;
 	font-weight: 700;
 	padding: 10px;
@@ -33,6 +35,11 @@ main {
 	font-weight: 600;
 	padding: 10px;
 	cursor: pointer;
+}
+
+.modal-terminos {
+	
+	color: #000 !important;
 }
 
 .formulario__grupo-input {
@@ -108,10 +115,9 @@ main {
 	margin-right: 10px;
 }
 
-.formulario__grupo-terminos, 
+
 .formulario__mensaje,
-.formulario__grupo-btn-enviar,
-.formulario__grupo-fecha
+.formulario__grupo-btn-enviar
 {
 	grid-column: span 2;
 }
@@ -119,6 +125,12 @@ main {
 .formulario__grupo-terminos
 {
 	align-self: center;
+}
+
+.formulario__grupo-terminos button
+{
+	align-self: center;
+	width: 100%;
 }
 
 .formulario__mensaje {

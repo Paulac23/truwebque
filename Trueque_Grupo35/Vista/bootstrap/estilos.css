@@ -1,0 +1,81 @@
+footer{
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    font-size: 3vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+  
+  }
+  
+  footer p{
+   padding: 0.1em;
+   margin: 0;
+   text-align: center; 
+   font-size: 0.4em;  
+  }
+  
+  footer ol{
+    font-size: 1em;
+    padding: 0px;
+    display: flex;
+    flex-direction: wrap;
+    align-items:center;
+    justify-content: space-between;
+  }
+  
+  
+  footer ol li{
+    list-style: none;
+    padding: 0.1em;
+  }
+  
+  footer ol li a:hover{
+    color:red;
+  }
+
+
+  
+/*QUERIES*/
+
+
+@media (min-width:0px){
+
+    footer ol{
+      font-size: 2em;
+      flex-direction: column;
+    }
+    footer>p{
+      font-size: 1em;
+    }
+      
+  }
+  @media (min-width:576px){
+  
+    footer ol{
+      font-size: 1em;
+      flex-flow: row wrap;
+    }
+    footer>p{
+      font-size: 0.5em;
+    } 
+  }
+  
+
+  .formulario {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
+}
+
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
+
+.formu{
+    margin-bottom: 50px;
+    border: 3px solid rgb(20, 252, 248);
+}

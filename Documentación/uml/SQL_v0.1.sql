@@ -1,3 +1,6 @@
+CREATE DATABASE  IF NOT EXISTS `trueque`;
+USE `trueque`;
+
 DROP TABLE IF EXISTS usuario;
 DROP TABLE IF EXISTS roles;
 DROP TABLE IF EXISTS usuario_roles;

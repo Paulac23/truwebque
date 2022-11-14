@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>TRUwEbQUE</title>
+
+  <link rel="canonical" href="https://getbootstrap.comdocs/4.3/examples/carousel/">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- Bootstrap core CSS -->
+  <link href="/Frontend/Vista/bootstrap/docs/4.3/dist/css/bootstrap.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+  <meta name="msapplication-config" content="/Frontend/Vista/bootstrap/docs/4.3/assets/img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#563d7c">
+  <link href="Frontend/Controlador/style.css" rel="stylesheet" type="text/css"> 
+    
+  <link href="Frontend/Controlador/carousel.css" rel="stylesheet">
+  <script src="/Frontend/Vista/bootstrap/docs/4.3/dist/js/bootstrap.bundle.js"></script>
+
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">TRUWEBQUE</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Categoria</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Carrito</a>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <main role="main">
+    <section class="section-white">
+
+      <div class="container">
+
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item item active">
+              <img
+                src="/Frontend/Vista/img/LOGO.png"
+                alt="...">
+
+              <div class="container">
+                <div class="carousel-caption">
+                  <p></p>
+                  <p><a class="btn btn-lg btn-success" href="registro.html" role="button">Registrate hoy</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item item ">
+              <img
+                src="/Frontend/Vista/img/INTERCAMBIO.png"
+                alt="...">
+
+              <div class="container ">
+                <div class="carousel-caption">
+                  <p></p>
+                  <p><a class="btn btn-lg btn-success" href="publicacionnueva.html" role="button">¡Publica y comenzá a intercambiar!</a></p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item item">
+              <img
+                src="/Frontend/Vista/img/ECONOMIA.png"
+                alt="...">
+
+              <div class="container">
+                <div class="carousel-caption ">
+                  <p></p>
+                  <p><a class="btn btn-lg btn-success" href="info.html" role="button">Conocé más sobre cómo contribuir</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="material-symbols-outlined">
+              arrow_back_ios
+              </span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="material-symbols-outlined">
+              arrow_forward_ios
+              </span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+   
+
+    <div class="container-marketing">
+      <div class="row">
+        <div class="col-lg-4">
+          <p></p>
+          <img class="bd-placeholder-img rounded-circle" src="/Frontend/Vista/img/electro.jpg" alt="" width="140"
+            height="140" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: 140x140"
+            preserveAspectRatio="xMidYMid slice" role="img">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#777" />
+
+          <h2>Electro</h2>
+          <p>.</p>
+          <p><a class="btn btn-secondary" href="#" role="button">Ingresar &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <p></p>
+          <img class="bd-placeholder-img rounded-circle" src="/Frontend/Vista/img/objetos.jpg" alt="" width="140"
+            height="140" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: 140x140"
+            preserveAspectRatio="xMidYMid slice" role="img">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#777" />
+
+          <h2>Objetos</h2>
+          <p>.</p>
+          <p><a class="btn btn-secondary" href="#" role="button">Ingresar &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <p></p>
+          <img class="bd-placeholder-img rounded-circle" src="/Frontend/Vista/img/ropa.jpg" alt="" width="140" height="140"
+            xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice"
+            role="img">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#777" />
+
+          <h2>Ropa</h2>
+          <p>.</p>
+          <p><a class="btn btn-secondary" href="#" role="button">Ingresar &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">No tires lo que ya no te sirve<span class="text-muted">.</span></h2>
+          <p class="lead">Si tenes objetos que solo ocupan lugar en tu hogar y no sabes qué hacer con ellos, desde
+            TRUwEbQUE te hacemos saber que hay miles de Argentinos que seguramente serían felices con ellos en su poder.
+          </p>
+        </div>
+        <div class="col-md-5">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            src="/Frontend/Vista/img/truque3.jpg" width="500" height="500" xmlns="http://www.w3.org/2000/svg"
+            aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" role="img">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading">Intercambia todo aquello que no usas<span class="text-muted">.</span></h2>
+          <p class="lead">No solo lograrás hacer más espacio en tu hogar, sino que como recompensa podrás obtener algún
+            otro elemento o servicio de tu interés. Sin gastar dinero, y ayudando a nuestro medio ambiente!</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            src="/Frontend/Vista/img/truque1.jpg" width="500" height="500" xmlns="http://www.w3.org/2000/svg"
+            aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" role="img">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">
+
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Conectate con el mundo del trueque<span class="text-muted">.</span></h2>
+          <p class="lead">Conocerás gente nueva, de tu zona, o de otros lugares del país. Esto te permitirá crear una
+            red de nuevos contactos con los que poder intercambiar más elementos en un futuro.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+            src="/Frontend/Vista/img/truque2.jpg" width="500" height="500" xmlns="http://www.w3.org/2000/svg"
+            aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" role="img">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">
+
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+    </div><!-- /.container -->
+
+
+    <!-- FOOTER -->
+    <footer class="main-background">
+      <ol>
+        <li>
+          <a href="#">
+            <p>Ingresar</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p>Publicaciones</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p>Categorias</p>
+          </a>
+        </li>
+        <li>
+          <a href="/Frontend/Vista/info.html">
+          <p>Quienes somos</p>
+          </a>
+        </li>
+        <li>
+          <a href="/Frontend/Vista/info.html"">
+            <p>Términos y condiciones</p>
+          </a>
+        </li>
+        <li>
+          <a href="/Frontend/Vista/info.html">
+            <p>Preguntas frecuentes</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <p>Contacto</p>
+          </a>
+        </li>
+        <li>
+          <a href="/Frontend/Vista/registro.html">
+            <p>Sumate</p>
+          </a>
+        </li>
+      </ol>
+      <a href="/Frontend/Vista/index.html"><p></p><strong>TRU</strong>w<strong>E</strong>b<strong>QUE</strong></p></a>
+    </footer>
+  </main>
+
+
+
+
+</body>
+
+</html>

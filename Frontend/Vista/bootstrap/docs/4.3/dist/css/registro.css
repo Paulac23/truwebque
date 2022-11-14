@@ -179,6 +179,15 @@ main {
 	display: block;
 }
 
+.modal-terminos {
+    font-size: 20px;
+	text-align: justify;
+}
+
+.modal-title {
+	font-size: 25px;
+	text-align: center;
+}
 /* ----- -----  Estilos para Validacion ----- ----- */
 .formulario__grupo-correcto .formulario__validacion-estado {
 	color: #1ed12d;

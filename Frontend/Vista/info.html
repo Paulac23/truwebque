@@ -29,18 +29,28 @@
 
   <style>
     .bd-placeholder-img {
-      font-size: 1.125rem;
+      font-size: 1.120rem;
       text-anchor: middle;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
     }
+    .card-header{
+      background-color: rgb(7, 174, 216);  
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
+    }
+
+    .card-header button{
+      color:rgb(42, 41, 43);
+      font-size: 15px;
+      color: whitesmoke;
+      letter-spacing: 3px;
+      text-transform: uppercase;  
+    }
+    .accordion{
+      box-shadow: 0 0 12px #585858;    
+
     }
   </style>
 
@@ -49,29 +59,38 @@
 
 <body>
 
-  <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="index.html">TRUWEBQUE</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="categoria.html">Categoria</a>
-          </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
-      </div>
-    </nav>
-  </header>
 
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="index.html">TRUWEBQUE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Categoria</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Carrito</a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2">
+        <button class="btn btn-outline-success my-2 my-sm-0" id="boton1" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
+</header>
 
+<main role="main">
 <div class="container">
+    <br>
+    <br>
     <div class="accordion" id="accordionExample">
         <div class="card">
           <div class="card-header" id="headingOne">
@@ -80,11 +99,19 @@
                 Quienes Somos
               </button>
             </h2>
-          </div>
-      
+          </div>     
           <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
-              <a href="http://www.truwebque.tk/"> Conoce a los developers haciendo click aquí</a>
+              <p>Buenas Internauta! Somos un Grupo de Estudiantes Del ISPC - Instituto Superior Politecnico Cordoba. 
+                Entusiastas del Mundo de la informatica, Autodidactas y Amantes del Mundo Geek.</p>
+                <p>TRUWEBQUE surgio de la idea de Poder hacer intercambios sin necesidad de tener que manejar
+                   dinero y que las personas pudieran utlizar la plataforma de manera gratuita.</p>
+                   <p> En este Proyecto utilizamos varias tecnologias, cada uno aporto un poco del conocimiento que tenia.
+                     Para mas detalles dejo link a Nuestra Pagina Web de presentacion, 
+                    en cual se detalla lo que hemos hecho y con que recursos trabajamos.</p>                  
+                  <p>Gracias por Tomarte el Tiempo de leer esto! Espero Que Cualquier Consulta no dudes en Contactarnos!</p>
+              <a href="http://www.truwebque.tk/" target="_blank"> Conoce a los developers haciendo click aquí</a>
+              <br>
             </div>
           </div>
         </div>
@@ -98,231 +125,25 @@
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
             <div class="card-body">
-                <h5 class="text-center">Términos, Condiciones de Uso y Políticas de Privacidad</h5>
+                <h5>Normas para la publicación de objetos</h5>
                 <hr>
-                
-<p class="text-justify">Cualquier persona, en adelante "Usuario" que desee acceder y/o usar el sitio o los Servicios
-podrá hacerlo sujetándose a los Términos y Condiciones Generales respectivos, junto con
-todas las demás políticas y principios que rigen en Truwebque y que son incorporados al
-presente.
-Mediante el uso de ésta página web ud. acepta “a priori” las condiciones del texto abajo
-indicado; Truwebque posee derechos absolutos sobre los servicios interactivos pudiendo
-removerlos si así lo creyese conveniente y no extiende garantía alguna sobre su duración
-en el tiempo. También posee el derecho de detener su servicio por actualizaciones y
-mejoras en el funcionamiento del sitio.
-CUALQUIER PERSONA QUE NO ACEPTE ESTOS TÉRMINOS Y CONDICIONES
-GENERALES, LOS CUALES TIENEN UN CARÁCTER OBLIGATORIO Y VINCULANTE,
-DEBERÁ ABSTENERSE DE UTILIZAR EL SITIO Y/O LOS SERVICIOS.
-Este acuerdo no crea ningún contrato de sociedad, de mandato, de franquicia, o relación
-laboral entre Truwebque y el Usuario.
-1) Modificaciones del Acuerdo: Truwebque podrá modificar los Términos y Condiciones
-Generales en cualquier momento haciendo pública dicha situación en el Sitio. Es
-responsabilidad del usuario revisar los Términos y Condiciones Generales periódicamente.
-2) Capacidad: Truwebque es un sitio que facilita a las personas la concreción de
-operaciones de trueque. Los productos y servicios sólo están disponibles para personas que
-tengan capacidad legal para contratar. No podrán utilizar los servicios las personas que no
-tengan esa capacidad, los menores de edad o Usuarios de Truwebque que hayan sido
-desactivados. Si estás registrando como persona jurídica, debes tener capacidad para
-contratar a nombre de tal entidad y de obligar a la misma en los términos de este acuerdo.
-3) Registración: Es necesario registrarse a Truwebque para poder usar el sitio y acceder a
-los servicios de la página. El Usuario accederá a su cuenta ("Cuenta") mediante el ingreso
-de su nombre de usuario y clave de seguridad elegida ("Contraseña"). El Usuario se obliga
-a mantener la confidencialidad de su Contraseña.
-El Usuario será responsable por todas las operaciones efectuadas en su Cuenta, pues el
-acceso a la misma está restringido al ingreso y uso de su Clave de Seguridad, de
-conocimiento exclusivo del Usuario. El Usuario se compromete a notificar a Truwebque en
-forma inmediata y por medio idóneo y fehaciente, cualquier uso no autorizado de su Cuenta,
-así como el ingreso por terceros no autorizados a la misma. Se aclara que está prohibida la
-venta, cesión o transferencia de la Cuenta bajo ningún título.
-Truwebque se reserva el derecho de rechazar cualquier solicitud de registración sin que
-esté obligado a comunicar o exponer las razones de su decisión y sin que ello genere algún
-derecho a indemnización o resarcimiento.
-4) Desactivaciones de cuenta: Truwebque se reserva el derecho de desactivar en cualquier
-momento la cuenta previamente aceptada sin que esté obligado a comunicar o exponer las
-razones de su decisión, y sin que ello genere algún derecho a indemnización o u otro tipo
-de resarcimiento.
-5) Obligaciones de los Usuarios: Todas las publicaciones de servicios o productos son de
-pura y exclusiva responsabilidad de los usuarios. El usuario debe publicar solamente
-productos y servicios permitidos por las leyes, sin perjuicio de las prohibiciones del punto
-siguiente.
-6) Prohibiciones: Queda terminantemente prohibida la publicación de contenidos y
-productos y servicios prohibidos para efectuar un trueque: Que resulten ofensivos para los
-derechos personalísimos de los individuos, con especial referencia al derecho al honor, a la
-dignidad, a la intimidad, a la imagen a la libre expresión, a la salud o sean discriminatorias.
-Pornográficos, con situaciones sexuales, cuerpos desnudos o semidesnudos. Fotos
-morbosas, de cadáveres, situaciones escatológicas, enfermedades (con excepción de fines
-educativos) Que infringen derechos de propiedad intelectual o de marcas de terceros. Que
-instiguen o promuevan situaciones delictivas o ilegales. Información personal de terceros o
-propia tales como email, claves, direcciones, teléfonos, etc., retratos de terceros sin su
-consentimiento. Links a páginas propias o que incorporen algún mecanismo de publicidad
-no permitida por este sitio. Que tengan como objeto recabar información de terceros a los
-fines de enviar spam. Equipos de telefonía celular o módem reportados, en banda negativa.
-Equipos o servicios que ofrezcan desbloquear celulares o dispositivos electrónicos y
-permitan la concreción a alguna actividad delictiva. Moto vehículos que no dispongan de
-toda la documentación reglamentaria. Todo tipo de armas ya sean blancas, de fuego
-explosivos, estén obsoletas o no. Estupefacientes, medicamentos, sustancias químicas
-prohibidas.
-7) Violaciones del Sistema o Bases de Datos: No está permitida ninguna acción o uso de
-dispositivo, software, u otro medio tendiente a interferir tanto en las actividades y operatoria
-de Truwebque como en las descripciones, cuentas o bases de datos de Truwebque
-Cualquier intromisión, tentativa o actividad violatoria o contraria a las leyes sobre derecho
-de propiedad intelectual y/o a las prohibiciones estipuladas en este contrato harán pasible a
-su responsable de las acciones legales pertinentes, y a las sanciones previstas por este
-acuerdo, así como lo hará responsable de indemnizar los daños y perjuicios ocasionados.
-8) Sanciones: Sin perjuicio de otras medidas, Truwebque podrá iniciar las acciones que
-estime pertinentes a un Usuario si se quebrantara alguna ley, o cualquiera de las
-estipulaciones de los Términos y Condiciones Generales.
-9) Responsabilidad: Las publicaciones de este sitio web son pura y exclusiva
-responsabilidad de los usuarios; Truwebque no se responsabiliza por cualquier daño que
-pueda ocasionar alguna de las publicaciones, tampoco es responsable si productos
-ofertados provienen de alguna actividad ilegal, sin perjuicio de que Truwebque toma todos
-los recaudos necesarios para que no suceda. Truwebque no se responsabiliza por cualquier
-daño, perjuicio o pérdida al Usuario causados por fallas en el sistema, en el servidor o en
-Internet. Truwebque tampoco será responsable por cualquier virus que pudiera infectar el
-equipo del Usuario como consecuencia del acceso, uso o examen de su sitio web o a raíz
-de cualquier transferencia de datos, archivos, imágenes, textos, o audio contenidos en el
-mismo. Los Usuarios NO podrán imputar responsabilidad alguna ni exigir pago por lucro
-cesante, en virtud de perjuicios resultantes de dificultades técnicas o fallas en los sistemas o
-en Internet. Truwebque no garantiza el acceso y uso continuado o ininterrumpido de su sitio.
-El sistema puede eventualmente no estar disponible debido a dificultades técnicas o fallas
-de Internet, o por cualquier otra circunstancia ajena a Truwebque; en tales casos se
-procurará restablecerlo con la mayor celeridad posible sin que por ello pueda imputársele
-algún tipo de responsabilidad. Truwebque no será responsable por ningún error u omisión
-contenidos en su sitio web.
-Truwebque solo pone a disposición de los Usuarios un espacio que les permita contactarse
-para realizar la operación de trueque (permuta conforme Art. 1172 del C.C.) Truwebque no
-participa de la operación y no es el propietario de los bienes, no tiene posesión de ellos, ni
-administran los servicios que los usuarios ofrecen.
-10) Propiedad intelectual: Los contenidos de las pantallas relativas a los servicios de
-Truwebque como así también los programas, bases de datos, redes, archivos que permiten
-al Usuario acceder y usar su Cuenta, son de propiedad de Truwebque y están protegidas
-por las leyes y los tratados internacionales de derecho de autor. El uso indebido y la
-reproducción total o parcial de dichos contenidos quedan prohibidos, salvo autorización
-expresa y por escrito de Truwebque.
-El Sitio puede contener enlaces a otros sitios web lo cual no indica que sean propiedad u
-operados por Truwebque. En virtud que Truwebque no tiene control sobre tales sitios, NO
-será responsable por los contenidos, materiales, acciones y/o servicios prestados por los
-mismos, ni por daños o pérdidas ocasionadas por la utilización de los mismos, sean
-causadas directa o indirectamente. La presencia de enlaces a otros sitios web no implica
-una sociedad, relación, aprobación, respaldo de Truwebque a dichos sitios y sus
-contenidos.
-11) Mecanismo de denuncia de contenido publicado: En el supuesto que cualquier Usuario
-desease denunciar alguna situación a Truwebque que viole derechos de propiedad
-intelectual o de marcas, o contenga contenido que el Usuario considere inapropiado , el
-mismo puede realizarlo mediante el envio de un email a Truwebque, en el que conste el
-contenido objeto del reclamo, los motivos en que se funda tal reclamo, los datos
-identificatorios y de contacto de quien envía la denuncia. La foto, video o archivo en
-particular objeto de la denuncia, URL, usuario quien la pública, etc. Una vez recibida la
-denuncia por parte del interesado, la misma será analizada por Truwebque de acuerdo a las
-circunstancias particulares, y se tomarán las medidas que correspondan de acuerdo al
-caso. Podrá asimismo solicitar del interesado cualquier otra información adicional que
-resulte necesaria para la corroboración de las circunstancias que la denuncia indique.
-12) Facultades: Truwebque se reserva el derecho de realizar modificaciones al sitio,
-remover cualquier tipo de contenido y desactivar cuentas de Usuario, sin hacerse
-responsable por ninguna de las consecuencias que pudiese acarrear tanto al Usuario como
-a los terceros en su representación o no. Tampoco se responsabiliza por el contenido que
-publican los Usuarios y los daños y perjuicios que ellos puedan ocasionar.
-13) Política de Privacidad:
-a) Derechos de acceso, cancelación y rectificación de datos personales Conforme se
-establece en el artículo 14, inciso 3 de la Ley Nº 25.326, el titular de los datos personales,
-previa acreditación de su identidad, tiene la facultad de ejercer el derecho de acceso a los
-mismos, dentro de los 10 (diez) días corridos desde la acreditación de su identidad, en
-forma gratuita a intervalos no inferiores a seis meses, salvo que se acredite un interés
-legítimo al efecto. Para la rectificación y supresión de los datos personales, el titular de los
-mismo podrá ejercer tales derechos dentro de los 5 (cinco) días hábiles de acreditada su
-identidad. Una vez registrado en Truwebque, el Usuario podrá revisar y cambiar los Datos
-Usuario que nos ha enviado durante el proceso de registración. En determinados casos,
-mantendremos en nuestros archivos cualquier información de tus Datos Usuario que nos
-hayas pedido que retiremos, y ello con la finalidad de resolver disputas o reclamaciones,
-detectar problemas o incidencias y solucionarlos, y dar cumplimiento a lo dispuesto en los
-Términos y Condiciones Generales por un período de tiempo determinado por la ley. En
-cualquier caso, los Datos Usuario no serán inmediatamente retirados de nuestros archivos
-por motivos legales y técnicos, incluyendo sistemas de soportes de seguridad. Por tanto, no
-se debe esperar que todos los Datos Usuario sean definitivamente borrados de nuestras
-bases de datos. Se informa que la Dirección Nacional de Protección de Datos Personales,
-Órgano de Control de la Ley Nº 25.326, tiene la atribución de atender las denuncias y
-reclamos que se interpongan con relación al incumplimiento de las normas sobre protección
-de datos personales.
-b) Uso que hacemos de la información Para suministrar un excelente servicio y para que los
-usuarios puedan realizar operaciones en forma ágil y segura, Truwebque requiere cierta
-información de carácter personal, incluyendo dirección de e-mail y teléfono de contacto. La
-recolección de información nos permite ofrecer a los usuarios servicios y funcionalidades
-que se adecuen mejor a sus necesidades y personalizar nuestros servicios para hacer que
-sus experiencias con Truwebque sean lo mejor posible. Los Datos Usuario que recabamos
-tiene las siguientes finalidades: Desarrollar estudios internos sobre los intereses,
-comportamientos y demografía de los usuarios para comprender mejor sus necesidades e
-intereses y ofrecer un mejor servicio y mejorar nuestras iniciativas comerciales y
-promocionales
-Truwebque puede contratar proveedores de servicios o empresas de “outsourcing” que
-contribuyan a mejorar el Servicio de Truwebque en cuyo caso podrá compartir los Datos de
-Usuario. Truwebque velará porque se cumplan ciertos estándares, mediante la firma de
-acuerdos o convenios cuyo objeto sea la privacidad de los Datos Usuario.
-c) Confidencialidad de la información Una vez que un Usuario se haya registrado,
-Truwebque no venderá, alquilará o compartirá los Datos Usuario excepto en las formas
-establecidas en estas políticas. Haremos todo lo que esté a nuestro alcance para proteger
-la privacidad de la información, aunque puede suceder que terceras partes bajo ciertas
-circunstancias puedan interceptar o acceder a cierta información o transmisiones de datos
-en cuyo caso Truwebque no responderá por la información que sea revelada.
-d) Orden de autoridades competentes - Requerimientos Legales: Truwebque coopera con
-las autoridades competentes y con otros terceros para garantizar el cumplimiento de las
-leyes, por ejemplo en materia de protección de derechos de propiedad industrial e
-intelectual, prevención del fraude y otras materias. Truwebque podrá revelar los Datos
-Usuario bajo requerimiento de la autoridades judiciales o gubernamentales competentes
-para efectos de investigaciones conducidas por ellas, aunque no exista una orden ni una
-citación ejecutiva o judicial, o por ejemplo (y sin limitación a este supuesto) cuando se trate
-de investigaciones de carácter penal, de fraude, relacionadas con piratería informática,
-violación de derechos de autor, infracción de derechos de propiedad industrial o intelectual,
-u otra actividad que sea ilegal o que pueda exponer a Truwebque o a sus Usuarios a
-cualquier responsabilidad legal. En tales situaciones, Truwebque colaborará con las
-autoridades competentes con el fin de salvaguardar la integridad y la seguridad de la
-Comunidad y la de sus Usuarios. Además, Truwebque se reserva el derecho (y nos
-autorizas expresamente a ello) de comunicar información sobre sus Usuarios a otros
-Usuarios, entidades o terceros cuando haya motivos suficientes para considerar que la
-actividad de un Usuario sea sospechosa de intentar o cometer un delito o intentar perjudicar
-a otras personas. Este derecho será utilizado por Truwebque a su entera discreción cuando
-lo considere apropiado o necesario para mantener la integridad y la seguridad de la
-Comunidad y la de sus Usuarios, para hacer cumplir los Términos y Condiciones Generales
-y a efectos de cooperar con la ejecución y cumplimiento de la ley. Este derecho será
-ejercido por Truwebque independientemente que no exista una orden judicial o
-administrativa al efecto.
-d) Seguridad. Almacenamiento de la información: Truwebque considera a los datos de sus
-Usuarios como un activo que debe ser protegido de cualquier pérdida o acceso no
-autorizado. Empleamos diversas técnicas de seguridad para proteger tales datos de
-accesos no autorizados por usuarios de dentro o fuera de nuestra compañía. Sin embargo,
-es necesario tener muy en cuenta que la seguridad perfecta no existe en Internet. El
-Usuario de Truwebque conoce y acepta expresamente que Truwebque, a su exclusivo
-criterio, recabe, almacene y monitoree el intercambio de mensajes entre sus Usuarios, con
-el objetivo de contribuir a la seguridad de las relaciones y comunicaciones en la comunidad.
-Por ello, Truwebque no se hace responsable por interceptaciones ilegales o violación de sus
-sistemas o bases de datos por parte de personas no autorizadas. Truwebque, tampoco se
-hace responsable por la indebida utilización de la información obtenida por esos medios.
-Todos los datos personales de los usuarios serán almacenados en un fichero automatizado
-de datos personales. El usuario al registrarse en Truwebque confirma que está informado de
-la residencia de este fichero y autoriza esta transferencia internacional de sus datos.
-e) Desactivación de una cuenta de Usuario: En el caso que un Usuario decida desactivar su
-cuenta de Truwebque nuestra Política de Privacidad continuará vigente respecto ese
-Usuario. Truwebque se rige en un todo de acuerdo a lo establecido por la Ley 24.240,
-26.361 y demás disposiciones concordantes.
-f) Jurisdicción y Ley Aplicable: Este acuerdo estará regido en todos sus puntos por las leyes
-vigentes en la República Argentina.
-Cualquier controversia derivada del presente acuerdo, su existencia, validez, interpretación,
-alcance o cumplimiento, será sometida al arbitraje del Centro Empresarial de Mediación y
-Arbitraje, de acuerdo con la reglamentación vigente de dicho tribunal. La sede de dicho
-arbitraje será la Ciudad Autónoma de Buenos Aires y los procedimientos se llevarán a cabo
-en idioma castellano. Este acuerdo estará regido en todos sus puntos por las leyes vigentes
-en la República Argentina. Cualquier controversia derivada del presente acuerdo, su
-existencia, validez, interpretación, alcance o cumplimiento, será sometida a la Jurisdicción
-de los tribunales Ordinarios del Departamento Judicial de Capital Federal. Protección de
-datos personales: "El titular de los datos personales tiene la facultad de ejercer el derecho
-de acceso a los mismos en forma gratuita a intervalos no inferiores a seis meses, salvo que
-se acredite un interés legítimo al efecto conforme lo establecido en el artículo 14, inciso 3 de
-la Ley Nº 25.326". "La DIRECCION NACIONAL DE PROTECCION DE DATOS
-PERSONALES, Organo de Control de la Ley Nº 25.326, tiene la atribución de atender las
-denuncias y reclamos que se interpongan con relación al incumplimiento de las normas
-sobre protección de datos personales". Cierre de una Cuenta: En el caso que un usuario
-decida no utilizar su cuenta de Truwebque nuestra Política de Privacidad continuará vigente
-respecto ese usuario. Truwebque se rige en un todo de acuerdo a lo establecido por la Ley
-24.240, 26.361 y demás disposiciones concordantes </p>
+                <p> No se permite la venta de productos.</p>
+                <hr>
+                <p> No se permite el intercambio de seres vivos.</p>
+                <hr>
+                <p> El usuario no podrá usar este servicio para transmitir cualquier clase de material ilegal, 
+                amenazante o cualquier otro tipo de material que pueda ser considerado ofensivo.</p>
+                 
+                Cualquier material que vaya en contra de los intereses de TRUwEbQUE, que constituya una ofensa criminal, 
+                    viole los derechos de otros, o cualquier otro tipo de violación aplicable 
+                    en su localidad, o por las leyes internacionales
+                <strong> TRUwEbQUE se reserva el derecho de dar de baja cualquier cuenta que vaya en contra de estas normas,
+                bajo su total discreción, y sin necesidad de dar ninguna razón.</strong>
+                <br>
+                <hr>
+                <a href="../Vista/doc/Terminos_Condiciones.pdf" target="_blank">Leer Terminos y Condiciones - Politicas de Privacidad</a> 
+                <br>
+     
             </div>
           </div>
         </div>
@@ -357,15 +178,15 @@ respecto ese usuario. Truwebque se rige en un todo de acuerdo a lo establecido p
                 <hr>
                 <p><strong>¿Puedo ofrecer servicios a cambio de productos?</strong></p>
                 Si, podes ofrecer tus servicios. La idea de la plataforma es que puedas contactar con gente de tus alrededores, 
-                para ofrecer por ejemplo servicios de pintura, albañilería, tareas domésticas, etc. a cambio de un producto de tu interés.<p></p>
+                para ofrecer por ejemplo servicios de pintura, albañilería, tareas domésticas, etc. a cambio de un producto de tu interés.</p>
             </div>
           </div>
         </div>
       </div>
+
     <hr class="featurette-divider">
 
 </div><!-- /.container -->
-</body>
 
     <!-- FOOTER -->
     <footer class="main-background">
@@ -381,12 +202,12 @@ respecto ese usuario. Truwebque se rige en un todo de acuerdo a lo establecido p
           </a>
         </li>
         <li>
-          <a href="categoria.html">
+          <a href="#">
             <p>Categorias</p>
           </a>
         </li>
         <li>
-            <a href="http://www.truwebque.tk/">
+            <a href="#>
             <p>Quienes somos</p>
           </a>
         </li>
@@ -401,7 +222,7 @@ respecto ese usuario. Truwebque se rige en un todo de acuerdo a lo establecido p
           </a>
         </li>
         <li>
-          <a href="http://www.truwebque.tk/contacto/">
+          <a href="#>
             <p>Contacto</p>
           </a>
         </li>

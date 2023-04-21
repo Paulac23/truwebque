@@ -1,4 +1,4 @@
-<img src="ispc.png">
+<img src="https://i.ibb.co/ncQnyt8/ispc.png" alt="ispc" border="0">
 <h1>Proyecto TRUEQUE</h1>
 <h2>TUTOR: Alvarado Yamil</h2>
 <h3>Integrantes: </h3>
@@ -9,11 +9,8 @@
   <li>Gonzalo Martin Parada</li>
   <li>Mariela Zulma Lara</li>
   <li>Belen Riquelme</li>
-  <li>Emanuel Britez</li>
-  <li>Maia Camacho</li>
   <li>Daniel Vargas</li>
   <li>Roberto Carlos Osores</li>
-  <li>Ariela Yael Bulacio</li>
 </ul>
 <p>Descripción: </p>
 

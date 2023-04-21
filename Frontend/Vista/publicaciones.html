@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>TRUwEbQUE</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/carousel/">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/docs/4.3/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/docs/4.3/dist/css/registro.css" rel="stylesheet">
+    <link href="bootstrap/docs/4.3/dist/css/jquery-ui.min.css" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="bootstrap/docs/4.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="bootstrap/docs/4.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="bootstrap/docs/4.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="bootstrap/docs/4.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="bootstrap/docs/4.3/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+    <link rel="icon" href="bootstrap/docs/4.3/assets/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="bootstrap/docs/4.3/assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#563d7c">
+  
+    <link href="../Controlador/carousel.css" rel="stylesheet">
+    <link href="../Controlador/style.css" rel="stylesheet" type="text/css">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.120rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+   
+      #formulario{ 
+        width: 100%;
+        border-radius: 15px; 
+        background-color: rgb(7, 174, 216);  
+        box-shadow: 0 0 12px #585858;      
+        overflow: hidden;
+        flex-direction: column;
+     
+      }
+      .formulario label{
+        font-size: 15px;
+        color: whitesmoke;
+        letter-spacing: 3px;
+        margin-bottom: 0px;
+        text-transform: uppercase;
+        font-weight: lighter;
+        
+      }
+
+      ::-webkit-input-placeholder{color:rgb(109, 109, 109);}
+
+      #lang{
+        height: 45px;
+        border-radius: 10px; 
+        background-color:rgba(252, 252, 252, 0.712);
+      }
+
+      .formulario input{
+        background-color:rgba(252, 252, 252, 0.712);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.89);
+        width: 100%;   
+      }
+      
+      #submitFormulario{
+        border-radius: 6px; 
+        background-color: rgb(42, 41, 43);
+        color: whitesmoke;
+        font-size: 15px;
+        letter-spacing: 4px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: .5s;
+        max-width: 50%;
+
+      }
+
+      #submitFormulario:hover{       
+        background-color: rgb(42, 41, 43);
+        box-shadow: 0 0 5px #866ba0, 0 0 15px #534f66,
+        0 0 40px #434249;               
+      }
+      #img_reg{
+        padding-top: 10%;
+        max-width: 80%;
+        
+      }
+
+
+
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    
+  </head>
+  <body>
+    
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="index.html">TRUWEBQUE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Categoria</a>
+        </li>
+      </ul>
+      <form class="form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2">
+        <button class="btn btn-outline-success my-2 my-sm-0" id="boton1" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
+</header>
+
+<main role="main">
+
+  <div class="container">
+
+    <!-- START THE FEATURETTES -->
+
+    <div class="row featurette" id="inicio">
+      <div class="col-md-7 order-md-1">
+        <h2 class="featurette-heading">Publicá tus productos<span class="text-muted">.</span></h2>
+        <p class="lead">Comienza a <strong>TRUwebQUEAR</strong>.<br>
+           Aquello que ya no uses o que solo esté ocupando lugar en tu hogar, a alguien más le puede servir!<br>
+            Y de paso, podes obtener algún otro elemento o servicio a cambio Todos Ganan!</p>
+      </div>
+      <div class="col-md-5 order-md-2">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="img/commerce.png" id="img_reg" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" role="img"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">
+
+      </div>
+    </div>
+
+    <br>
+    <form action="" class="formulario" id="formulario" >
+
+        <!-- Grupo: Titulo -->
+        <div class="formulario__grupo" id="grupo__titulo">
+          <label for="usuario" class="formulario__label">Título</label> 
+          <div class="formulario__grupo-input">
+            <input type="text" class="formulario__input" name="titulo" id="usuario" placeholder="Ejemplo: Notebook">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">El título debe contener más de un caracter.</p>
+        </div>
+    
+        <!-- Grupo: Descripcion -->
+        <div class="formulario__grupo" id="grupo__descripcion">
+           <label for="descripcion" class="formulario__label">Descripcion</label>
+          <div class="formulario__grupo-input">
+            <input type="textarea" rows=10 class="formulario__input" name="descripcion" id="descripcion"  placeholder="Ejemplo: i7 - 8 RAM">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          </div>
+          <p class="formulario__input-error">La descripción debe contener más de un caracter</p>
+        </div>
+    
+        <!-- Grupo: Preferencias -->
+        <div class="formulario__grupo" id="grupo__preferencias">
+            <label for="preferencias" class="formulario__label">Preferencias</label> 
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="preferencias" id="preferencias" placeholder="Ejemplo: Mesa de Vidrio">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">Las preferencias deben contener más de un caracter</p>
+        </div>
+    
+        <!-- Grupo: Imagen -->
+        <div class="formulario__grupo" id="grupo__imagen">
+           <label for="imagen" class="formulario__label">Imagen</label>
+            <div class="formulario__grupo-input">
+                <input type="file" class="formulario__input" name="imagen" id="imagen" placeholder="">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error"></p>
+        </div>
+        
+        <!-- Grupo: Cantidad -->
+        <div class="formulario__grupo" id="grupo__Cantidad">
+            <label for="Cantidad" class="formulario__label">Cantidad</label>
+            <div class="formulario__grupo-input">
+                <input type="number" min="1" class="formulario__input" name="Cantidad" id="Cantidad" placeholder="Ejemplo: 1">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error"></p>
+        </div>
+    
+    
+        
+        
+        <!-- Grupo: Categoria -->
+        <div class="formulario__grupo" id="grupo__Categoria">
+           <label for="Categoria" class="formulario__label">Categoría</label>
+            <div class="formulario__grupo-input">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                <select name="Categoria" id="lang">
+                    <option value="1">Selecciona categoría</option>
+                    <option value="2">Accesorios para Vehículos</option>
+                    <option value="3">Agro</option>
+                    <option value="4">Alimentos y Bebidas</option>
+                    <option value="5">Animales y Mascotas</option>
+                    <option value="6">Antigüedades y Colecciones</option>
+                    <option value="7">Arte, Librería y Mercería</option>
+                    <option value="8">Autos, motos y otros</option>
+                    <option value="9">Belleza y cuidado personal</option>
+                    <option value="10">Cámaras y Accesorios</option>
+                    <option value="11">Celulares y Teléfonos</option>
+                    <option value="12">Computación</option>
+                    <option value="13">Construcción</option>
+                    <option value="14">Deportes y Fitness</option>
+                    <option value="15">Electrodomésticos</option>
+                    <option value="16">Electrónica, Audio y Video</option>
+                    <option value="17">Herramientas</option>
+                    <option value="18">Hogar, Muebles y Jardín</option>
+                    <option value="19">Industrias y Oficinas</option>
+                    <option value="20">Inmuebles</option>
+                    <option value="21">Instrumentos Musicales</option>
+                    <option value="22">Juegos y Juguetes</option>
+                    <option value="23">Libros, Revistas y Comics</option>
+                    <option value="24">Ropa y Accesorios</option>
+                    <option value="25">Servicios</option>
+                    <option value="26">Otras categorias</option>
+                  </select>
+            </div>
+            <p class="formulario__input-error"></p>
+        </div>
+    
+        <div class="formulario__mensaje" id="formulario__mensaje">
+          <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+        </div>
+    
+        <div class="formulario__grupo formulario__grupo-btn-enviar">
+          <button type="submit" class="formulario__btn" id="submitFormulario">Publicar</button>
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Publicación exitosa!</p>
+        </div>
+      </form>
+    
+      <hr class="featurette-divider">
+    
+    
+
+  </div><!-- /.container -->
+
+  <!-- /Aformulario --> 
+
+  <!-- FOOTER -->
+  <footer class="main-background">
+    <ol>
+        <li>
+          <a href="login.html">
+          <p>Ingresar</p>
+          </a>
+        </li>
+        <li>
+          <a href="publicaciones.html">
+          <p>Publicaciones</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+          <p>Categorias</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+          <p>Quienes somos</p>
+          </a>
+        </li>
+        <li>
+          <a href="info.html">
+          <p>Términos y condiciones</p>
+          </a>
+        </li>
+        <li>
+          <a href="info.html">
+          <p>Preguntas frecuentes</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+          <p>Contacto</p>
+          </a>
+        </li>
+        <li>
+          <a href="registro.html">
+          <p>Sumate</p>
+          </a>
+        </li>
+    </ol>
+    <a href="index.html"><p></p><strong>TRU</strong>w<strong>E</strong>b<strong>QUE</strong></p></a>
+</footer>
+</main>
+
+
+    
+        <script src="bootstrap/docs/4.3/dist/js/jquery.js"></script>
+        <script src="bootstrap/docs/4.3/dist/js/jquery-ui.min.js"></script>
+        <script src="bootstrap/docs/4.3/dist/js/datepicker-es.js"></script>
+        <script src="bootstrap/docs/4.3/dist/js/bootstrap.bundle.js"></script>
+        <script src="bootstrap/docs/4.3/dist/js/forms.js"></script>
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+      
+
+      
+    
+  </body>
+</html>

@@ -1,0 +1,26 @@
+  <div class="container text-center">
+    todos productos
+    <div class="row align-items-start">
+
+        <div *ngFor="let product of products" class="card col-sm-3 col-md-3 col-xl-3 pt-3 text-truncate h-100" >
+          <img src="https://th.bing.com/th/id/R.dc5e5867cabdb00c44433dac2c87c736?rik=0RpcniOFTFBBcw&riu=http%3a%2f%2fwww.pepsico.cl%2fimages%2flibrariesprovider40%2fdefault-album%2fvb3_montaje-productos-pepsico2e33c3aeef576d378be6ff5000e253d8.jpg%3fsfvrsn%3d1&ehk=DWzgEvkO%2fu8RcjcZYgkjXFxQRKrjMqoYosTD6FAvypE%3d&risl=&pid=ImgRaw&r=0"
+          class="card-img-top" alt="imagen">
+          <div class="card-body">
+            <p class="card-text">{{product.title}}</p>
+            <hr>
+            <p>{{product.description}}</p>
+            <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-12 col-sm-12">
+                ${{product.price}}
+              </div>
+              <div class="col-lg-6 col-md-12 col-sm-12">
+                <button class="btn btn-primary fs-6 text-nowrap"
+                  [routerLink]="['/shop/product']">Ver mas</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+  </div>

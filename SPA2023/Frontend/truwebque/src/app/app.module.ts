@@ -5,20 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
 import { PagesComponent } from './pages/pages.component';
-import { ShopComponent } from './shop/shop.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ShopService } from './shop/shop.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    PagesComponent,
-    ShopComponent
+    PagesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ShopService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

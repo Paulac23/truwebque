@@ -1,8 +1,62 @@
   <div class="container text-center">
     todos productos
-    <div class="row align-items-start">
 
-        <div *ngFor="let product of products" class="card col-sm-3 col-md-3 col-xl-3 pt-3 text-truncate h-100" >
+  <!-- carousel init-->
+  <div class="container" style=" height: 20rem">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <div  class="carousel-item active">
+          <div class="container">
+            <img style=" height: 20rem"
+             src="https://th.bing.com/th/id/R.22f61000132613018646a25a0439aa19?rik=zpgt9eVICj2CGA&pid=ImgRaw&r=0"
+            alt="imagen de ofertas">
+          </div>
+        </div>
+        <div *ngFor="let product of products" class="carousel-item">
+          <div class="row row-cols-5">
+            <div class="col mb-3 mb-sm-0">
+              <div class="card " style=" height: 20rem; width: 10rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card" style=" height: 20rem; width: 10rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <!-- carousel end
+  col-sm-3 col-md-3 col-xl-3 pt-3  h-100
+  -->
+
+  <div class="row row-cols-5 align-items-start">
+
+        <div *ngFor="let product of products"
+              class="card p-3 m-3 text-truncate"
+              style="width: 10rem;" >
           <img src="https://th.bing.com/th/id/R.dc5e5867cabdb00c44433dac2c87c736?rik=0RpcniOFTFBBcw&riu=http%3a%2f%2fwww.pepsico.cl%2fimages%2flibrariesprovider40%2fdefault-album%2fvb3_montaje-productos-pepsico2e33c3aeef576d378be6ff5000e253d8.jpg%3fsfvrsn%3d1&ehk=DWzgEvkO%2fu8RcjcZYgkjXFxQRKrjMqoYosTD6FAvypE%3d&risl=&pid=ImgRaw&r=0"
           class="card-img-top" alt="imagen">
           <div class="card-body">
@@ -10,10 +64,10 @@
             <hr>
             <p>{{product.description}}</p>
             <div class="row justify-content-center">
-              <div class="col-lg-6 col-md-12 col-sm-12">
+              <div class="col">
                 ${{product.price}}
               </div>
-              <div class="col-lg-6 col-md-12 col-sm-12">
+              <div class="col">
                 <button class="btn btn-primary fs-6 text-nowrap"
                   [routerLink]="['/shop/product']">Ver mas</button>
               </div>
@@ -23,4 +77,6 @@
 
 
     </div>
+
+
   </div>

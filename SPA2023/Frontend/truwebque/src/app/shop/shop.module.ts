@@ -7,6 +7,7 @@ import { CartComponent } from './component/cart/cart.component';
 import { AllProductsComponent } from './component/all-products/all-products.component';
 import { HttpClientModule} from'@angular/common/http';
 import { ProductFormComponent } from './component/product-form/product-form.component';
+import { MyProductsComponent } from './component/my-products/my-products.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ProductFormComponent } from './component/product-form/product-form.comp
     CartComponent,
     AllProductsComponent,
     ProductFormComponent,
+    MyProductsComponent,
   ],
   imports: [
     CommonModule,

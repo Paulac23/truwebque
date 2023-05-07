@@ -39,21 +39,28 @@
         </div>
 
         <div class="col-6 d-flex justify-content-end align-items-center">
-    <i [ngClass]="{'bi bi-pencil': !pencilFill, ' bi bi-pencil-fill': pencilFill}"
-          (mouseover)="fillPencil()"
-          (mouseleave)="fillPencil()"></i>
-          <i [ngClass]="{'bi bi-trash': !trashFill, ' bi bi-trash-fill': trashFill}"
-          (mouseover)="fillTrash()"
-          (mouseleave)="fillTrash()"></i>
+          <i
+            [ngClass]="{
+              'bi bi-pencil': !pencilFill,
+              ' bi bi-pencil-fill': pencilFill
+            }"
+            (mouseover)="fillPencil()"
+            (mouseleave)="fillPencil()"
+          ></i>
+          <i
+            [ngClass]="{
+              'bi bi-trash': !trashFill,
+              ' bi bi-trash-fill': trashFill
+            }"
+            (mouseover)="fillTrash()"
+            (mouseleave)="fillTrash()"
+          ></i>
           <h6 class="">$Precio</h6>
         </div>
       </div>
     </div>
     <!--Items end-->
     <hr />
-    <div class="container">
-
-    </div>
-
+    <div class="container"></div>
   </div>
 </div>

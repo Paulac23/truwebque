@@ -1,32 +1,37 @@
 <div class="col">
   <div class="product-details mr-2">
-    <div class="d-flex flex-row align-items-center">
-      <button [routerLink]="['/shop']" class="btn btn-primary">Seguir comprando</button>
-    </div>
-    <hr />
-    <h6 class="mb-0">Carrito de Compras</h6>
-    <div class="d-flex justify-content-between">
-      <span>You have 4 items in your cart</span>
-      <div class="d-flex flex-row align-items-center">
-        <span class="text-black-50">Sort by:</span>
-        <div class="price ml-2">
-          <span class="mr-1">price</span><i class="fa fa-angle-down"></i>
+    <div class="row">
+      <div class="col-6">
+        <h6 class="mb-0">Carrito de Compras de usuario</h6>
+        <div class="d-flex justify-content-between">
+          <span>Tienes 4 items en tu carrito</span>
         </div>
       </div>
+      <div class="col-6 d-flex justify-content-end align-items-center">
+        <button [routerLink]="['/shop']" class="btn btn-primary">
+          Seguir comprando
+        </button>
+      </div>
     </div>
-    <!--Items-->
-    <h1>mis items</h1>
 
-    <div class="container items" style="height: 64px">
+    <h1 class="text-center fw-bold">Mis articulos</h1>
+
+    <!--Items start-->
+    <div class="container items rounded" style="height: 64px">
       <div class="row pt-2">
         <div class="col-2 d-flex justify-content-center align-items-center">
-          <img src="https://th.bing.com/th/id/OIP.2bNUJ-z5UnaJfuclcYMWAgHaEK?pid=ImgDet&rs=1" alt="Img" srcset=""
-          style="height: 48px; width: 48" />
+          <img
+            class="rounded"
+            src="https://th.bing.com/th/id/OIP.2bNUJ-z5UnaJfuclcYMWAgHaEK?pid=ImgDet&rs=1"
+            alt="Img"
+            srcset=""
+            style="height: 48px; width: 48"
+          />
         </div>
 
         <div class="col-4">
           <div class="row">
-            <div class="col-6 product text-nowrap">Nombre producto</div>
+            <div class="col-6 product text-nowrap">1</div>
           </div>
           <div>
             <div class="col-6 description text-nowrap">Descripcion corta</div>
@@ -34,77 +39,21 @@
         </div>
 
         <div class="col-6 d-flex justify-content-end align-items-center">
-          <h6 class="">Precio</h6>
+    <i [ngClass]="{'bi bi-pencil': !pencilFill, ' bi bi-pencil-fill': pencilFill}"
+          (mouseover)="fillPencil()"
+          (mouseleave)="fillPencil()"></i>
+          <i [ngClass]="{'bi bi-trash': !trashFill, ' bi bi-trash-fill': trashFill}"
+          (mouseover)="fillTrash()"
+          (mouseleave)="fillTrash()"></i>
+          <h6 class="">$Precio</h6>
         </div>
       </div>
     </div>
-
+    <!--Items end-->
     <hr />
+    <div class="container">
 
-    <div
-      class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded"
-    >
-      <div class="d-flex flex-row">
-        <img class="rounded" src="https://i.imgur.com/QRwjbm5.jpg" width="40" />
-        <div class="ml-2">
-          <span class="font-weight-bold d-block">Iphone 11 pro</span
-          ><span class="spec">256GB, Navy Blue</span>
-        </div>
-      </div>
-      <div class="d-flex flex-row align-items-center">
-        <span class="d-block">2</span
-        ><span class="d-block ml-5 font-weight-bold">$900</span
-        ><i class="fa fa-trash-o ml-3 text-black-50"></i>
-      </div>
     </div>
-    <div
-      class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded"
-    >
-      <div class="d-flex flex-row">
-        <img class="rounded" src="https://i.imgur.com/GQnIUfs.jpg" width="40" />
-        <div class="ml-2">
-          <span class="font-weight-bold d-block">One pro 7T</span
-          ><span class="spec">256GB, Navy Blue</span>
-        </div>
-      </div>
-      <div class="d-flex flex-row align-items-center">
-        <span class="d-block">2</span
-        ><span class="d-block ml-5 font-weight-bold">$900</span
-        ><i class="fa fa-trash-o ml-3 text-black-50"></i>
-      </div>
-    </div>
-    <div
-      class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded"
-    >
-      <div class="d-flex flex-row">
-        <img class="rounded" src="https://i.imgur.com/o2fKskJ.jpg" width="40" />
-        <div class="ml-2">
-          <span class="font-weight-bold d-block">Google pixel 4 XL</span
-          ><span class="spec">256GB, Axe black</span>
-        </div>
-      </div>
-      <div class="d-flex flex-row align-items-center">
-        <span class="d-block">1</span
-        ><span class="d-block ml-5 font-weight-bold">$800</span
-        ><i class="fa fa-trash-o ml-3 text-black-50"></i>
-      </div>
-    </div>
-    <div
-      class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded"
-    >
-      <div class="d-flex flex-row">
-        <img class="rounded" src="https://i.imgur.com/Tja5H1c.jpg" width="40" />
-        <div class="ml-2">
-          <span class="font-weight-bold d-block"
-            >Samsung galaxy Note 10&nbsp;</span
-          ><span class="spec">256GB, Navy Blue</span>
-        </div>
-      </div>
-      <div class="d-flex flex-row align-items-center">
-        <span class="d-block">1</span
-        ><span class="d-block ml-5 font-weight-bold">$999</span
-        ><i class="fa fa-trash-o ml-3 text-black-50"></i>
-      </div>
-    </div>
+
   </div>
 </div>

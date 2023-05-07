@@ -8,13 +8,14 @@
 
         <div  class="carousel-item active">
           <div class="container">
-            <img style=" height: 20rem"
+            <img class="img-fluid"
+            style=" height: 20rem"
              src="https://th.bing.com/th/id/R.22f61000132613018646a25a0439aa19?rik=zpgt9eVICj2CGA&pid=ImgRaw&r=0"
             alt="imagen de ofertas">
           </div>
         </div>
         <div *ngFor="let product of products" class="carousel-item">
-          <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 ">
+          <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
             <div class="col mb-3 mb-sm-0">
               <div class="card " style=" height: 20rem; width: 10rem;">
                 <div class="card-body">
@@ -33,7 +34,7 @@
                 </div>
               </div>
             </div>
-           <div class="col d-none d-sm-block">
+           <div class="col d-none d-md-block">
               <div class="card" style=" height: 20rem; width: 10rem;">
                 <div class="card-body">
                   <h5 class="card-title">Special title treatment</h5>
@@ -42,7 +43,7 @@
                 </div>
               </div>
             </div>
-            <div class="col d-none d-sm-block">
+            <div class="col d-none d-lg-block">
               <div class="card" style=" height: 20rem; width: 10rem;">
                 <div class="card-body">
                   <h5 class="card-title">Special title treatment</h5>

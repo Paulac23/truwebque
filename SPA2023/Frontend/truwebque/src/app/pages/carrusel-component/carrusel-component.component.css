@@ -1,0 +1,15 @@
+owl-carousel-o {
+    width: 100%;
+  }
+  
+  owl-carousel-o img {
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (min-width: 768px) {
+    owl-carousel-o {
+      max-width: 80%;
+    }
+  }
+  

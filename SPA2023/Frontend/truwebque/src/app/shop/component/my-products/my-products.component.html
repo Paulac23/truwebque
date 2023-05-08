@@ -1,0 +1,71 @@
+<h1>Mis publicaciones</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">N°</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{articulo}}</td>
+      <td>{{cantidad}}</td>
+      <td>
+        <button class="btn btn-warning">
+          <i
+            [ngClass]="{
+              'bi bi-pencil': !pencilFill,
+              ' bi bi-pencil-fill': pencilFill
+            }"
+            (mouseover)="fillPencil()"
+            (mouseleave)="fillPencil()"
+            [routerLink]="['/shop/newProduct']"
+          ></i>
+        </button>
+        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+          <i style="color:black"
+            [ngClass]="{
+              'bi bi-trash': !trashFill,
+              ' bi bi-trash-fill': trashFill
+            }"
+            (mouseover)="fillTrash()"
+            (mouseleave)="fillTrash()"
+
+          ></i>
+        </button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="deleteModalLabel">Advertencia de borrado</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Esta seguro que desea eliminar la publicacion?
+        Una vez eliminado no se puede recuperar.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteItem()">Borrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete alert-->
+<div *ngIf="deleted"
+    class="fixed-bottom alert alert-danger dismiss"
+     role="alert">
+  La publicacion fue eliminada.
+</div>

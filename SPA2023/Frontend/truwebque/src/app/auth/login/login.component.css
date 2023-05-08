@@ -1,0 +1,101 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  footer{
+    position: absolute;
+    margin-top: 0 auto;
+  }
+
+  
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+  }
+  .login-box{
+    width: 400px;
+    padding: 35px;
+    background-color: rgb(27, 175, 212);
+    border-radius: 10px;
+    box-shadow: 0 0 12px #585858;
+  }
+  .login-box h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  .login-box .user-box input{
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+
+  }
+
+
+  #submit{
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    letter-spacing: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    
+    border: 1px solid #222222;
+    border-radius: 5px;
+    margin: auto;
+
+  }
+  #submit:hover{
+    background-color: rgb(42, 41, 43);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #5a5a5c, 0 0 15px #534f66,
+    0 0 40px #434249;
+  }
+  .button-form{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+  }
+  #register{
+    font-size: 14px;
+    text-decoration: none;
+    color: #fcfcfc9a;
+    margin: auto;
+    width: 30%;
+    text-align: center;
+
+  }
+  #register a{
+    margin: auto;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  ::-webkit-input-placeholder{
+    color:rgb(236, 236, 236);
+  }
+
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    
+    }
+
+  }

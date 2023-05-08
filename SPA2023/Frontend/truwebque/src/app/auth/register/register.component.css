@@ -1,0 +1,16 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+form{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto; 
+    border-radius: 15px;
+    background-color: rgba(0, 195, 255, 0.7);
+}
+
+
+#fecha{
+    border-radius: 4px;
+    margin-left: 5px;
+    border-width: 0.1px;
+}

@@ -23,6 +23,8 @@ import { FooterComponentComponent } from './pages/footer-component/footer-compon
 import { NavbarComponentComponent } from './pages/navbar-component/navbar-component.component';
 import { CarruselComponentComponent } from './pages/carrusel-component/carrusel-component.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 const appRoutes:Routes=[
@@ -38,14 +40,32 @@ const appRoutes:Routes=[
 
 ];
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     PagesComponent,
-    HomeComponentComponent, CategoriaComponentComponent, CarritoComponentComponent, IngresarComponentComponent, QuienesSomosComponentComponent, PreguntasFrecuentesComponentComponent, ContactoComponentComponent, TyCoComponentComponent, PublicacionesComponentComponent, HeaderComponentComponent, FooterComponentComponent, NavbarComponentComponent, CarruselComponentComponent,
-    
+    HomeComponentComponent,
+    CategoriaComponentComponent,
+    CarritoComponentComponent,
+    IngresarComponentComponent,
+    QuienesSomosComponentComponent,
+    PreguntasFrecuentesComponentComponent,
+    ContactoComponentComponent,
+    TyCoComponentComponent,
+    PublicacionesComponentComponent,
+    HeaderComponentComponent,
+    FooterComponentComponent,
+    NavbarComponentComponent,
+    CarruselComponentComponent,
+    LoginComponent,
+    RegisterComponent
+  
+
   ],
+
   imports: [
     CarouselModule.forRoot(),
     BrowserModule,

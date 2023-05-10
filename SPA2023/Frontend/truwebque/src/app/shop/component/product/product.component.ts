@@ -14,11 +14,12 @@ export class ProductComponent implements OnInit{
   productImage="";
   productPrice=0;
   productRating=0.0;
+  productId:number=1;
 
   constructor(private shopService:ShopService){}
 
   ngOnInit() :void {
-    this.shopService.getProductById().subscribe((res:any) => {
+    this.shopService.getProductById(this.productId).subscribe((res:any) => {
       this.productTitle = res.title
       this.productDescription = res.description
       this.productImage= res.image

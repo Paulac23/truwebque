@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Cart } from './interface/cart';
+import { Cart, responseProd, singleProduct } from './interface/cart';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,8 @@ export class ShopService {
     return this.http.get('https://fakestoreapi.com/products?limit=10');
   }
 
-  getProductById(){
-    return this.http.get('https://fakestoreapi.com/products/1');
+  getProductById(id:number){
+    return this.http.get<responseProd>('https://fakestoreapi.com/products/'+id);
   }
 
 

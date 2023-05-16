@@ -19,9 +19,14 @@ export class ShopService {
   }
 
 
+
   //cart http
 
   getCartById(id:number){
     return this.http.get<Cart>('https://fakestoreapi.com/carts/'+id);
+  }
+
+  deleteById(id:number){
+    return this.http.delete('https://fakestoreapi.com/carts/'+id);
   }
 }

@@ -19,6 +19,7 @@ export interface singleProduct{
 }
 
 export interface responseProd{
+  id:       number;
   title:string;
   price:number;
   quantity:number;

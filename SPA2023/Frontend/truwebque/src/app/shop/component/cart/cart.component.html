@@ -37,36 +37,41 @@
 
         <div class="col-4">
           <div class="row">
-            <div class="col-6 product text-nowrap">{{product.title}}</div>
+            <div class="col-6 product cut text-nowrap">{{product.title}}</div>
           </div>
           <div>
-            <div class="col-6 description text-nowrap">{{product.quantity}}</div>
+            <div class="col-6 description text-nowrap">Cantidad {{product.quantity}}</div>
           </div>
         </div>
 
         <div class="col-6 d-flex justify-content-end align-items-center">
-          <i
+ <!--         <i
             [ngClass]="{
               'bi bi-pencil': !pencilFill,
               ' bi bi-pencil-fill': pencilFill
             }"
             (mouseover)="fillPencil()"
             (mouseleave)="fillPencil()"
-          ></i>
-          <i
-            [ngClass]="{
-              'bi bi-trash': !trashFill,
-              ' bi bi-trash-fill': trashFill
-            }"
-            (mouseover)="fillTrash()"
-            (mouseleave)="fillTrash()"
-          ></i>
-          <h6 class="">{{product.price}}</h6>
+          ></i>-->
+          <div class="col-1 " ><i  class="bi bi-pencil" ></i></div>
+          <div class="col-1 " ><i (click)="borrar(product.id)" class="bi bi-trash" ></i></div>
+
+          <div class="col-2"><h6>${{product.price}}</h6></div>
+
         </div>
       </div>
     </div>
     <!--Items end-->
     <hr />
-    <div class="container"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-10"><h2>Total</h2></div>
+        <div class="col-2"><h6 >suma</h6></div>
+
+
+      </div>
+
+    </div>
   </div>
 </div>
+

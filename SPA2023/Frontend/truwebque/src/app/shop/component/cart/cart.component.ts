@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../../shop.service';
-import { Cart, Products, responseProd, singleProduct } from '../../interface/cart';
-import { resProduct } from '../../interface/resProduct';
+import { Cart, responseProd } from '../../interface/cart';
 
 @Component({
   selector: 'app-cart',
@@ -16,24 +15,28 @@ export class CartComponent implements OnInit{
   hasProducts:boolean=true;
   productsInCart:responseProd[]=[];
 
+
+
 constructor(private shopService:ShopService){}
 
   ngOnInit() :void {
     this.shopService.getCartById(this.userId)
     .subscribe((res) => {
-     this.name=res;
-     console.log(this.name.products[0]['productId'])
-     console.log(this.name.products)
+      this.name=res;
       let products = this.name.products;
+
       if(products.length>1){
         this.hasProducts=false;
       }
+
       for (const i of products) {
         console.log(i)
         let quantity= i.quantity;
-        this.shopService.getProductById(i.productId)
+        let idProduct=i.productId;
+        this.shopService.getProductById(idProduct)
         .subscribe((item)=> {
           let respProduct = <responseProd>{}
+          respProduct.id=idProduct
           respProduct.title= item.title;
           respProduct.price=item.price;
           respProduct.quantity=quantity;
@@ -45,7 +48,13 @@ constructor(private shopService:ShopService){}
     })
   }
 
+  borrar(id:number ){
+    const res = this.shopService.deleteById(id)
+    .subscribe((res)=>{
+      console.log(res)
+    });
 
+  }
 
 pencilFill = false;
 trashFill = false;

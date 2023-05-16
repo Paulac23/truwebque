@@ -14,6 +14,7 @@ import { PreguntasFrecuentesComponentComponent } from './pages/preguntas-frecuen
 import { PublicacionesComponentComponent } from './pages/publicaciones-component/publicaciones-component.component';
 import { QuienesSomosComponentComponent } from './pages/quienes-somos-component/quienes-somos-component.component';
 import { TyCoComponentComponent } from './pages/ty-co-component/ty-co-component.component';
+import { ContactoComponentComponent } from './pages/contacto-component/contacto-component.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: "login", component: LoginComponent, pathMatch: "full"},
   {path: "register", component: RegisterComponent, pathMatch: "full"},
   {path: 'ingresar', component:IngresarComponentComponent},
+  {path: 'contacto', component:ContactoComponentComponent},
 
   //Shop module
   {

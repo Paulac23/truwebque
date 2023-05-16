@@ -20,7 +20,6 @@ import { TyCoComponentComponent } from './pages/ty-co-component/ty-co-component.
 import { PublicacionesComponentComponent } from './pages/publicaciones-component/publicaciones-component.component';
 import { HeaderComponentComponent } from './pages/header-component/header-component.component';
 import { FooterComponentComponent } from './pages/footer-component/footer-component.component';
-import { NavbarComponentComponent } from './pages/navbar-component/navbar-component.component';
 import { CarruselComponentComponent } from './pages/carrusel-component/carrusel-component.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
@@ -32,9 +31,10 @@ const appRoutes:Routes=[
   {path: 'carrito', component:CarritoComponentComponent},
   {path: 'preguntasfrecuentes', component:PreguntasFrecuentesComponentComponent},
   {path: 'publicaciones', component:PublicacionesComponentComponent},
-  {path: 'quienessomos', component:QuienesSomosComponentComponent},
+  {path: 'header', component:HeaderComponentComponent},
   {path: 'tyc', component:TyCoComponentComponent},
-  {path: 'header', component:HeaderComponentComponent}
+  {path: 'quienessomos', component:QuienesSomosComponentComponent},
+
 
 ];
 
@@ -43,7 +43,18 @@ const appRoutes:Routes=[
     AppComponent,
     AuthComponent,
     PagesComponent,
-    HomeComponentComponent, CategoriaComponentComponent, CarritoComponentComponent, IngresarComponentComponent, QuienesSomosComponentComponent, PreguntasFrecuentesComponentComponent, ContactoComponentComponent, TyCoComponentComponent, PublicacionesComponentComponent, HeaderComponentComponent, FooterComponentComponent, NavbarComponentComponent, CarruselComponentComponent,
+    HomeComponentComponent, 
+    CategoriaComponentComponent, 
+    CarritoComponentComponent, 
+    IngresarComponentComponent, 
+    QuienesSomosComponentComponent, 
+    PreguntasFrecuentesComponentComponent, 
+    ContactoComponentComponent, 
+    TyCoComponentComponent, 
+    PublicacionesComponentComponent, 
+    HeaderComponentComponent, 
+    FooterComponentComponent, 
+    CarruselComponentComponent,
     
   ],
   imports: [

@@ -1,6 +1,7 @@
 <carousel>
-    <slide *ngFor="let image of images">
+  <slide *ngFor="let image of images">
+    <a href="#">
       <img [src]="image.src" [alt]="image.alt">
-    </slide>
-  </carousel>
-  
+    </a>
+  </slide>
+</carousel>

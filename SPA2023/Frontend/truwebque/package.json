@@ -21,6 +21,7 @@
     "@ng-bootstrap/ng-bootstrap": "^14.1.1",
     "@popperjs/core": "^2.11.7",
     "bootstrap": "^5.2.3",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.6.4",
     "ngx-bootstrap": "^10.2.0",
     "primeng": "^14.2.5-lts",

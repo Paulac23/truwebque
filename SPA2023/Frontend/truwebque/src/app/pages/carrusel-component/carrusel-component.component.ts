@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import 'bootstrap';
 
 @Component({
   selector:'app-carrusel-component',
@@ -6,11 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./carrusel-component.component.css']
 })
 export class CarruselComponentComponent {
-  images = [
-    { src: '../../../assets/LOGO.png', alt: 'Imagen 1' },
-    { src: '../../../assets/ECONOMIA.png', alt: 'Imagen 2' },
-    { src: '../../../assets/INTERCAMBIO.png', alt: 'Imagen 3' }
-  ];
 
 }
 

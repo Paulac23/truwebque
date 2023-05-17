@@ -1,18 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 
-
-
  body{ 
-  margin:0;
-  padding-left: 5%;
-  padding-right: 5%;
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-top: 0px;
+  margin-bottom: 10px;
   height: 100%;
   width: 100%;
   background-color:rgba(245, 245, 245, 0.647);  
  }
  
 
+/*botones de homepage*/
 .bigicon {
   font-size: 35px;
   color: #194b77;
@@ -28,112 +28,46 @@
 
 
 
-
-footer a{color: #454545;}
-footer a:hover{color: black;}
-
-
-footer{
-  display: flex;
-  flex-direction: column;
-  align-items:center;
-  position: absolute;
-  color: #454545;
-  height:50px;
-  bottom:0;
-  left:0;
-  width:100%;
+/*carrusel*/
+@media (max-width: 528){
+  body{
+    display: block;
+    margin: 0;
+    padding: 0;
+    background-color: #194b77;
+  }
 
 }
 
-footer p{
-  padding: 0.3em;
-  margin: 2px;
-  text-align: center;  
-  color: #454545;
-  font-size: 14px;
-}
-  
-footer ol{
-  font-size: 1em;
-  padding: 0px;
-}
-     
-footer ol li{
-  list-style: none;
-}
 
+@media screen and (max-width: 1400px) {
 
- /*iconos carousel*/
+  .container {
+    max-width: 100%;
+  }
 
-.material-symbols-outlined {
-  font-size: 4rem;
-  color:black;
-  font-weight: 500;
 }
+.carousel {
     
-  .col-lg-4{
-    position:relative;
-    text-align: center;
-  }
-  
-/*QUERIES*/
-  @media (max-width: 528){
-    body{
-      display: block;
-      margin: 0;
-      padding: 0;
-      background-color: #194b77;
-    }
-  
-  }
-  @media screen and (min-width: 768px){
- 
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
-      
-    footer{  
-      display: flex;
-      flex-direction: column;
-      align-items:center;
-      justify-content: center;          
-      font-family: 'Roboto', sans-serif;
-    }
+  width: 100%;
+  height: 600px;
+}
 
-    footer ol{
-      font-size: 3vw;
-      font-weight: bolder;  
-      display: flex;
-      flex-direction: wrap;
-      align-items:center;
-      justify-content: space-between;
-    }
+.carousel .carousel-item {
+  height: 600px;
+}
 
-  }
- 
-  
-  @media screen and (max-width: 1400px) {
+.carousel .carousel-item img {
+  max-width: 100%;
+  height: auto;
+}
 
-    .container {
-      max-width: 80%;
-    }
-  
+@media (max-width: 767px) {
+  .carousel {
+    height: 200px;
   }
 
-  owl-carousel-o {
-    width: 100%;
+  .carousel .carousel-item {
+    height: 200px;
   }
-  
-  owl-carousel-o img {
-    width: 100%;
-    height: auto;
-  }
-  
-  @media (min-width: 768px) {
-    owl-carousel-o {
-      max-width: 80%;
-    }
-  }
-  
-
+}

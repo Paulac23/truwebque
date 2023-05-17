@@ -1,34 +1,21 @@
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
 
-<nav class="navbar navbar-expand-sm navbar-custom">
-    <div class="container-fluid" div style="font-weight: bold;">
-      <a class="navbar-brand" href="">TRUWEBQUE</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="">Home</a>
+            <a class="nav-link" [routerLink]="['/']">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/categoria">Categorias</a>
+            <a class="nav-link" [routerLink]="['/']">Categorias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/ingresar">Ingresar</a>
+            <a class="nav-link" [routerLink]="['/login']">Ingresar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/carrito">
-              <i class="fas fa-shopping-cart"></i>
-              </a>
-          </li>
-      </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="text" placeholder="Buscar">
-          <button type="button" class="btn btn-light">Buscar</button>
         </form>
       </div>
     </div>
   </nav>
+

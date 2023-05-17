@@ -9,13 +9,29 @@ export class ShopService {
 
   constructor(private http:HttpClient) {}
 
-  //products http
+  //Get all products http
   getProducts(){
     return this.http.get('https://fakestoreapi.com/products?limit=10');
   }
 
   getProductById(id:number){
     return this.http.get<responseProd>('https://fakestoreapi.com/products/'+id);
+  }
+
+  //Get my product http
+  getMyProducts(id:number){
+    return this.http.get('https://fakestoreapi.com/products?limit=10');
+  }
+  getMyProductById(id:number){
+    return this.http.get<responseProd>('https://fakestoreapi.com/products/'+id);
+  }
+
+ // editMyProductById(id:number){
+   // return this.http.patch(''+id);
+  //}
+
+  deleteMyProductById(id:number){
+    return this.http.delete('https://fakestoreapi.com/carts/'+id);
   }
 
 
@@ -26,7 +42,7 @@ export class ShopService {
     return this.http.get<Cart>('https://fakestoreapi.com/carts/'+id);
   }
 
-  deleteById(id:number){
+  deleteProductInCartById(id:number){
     return this.http.delete('https://fakestoreapi.com/carts/'+id);
   }
 }

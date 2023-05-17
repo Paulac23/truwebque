@@ -14,7 +14,7 @@ export class CartComponent implements OnInit{
   //products:Products[] = [];
   hasProducts:boolean=true;
   productsInCart:responseProd[]=[];
-
+  total:number = 0;
 
 
 constructor(private shopService:ShopService){}
@@ -46,15 +46,28 @@ constructor(private shopService:ShopService){}
         })
       }
     })
+    this.suma()
   }
 
+
+
+
+
   borrar(id:number ){
-    const res = this.shopService.deleteById(id)
+    const res = this.shopService.deleteProductInCartById(id)
     .subscribe((res)=>{
       console.log(res)
     });
+    this.suma()
 
   }
+suma(){
+  for (const j of this.productsInCart) {
+    this.total += j.price;
+
+  }
+  console.log(this.total)
+}
 
 pencilFill = false;
 trashFill = false;

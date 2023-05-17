@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ShopService } from './shop/shop.service';
+/*import { ShopService } from './shop/shop.service';*/
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
+import { RouterModule } from '@angular/router';
 import { HeaderComponentComponent } from './pages/header-component/header-component.component';
 import { FooterComponentComponent } from './pages/footer-component/footer-component.component';
 import { CarruselComponentComponent } from './pages/carrusel-component/carrusel-component.component';
@@ -51,8 +53,15 @@ const appRoutes:Routes=[
     HeaderComponentComponent, 
     FooterComponentComponent, 
     CarruselComponentComponent,
-  
-
   ],
+  imports: [
+    RouterModule,
+    HttpClientModule,
+    FormsModule,
+    AppRoutingModule,
+    CarouselModule,
+  
+  ]
 })
+
 export class AppModule { }

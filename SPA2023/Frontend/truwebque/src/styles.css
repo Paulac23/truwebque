@@ -1,7 +1,7 @@
 
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 
- body{ 
+body{ 
   margin-left: 0px;
   margin-right: 10px;
   margin-top: 0px;
@@ -11,22 +11,6 @@
   background-color:rgba(245, 245, 245, 0.647);  
  }
  
-
-/*botones de homepage*/
-.bigicon {
-  font-size: 35px;
-  color: #194b77;
-}
-
-#boton1, #btn{
-  color:white;
-  border-color: rgb(7, 174, 216);
-}
-#boton1:hover, #btn{
-  background-color: rgb(7, 174, 216);
-}
-
-
 
 /*carrusel*/
 @media (max-width: 528){
@@ -38,7 +22,6 @@
   }
 
 }
-
 
 @media screen and (max-width: 1400px) {
 
@@ -71,3 +54,18 @@
     height: 200px;
   }
 }
+
+/*botones de homepage*/
+.bigicon {
+  font-size: 35px;
+  color: #194b77;
+}
+
+#boton1, #btn{
+  color:white;
+  border-color: rgb(7, 174, 216);
+}
+#boton1:hover, #btn{
+  background-color: rgb(7, 174, 216);
+}
+

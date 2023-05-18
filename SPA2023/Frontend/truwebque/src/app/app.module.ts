@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-/*import { ShopService } from './shop/shop.service';*/
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -21,47 +20,37 @@ import { QuienesSomosComponentComponent } from './pages/quienes-somos-component/
 import { IngresarComponentComponent } from './pages/ingresar-component/ingresar-component.component';
 import { AuthComponent } from './auth/auth.component';
 import { ContactoComponentComponent } from './pages/contacto-component/contacto-component.component';
-import { Routes } from '@angular/router';
-
-const appRoutes:Routes=[
-  {path: '', component:HomeComponentComponent},
-  {path: 'categoria', component:CategoriaComponentComponent},
-  {path: 'ingresar', component:IngresarComponentComponent},
-  {path: 'carrito', component:CarritoComponentComponent},
-  {path: 'preguntasfrecuentes', component:PreguntasFrecuentesComponentComponent},
-  {path: 'publicaciones', component:PublicacionesComponentComponent},
-  {path: 'header', component:HeaderComponentComponent},
-  {path: 'tyc', component:TyCoComponentComponent},
-  {path: 'quienessomos', component:QuienesSomosComponentComponent},
-
-
-];
+import { ShopService } from './shop/shop.service';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    HomeComponentComponent, 
-    CategoriaComponentComponent, 
-    CarritoComponentComponent, 
-    IngresarComponentComponent, 
-    QuienesSomosComponentComponent, 
-    PreguntasFrecuentesComponentComponent, 
-    ContactoComponentComponent, 
-    TyCoComponentComponent, 
-    PublicacionesComponentComponent, 
-    HeaderComponentComponent, 
-    FooterComponentComponent, 
+    HomeComponentComponent,
+    CategoriaComponentComponent,
+    CarritoComponentComponent,
+    IngresarComponentComponent,
+    QuienesSomosComponentComponent,
+    PreguntasFrecuentesComponentComponent,
+    ContactoComponentComponent,
+    TyCoComponentComponent,
+    PublicacionesComponentComponent,
+    HeaderComponentComponent,
+    FooterComponentComponent,
     CarruselComponentComponent,
   ],
   imports: [
     RouterModule,
+    BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
     CarouselModule,
-  
-  ]
+
+  ],
+  providers: [ShopService],
+  bootstrap: [AppComponent]
 })
 
 export class AppModule { }

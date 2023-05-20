@@ -7,23 +7,25 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="javascript:void(0)">TRUWEBQUE</a>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark" >
+    <div class="container-fluid" id="demo">
+      <a class="nav-link" [routerLink]="['/']" style="color: whitesmoke;"> TRUWEBQUE </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/']">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/categoria']">Categorías</a>
+            <a class="nav-link" [routerLink]="['/']"> Productos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/login']">Ingresar</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/register']">Registrarse</a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/']">Carrito
               <i class="fas fa-shopping-cart"></i>

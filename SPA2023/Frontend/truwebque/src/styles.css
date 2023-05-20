@@ -1,6 +1,12 @@
 
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 
+body { 
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 /*
 body{ 
   margin-left: 0px;

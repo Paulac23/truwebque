@@ -24,10 +24,12 @@ const routes: Routes = [
   {path: 'quienessomos', component:QuienesSomosComponentComponent},
   {path: 'tyc', component:TyCoComponentComponent},
   {path: 'header', component:HeaderComponentComponent},
+  {path: 'ingresar', component:IngresarComponentComponent},
+  {path: 'carrito',component:CarritoComponentComponent},
   //Auth paths
   {path: "login", component: LoginComponent, pathMatch: "full"},
   {path: "register", component: RegisterComponent, pathMatch: "full"},
-  {path: 'ingresar', component:IngresarComponentComponent},
+ 
 
   //Shop module
   {

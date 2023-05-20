@@ -1,13 +1,26 @@
-@import '~bootstrap/dist/css/bootstrap.css';
+/* @import '~bootstrap/dist/css/bootstrap.css'; */
 
-form{
+
+#form-registro{
     width: fit-content;
     margin-left: auto;
     margin-right: auto; 
     border-radius: 15px;
-    background-color: rgba(0, 195, 255, 0.7);
+    background-color: #1d1d1de7;
+    color: whitesmoke;
+}
+#linea{
+   display: flex;
+   align-items: center;
+}
+#linea div{
+    margin-right: 1%;
 }
 
+#form-btn{
+    background-color: rgb(226, 141, 43);
+    border-radius: 5px;
+}
 
 #fecha{
     border-radius: 4px;

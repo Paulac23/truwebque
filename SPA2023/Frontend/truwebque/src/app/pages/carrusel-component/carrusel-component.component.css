@@ -1,2 +1,20 @@
+.carousel-image {
+    object-fit: contain;
+    max-height: 100%;
+  }
 
+.carousel-indicators li {
+    background-color: gray;
+  }
   
+.carousel-indicators .active {
+    background-color: black;
+  }
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: invert(100%);
+  }
+
+.carousel-control-prev, .carousel-control-next {
+    color: black;
+  }

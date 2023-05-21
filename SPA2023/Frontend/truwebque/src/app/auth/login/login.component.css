@@ -6,10 +6,6 @@
     -ms-user-select: none;
     user-select: none;
   }
-  /* footer{
-    position: absolute;
-    margin-top: 0 auto;
-  } */
 
   
   .container{
@@ -18,21 +14,20 @@
     align-items: center;
     padding-top: 100px;
   }
-  .login-box{
+  #login-box{
     width: 400px;
     padding: 35px;
-    /* background-color: rgb(27, 175, 212); */
     background-color: #1d1d1de7;
     border-radius: 10px;
     box-shadow: 0 0 12px #003503a6;
   }
-  .login-box h2{
+  #login-box h2{
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
     text-align: center;
   }
-  .login-box .user-box input{
+  #login-box .user-box input{
     position: relative;
     width: 100%;
     padding: 10px 0;
@@ -56,6 +51,7 @@
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
+    background-color: #434249;
     
     border: 1px solid #222222;
     border-radius: 5px;
@@ -66,8 +62,8 @@
     background-color: rgb(42, 41, 43);
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #5a5a5c, 0 0 15px #534f66,
-    0 0 40px #434249;
+    box-shadow: 0 0 5px #646360, 0 0 15px #997a37,
+    0 0 40px #302c25;
   }
   .button-form{
     display: flex;
@@ -93,10 +89,38 @@
   }
 
 
+#test{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto; 
+  text-align: center;
+
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto; 
+  margin-top:5%;
+  text-align: center;
+  /* border:  1px solid grey; */
+
+}
+
+#tabla th{
+  background-color: #434249;
+  color: whitesmoke;
+
+}
+
   @media (min-width: 768px) {
     .bd-placeholder-img-lg {
       font-size: 3.5rem;
     
+    }
+
+    table{
+      display: inline-table;
+      width: 80%;
     }
 
   }

@@ -32,12 +32,13 @@
       aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
     <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">  
       <label> Recomendable incluir al menos 8 caracteres</label>
+      
     </small>
 
-    <div class="form-control mb-4">    
+    <!-- <div class="form-control mb-4">    
     <label>Fecha de Nacimiento: </label>
     <input id="fecha" type="date" onclick="this.value = '1980-01-01';"/>
-    </div>
+    </div> -->
 
     <div >
       <select class="form-control">
@@ -82,7 +83,7 @@
     <!-- Terminos y servicios -->
     <p>Al <em>Registrarte</em> estas aceptando nuestros
   
-    <a href="" target="_blank">terminos y condiciones</a>
+    <a [routerLink]="['/tyc']">terminos y condiciones</a>
     
 
 </form>

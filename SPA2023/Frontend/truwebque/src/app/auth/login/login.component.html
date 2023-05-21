@@ -1,33 +1,94 @@
 <!-- Formulario de Login -->
 
+
+
+
 <div class="container">
 
-    <div class="login-box">  
+    <div class="login" id="login-box">  
     <h2>Login</h2>
-    <form>
+
+    <form class="custom-form" method="post">
         <div class="user-box">
-          <input type="text" class="campo"  name="" value="" placeholder="Usuario">  
+          <input type="email"  class="campo"  name="email" placeholder="Email" required>  
         </div>
 
         <div class="user-box">
-          <input type="password" class="campo" name="" value="" placeholder="Contraseña">  
+          <input type="password"  class="campo"   name="password" placeholder="Contraseña" required>  
         </div>
         
         <div class="button-form">
-          <a id="submit" href="#">Ingresar</a>
+         
+          <!-- <button type="submit" id="submit" (click)="getUser()">Ingresar</button> -->
+          <button type="submit" id="submit">Ingresar</button>
+
+
             <div id="register">
                 ¿No tienes una cuenta aún? 
-                <!-- <a href="registro.html">Registrate</a> -->
+                <a [routerLink]="['/register']" style="color: orange;">Registrate</a>
             </div>   
         </div>
 
     </form>
   
+
     </div>     
 
 </div> 
 <br>
 <br>
+<hr>
+<section id="test">
+
+<h3>API Rest de Prueba - Traer Usuarios</h3>
 <br>
+<button type="submit" id="submit" (click)="show =!show">Metodo Get</button>
+<br>
+<br>
+  <table class="table table-responsive table-hover">
+
+    <tbody id="tabla" *ngIf="!show">
+
+      <th><strong>Nombre</strong></th>
+      <th><strong>Apellido</strong></th>
+      <th><strong>Correo</strong></th>
+      <th><strong>Perfil</strong></th>
+
+      <tr *ngFor="let usuario of users">
+      
+        <td>{{usuario.first_name}}</td>
+        <td>{{usuario.last_name}}</td>
+        <td>{{usuario.email}}</td>
+        <td><img [src]=usuario.avatar alt="foto"></td>
+      </tr>
+    </tbody>
+
+
+  </table>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+
+<!-- <script type="text/javascript">
+  function myFun() {
+
+    document.getElementById("login-box").style.display = "none";
+    document.getElementById("tabla-usuarios").style.display = "contents";
+    }
+
+</script> -->
 
  

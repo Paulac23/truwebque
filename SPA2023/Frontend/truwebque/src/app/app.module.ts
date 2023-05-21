@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { RouterModule } from '@angular/router';
@@ -22,11 +23,15 @@ import { AuthComponent } from './auth/auth.component';
 import { ContactoComponentComponent } from './pages/contacto-component/contacto-component.component';
 import { ShopService } from './shop/shop.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
+    LoginComponent,
+    RegisterComponent,
     HomeComponentComponent,
     CategoriaComponentComponent,
     CarritoComponentComponent,
@@ -47,6 +52,7 @@ import { BrowserModule } from '@angular/platform-browser';
     FormsModule,
     AppRoutingModule,
     CarouselModule,
+    ReactiveFormsModule,
 
   ],
   providers: [ShopService],

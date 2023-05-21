@@ -1,8 +1,5 @@
 <!-- Formulario de Login -->
 
-
-
-
 <div class="container">
 
     <div class="login" id="login-box">  
@@ -17,12 +14,9 @@
           <input type="password"  class="campo"   name="password" placeholder="Contraseña" required>  
         </div>
         
-        <div class="button-form">
-         
+        <div class="button-form">         
           <!-- <button type="submit" id="submit" (click)="getUser()">Ingresar</button> -->
           <button type="submit" id="submit">Ingresar</button>
-
-
             <div id="register">
                 ¿No tienes una cuenta aún? 
                 <a [routerLink]="['/register']" style="color: orange;">Registrate</a>
@@ -30,9 +24,7 @@
         </div>
 
     </form>
-  
-
-    </div>     
+  </div>     
 
 </div> 
 <br>
@@ -40,11 +32,11 @@
 <hr>
 <section id="test">
 
-<h3>API Rest de Prueba - Traer Usuarios</h3>
+<h4>API Rest de Prueba - Traer Usuarios</h4>
 <br>
-<button type="submit" id="submit" (click)="show =!show">Metodo Get</button>
-<br>
-<br>
+<button type="submit" id="submit" (click)="show =!show">Lista Usuarios</button>
+
+<!-- Tabla que Muestra los datos traidos -->
   <table class="table table-responsive table-hover">
 
     <tbody id="tabla" *ngIf="!show">
@@ -65,9 +57,6 @@
 
 
   </table>
-
-
-
 
 </section>
 

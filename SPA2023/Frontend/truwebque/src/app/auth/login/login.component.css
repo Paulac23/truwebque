@@ -97,17 +97,22 @@
 
 }
 
+section button{
+  display: flex;
+  text-align: center;
+
+}
+
 table{
   margin-left: auto;
   margin-right: auto; 
   margin-top:5%;
   text-align: center;
-  /* border:  1px solid grey; */
 
 }
 
 #tabla th{
-  background-color: #434249;
+  background-color: #24201ac1;
   color: whitesmoke;
 
 }

@@ -8,13 +8,14 @@
   }
   
 .carousel-indicators .active {
-    background-color: black;
+    background-color:orange;
   }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
     filter: invert(100%);
+    color: orangered;
   }
 
 .carousel-control-prev, .carousel-control-next {
-    color: black;
+    color: black; 
   }

@@ -2,12 +2,9 @@
 <h1>Proyecto TruWEBquE</h1>
 <h2>TUTOR: Alvarado Yamil</h2>
 <h3>Integrantes: </h3>
-<p>Grupo: 35  </p>
 <ul>
 	<li>Scrum Master: Paula Cabrera</li>
-  <li>Pablo Agustin Vallejos</li>
   <li>Gonzalo Martin Parada</li>
-  <li>Mariela Zulma Lara</li>
   <li>Belen Riquelme</li>
   <li>Daniel Vargas</li>
   <li>Roberto Carlos Osores</li>

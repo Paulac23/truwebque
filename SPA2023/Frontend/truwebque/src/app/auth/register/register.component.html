@@ -1,0 +1,90 @@
+
+<!-- formulario registro -->
+<form class="text-center border border-light p-5" id="form-registro">
+    <p class="h4 mb-4">Registro</p>
+
+    <div class="form-row mb-4" id="linea">
+      <div class="col-md-6">
+        <!-- usuario -->
+        <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Usuario" required>
+      </div>
+
+      <div class="col-md-6">
+        <!-- nombre -->
+        <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Nombre" required>
+      </div>
+
+    </div>
+
+
+    <!-- <div class="form-row mb-5">
+      <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Usuario" required>
+      <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Nombre" required>
+      
+
+    </div> -->
+         
+
+    <!-- mail -->
+    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" required>
+    <!-- Password-->
+    <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password"
+      aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
+    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">  
+      <label> Recomendable incluir al menos 8 caracteres</label>
+    </small>
+
+    <div class="form-control mb-4">    
+    <label>Fecha de Nacimiento: </label>
+    <input id="fecha" type="date" onclick="this.value = '1980-01-01';"/>
+    </div>
+
+    <div >
+      <select class="form-control">
+        <option>Buenos Aires
+        <option>Catamarca
+        <option>Chaco
+        <option>Chubut
+        <option>Cordoba
+        <option>Corrientes
+        <option>Entre Rios
+        <option>Formosa
+        <option>Jujuy
+        <option>La Pampa
+        <option>La Rioja
+        <option>Mendoza
+        <option>Misiones
+        <option>Neuquen
+        <option>Rio Negro
+        <option>Salta
+        <option>San Juan
+        <option>San Luis
+        <option>Santa Cruz
+        <option>Santa Fe
+        <option>Santiago del Estero
+        <option>Tierra del Fuego
+        <option>Tucuman     
+      </select>
+    </div>
+    
+       
+    <br>
+
+    <!-- celular-->
+    <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Celular"
+      aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+
+
+    <br>
+      <!--  boton -->
+    <input type="submit" name="submit" class="btn btn-secondary btn-sm" block="true" value="Registrate!" id="form-btn" />
+     <hr>
+    <!-- Terminos y servicios -->
+    <p>Al <em>Registrarte</em> estas aceptando nuestros
+  
+    <a href="" target="_blank">terminos y condiciones</a>
+    
+
+</form>
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->

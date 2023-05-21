@@ -1,0 +1,12 @@
+.dismiss{
+  animation: myAnim 2s linear 3s 1 normal forwards;
+}
+@keyframes myAnim {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}

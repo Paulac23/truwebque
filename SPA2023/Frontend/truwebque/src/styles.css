@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+
+body { 
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/*
+body{ 
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 100%;
+  width: 100%;
+  background-color:rgba(245, 245, 245, 0.647);  
+ }*/
+ 
+
+/*carrusel
+@media (max-width: 528){
+  body{
+    display: block;
+    margin: 0;
+    padding: 0;
+    background-color: #194b77;
+  }
+
+}
+
+@media screen and (max-width: 1400px) {
+
+  .container {
+    max-width: 100%;
+  }
+
+}*/
+.carousel {
+    
+  width: 100%;
+  height: 600px;
+}
+
+.carousel .carousel-item {
+  height: 600px;
+}
+
+.carousel .carousel-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .carousel {
+    height: 200px;
+  }
+
+  .carousel .carousel-item {
+    height: 200px;
+  }
+}
+
+/*botones de homepage
+.bigicon {
+  font-size: 35px;
+  color: #194b77;
+}
+
+#boton1, #btn{
+  color:white;
+  border-color: rgb(7, 174, 216);
+}
+#boton1:hover, #btn{
+  background-color: rgb(7, 174, 216);
+}*/
+

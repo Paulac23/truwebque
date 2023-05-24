@@ -8,6 +8,8 @@ import { AllProductsComponent } from './component/all-products/all-products.comp
 import { HttpClientModule} from'@angular/common/http';
 import { ProductFormComponent } from './component/product-form/product-form.component';
 import { MyProductsComponent } from './component/my-products/my-products.component';
+import { SubscribeComponent } from './component/subscribe/subscribe.component';
+import { PaymentComponent } from './component/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { MyProductsComponent } from './component/my-products/my-products.compone
     AllProductsComponent,
     ProductFormComponent,
     MyProductsComponent,
+    SubscribeComponent,
+    PaymentComponent,
   ],
   imports: [
     CommonModule,

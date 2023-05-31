@@ -5,10 +5,19 @@
     <div class="login" id="login-box">  
     <h2>Login</h2>
 
-    <form class="custom-form" method="post">
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
         <div class="user-box">
-          <input type="email"  class="campo"  name="email" placeholder="Email" required>  
+          <input type="email" class="form-control"  placeholder="Email" required formControlName="email">  
         </div>
+        <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']"
+      class="alert alert-danger">This field is required.</div>
+
+    <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['minlength']"
+      class="alert alert-danger">Name must be longer than
+      {{ loginForm.get('email')?.errors?.['minlength']?.requiredLength}} characters.</div>
+
+     
+
 
         <div class="user-box">
           <input type="password"  class="campo"   name="password" placeholder="Contraseña" required>  

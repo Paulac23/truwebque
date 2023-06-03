@@ -26,3 +26,13 @@ export interface responseProd{
   description:string;
   image:string;
 }
+
+export interface newPublish{
+  title?:string;
+  price?:number;
+  quantity?:number;
+  description?:string;
+  image?:string;
+  category?:string;
+  preferences?:string;
+}

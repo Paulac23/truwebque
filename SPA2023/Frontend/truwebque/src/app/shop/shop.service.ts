@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Cart, responseProd, singleProduct } from './interface/cart';
+import { Cart, newPublish, responseProd, singleProduct } from './interface/cart';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,10 @@ export class ShopService {
     return this.http.get<responseProd>('https://fakestoreapi.com/products/'+id);
   }
 
+  addPublish(publish: any ){
+    return this.http.post('http://localhost:3000/products', publish)
+  }
+
   //Get my product http
   getMyProducts(id:number){
     return this.http.get('https://fakestoreapi.com/products?limit=10');
@@ -26,9 +30,7 @@ export class ShopService {
     return this.http.get<responseProd>('https://fakestoreapi.com/products/'+id);
   }
 
- // editMyProductById(id:number){
-   // return this.http.patch(''+id);
-  //}
+
 
   deleteMyProductById(id:number){
     return this.http.delete('https://fakestoreapi.com/carts/'+id);

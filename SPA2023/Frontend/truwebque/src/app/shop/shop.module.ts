@@ -10,6 +10,7 @@ import { ProductFormComponent } from './component/product-form/product-form.comp
 import { MyProductsComponent } from './component/my-products/my-products.component';
 import { SubscribeComponent } from './component/subscribe/subscribe.component';
 import { PaymentComponent } from './component/payment/payment.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PaymentComponent } from './component/payment/payment.component';
   imports: [
     CommonModule,
     ShopRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 
 })

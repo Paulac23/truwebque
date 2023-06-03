@@ -3,3 +3,12 @@
   border: 3px solid rgb(197, 196, 196);
   border-radius: 15px;
 }
+.ng-touched.ng-invalid:is(input, textarea),
+.ng-dirty.ng-invalid:is(input,textarea){
+  outline: 2px solid red;
+}
+
+.error{
+  font-size: 0.75rem;
+  color: #bd0c0c;
+}

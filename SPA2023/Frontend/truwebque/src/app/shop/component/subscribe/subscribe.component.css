@@ -49,7 +49,6 @@
   background: -moz-linear-gradient(left,#f4524d 0%,#5543ca 100%) !important;
   background: -webkit-linear-gradient(left,#f4524d 0%,#5543ca 100%) !important;
   background: linear-gradient(to right,#f4524d 0%,#5543ca 100%) !important;
-  -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
 

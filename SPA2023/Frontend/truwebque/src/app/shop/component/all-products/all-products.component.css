@@ -4,3 +4,34 @@
   vertical-align: middle;
   background-color: aqua;
 }
+
+.cut{
+  overflow: hidden;
+  display: inline-block;
+  width: 100px;
+  text-overflow: ellipsis;
+  white-space: pre-line;
+}
+
+.p-cut{
+  overflow: hidden;
+  display: inline-block;
+  width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.p.card-text {
+  height: 100px;
+  width: 70px;
+}
+
+.card{
+  height: 320px;
+  width: 100px;
+}
+
+
+.card-body{
+  height: 220px;
+}

@@ -6,6 +6,9 @@ Python 3.11.3
 Pillow 9.5.0
 mysqlclient 2.1.1
 Django 4.2.1
+djangorestframework 3.14
+django-cors-headers  4.0.0
+
 
 Datos del superuser para acceder a la consola de admin:
 Username: superuser

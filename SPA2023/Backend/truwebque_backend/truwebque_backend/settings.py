@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'truwebque_db',
         'USER' : 'root',
-        'PASSWORD' : '202526abcD',
+        'PASSWORD' : '',
         'HOST' : 'localhost',
         'PORT' : '3306'
         }

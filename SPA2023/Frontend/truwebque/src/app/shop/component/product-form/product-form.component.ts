@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ShopService } from '../../shop.service';
-import { newPublish } from '../../interface/cart';
 
 @Component({
   selector: 'app-product-form',
@@ -15,10 +14,11 @@ export class ProductFormComponent {
     title: new FormControl('', [Validators.minLength(5), Validators.maxLength(25), Validators.required]),
     description: new FormControl('', Validators.maxLength(250)),
     price: new FormControl('0.00'),
-    quantity: new FormControl('', Validators.required),
+    quantity: new FormControl('', [Validators.required, Validators.min(1)]),
     preferences: new FormControl(''),
     category: new FormControl(''),
-    image:new FormControl('')
+    image:new FormControl(''),
+    readCheck:new FormControl(false, Validators.requiredTrue)
   });
 
   get titleControl(): FormControl{
@@ -27,8 +27,8 @@ export class ProductFormComponent {
 
   get quantityControl():FormControl{
     return this.form.get('quantity') as FormControl;
-  }
 
+  }
 
 
   addProduct(): void{

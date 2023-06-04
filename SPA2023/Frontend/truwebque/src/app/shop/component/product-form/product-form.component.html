@@ -32,10 +32,12 @@
 
       <div class="form-group">
         <label for="cantidad">cantidad</label>
-        <input type="number" class="form-control" formControlName="quantity" required/>
+        <input type="number" class="form-control" formControlName="quantity"
+         required/>
       </div>
       <div class="row" *ngIf="quantityControl.invalid && (quantityControl.dirty || quantityControl.touched)">
         <p class="col error" *ngIf="quantityControl.errors?.['required']">Campo requerido</p>
+        <p class="col error" *ngIf="quantityControl.errors?.['min']">Cantidad debe ser mayor a cero.<p>
       </div>
 
       <div class="form-group">
@@ -54,12 +56,14 @@
           type="checkbox"
           value=""
           id="readCheck"
+          formControlName="readCheck"
         />
         <label class="form-check-label" for="readCheck">
           Leí y estoy de acuerdo con las condiciones de uso de la plataforma.
         </label>
       </div>
-      <button [disabled]="form.invalid" type="submit" (click)="addProduct()" class="mt-3">Agregar</button>
+      <button [disabled]="form.invalid || form.pending" type="submit"
+       (click)="addProduct()" class="mt-3 btn btn-primary">Agregar</button>
     </form>
   </div>
 </div>

@@ -20,13 +20,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductFormComponent,
     MyProductsComponent,
     SubscribeComponent,
-    PaymentComponent,
+    PaymentComponent
   ],
   imports: [
     CommonModule,
     ShopRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 
 })

@@ -1,47 +1,46 @@
 
 <!-- formulario registro -->
-<form class="text-center border border-light p-5" id="form-registro">
+<form novalidate class="text-center border border-light p-5" id="form-registro" [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
     <p class="h4 mb-4">Registro</p>
 
     <div class="form-row mb-4" id="linea">
-      <div class="col-md-6">
-        <!-- usuario -->
-        <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Usuario" required>
+
+       <!-- Nombre -->
+      <div class="col-md-6">      
+        <input type="text" id="defaultRegisterFormFirstName" minlength="3" class="form-control"  placeholder="Nombre" formControlName="nombre">  
+        <label for="defaultRegisterFormFirstName">Ingrese Nombre correctamente</label>
       </div>
 
-      <div class="col-md-6">
-        <!-- nombre -->
-        <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Nombre" required>
+      <!-- Apellido -->
+      <div class="col-md-6">    
+        <input type="text" id="defaultRegisterFormLastName" minlength="3" class="form-control" placeholder="Apellido" formControlName="apellido">
+        <label for="defaultRegisterFormLastNamee">Ingrese Apellido correctamente</label>
       </div>
 
     </div>
 
 
-    <!-- <div class="form-row mb-5">
-      <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Usuario" required>
-      <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Nombre" required>
-      
-
-    </div> -->
-         
-
-    <!-- mail -->
-    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail" required>
+     <!-- mail -->
+    <div class="form-row mb-2" id="linea">       
+        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Correo" formControlName="correo">
+        <label for="defaultRegisterFormEmail">Ingrese Mail correctamente</label>
+    </div>
+ 
     <!-- Password-->
-    <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password"
-      aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
-    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">  
-      <label> Recomendable incluir al menos 8 caracteres</label>
-      
-    </small>
+    <div class="form-row mb-4" id="linea">       
+        <input type="password" id="defaultRegisterFormPassword" minlength="8" class="form-control" placeholder="Password" formControlName="password">
+        <label for="defaultRegisterFormPassword">Incluir Al menos 8 caracteres </label>    
+    </div>
+   
 
     <!-- <div class="form-control mb-4">    
     <label>Fecha de Nacimiento: </label>
     <input id="fecha" type="date" onclick="this.value = '1980-01-01';"/>
     </div> -->
 
-    <div >
-      <select class="form-control">
+    <div class="form-row mb-4" id="linea">      
+      <select class="form-control" id="defaultRegisterFormProvincia" formControlName="provincia">
+        <option value="">Elegir Provincia</option>
         <option>Buenos Aires
         <option>Catamarca
         <option>Chaco
@@ -67,19 +66,18 @@
         <option>Tucuman     
       </select>
     </div>
-    
-       
-    <br>
+          
 
     <!-- celular-->
-    <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Celular"
-      aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
+    <div class="form-row mb-4" id="linea">  
+      <input type="text" id="defaultRegisterFormPhone" minlength="8" class="form-control" placeholder="Celular" aria-describedby="defaultRegisterFormPhoneHelpBlock" formControlName="celular">
+      <label for="defaultRegisterFormPhone">Incluir 8 Numeros </label>  
+    </div>
+    
 
-
-    <br>
       <!--  boton -->
-    <input type="submit" name="submit" class="btn btn-secondary btn-sm" block="true" value="Registrate!" id="form-btn" />
-     <hr>
+    <button type="submit" name="submit" class="btn btn-secondary btn-sm" block="true" id="form-btn" [disabled]="!registerForm.valid">Registrate ! </button>
+    <hr>
     <!-- Terminos y servicios -->
     <p>Al <em>Registrarte</em> estas aceptando nuestros
   
@@ -88,4 +86,18 @@
 
 </form>
 
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+<!-- 
+ - prueba si toma los valores -
+<strong>{{registerForm.value.nombre}} </strong>
+<br>
+<strong>{{registerForm.value.apellido}} </strong>
+<br>
+<strong>{{registerForm.value.correo}} </strong>
+<br>
+<strong>{{registerForm.value.password}} </strong>
+<br>
+<strong>{{registerForm.value.provincia}} </strong>
+<br>
+<strong>{{registerForm.value.celular}} </strong> -->
+

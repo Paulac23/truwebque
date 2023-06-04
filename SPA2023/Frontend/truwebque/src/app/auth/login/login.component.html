@@ -6,26 +6,31 @@
     <h2>Login</h2>
 
     <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+      
         <div class="user-box">
-          <input type="email" class="form-control"  placeholder="Email" required formControlName="email">  
+          <input type="email" class="form-group"  placeholder="Email" required formControlName="email">  
         </div>
         <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']"
-      class="alert alert-danger">This field is required.</div>
+      style="color: aliceblue;"class="alert alert-danger, border border-danger">Ingresa un email</div>
 
-    <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['minlength']"
-      class="alert alert-danger">Name must be longer than
-      {{ loginForm.get('email')?.errors?.['minlength']?.requiredLength}} characters.</div>
+      <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email']"
+      style="color: aliceblue;"class="alert alert-danger, border border-danger">Debe ingresar un email válido.</div>
 
      
+      <div class="user-box">
+        <input type="password" class="campo" name="password" placeholder="Contraseña" required formControlName="password">
+      </div>
+      
+      <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
+      style="color: aliceblue;"class="alert alert-danger, border border-danger">Ingresa la contraseña</div>
 
+      <div *ngIf="loginForm.get('password')?.touched && (loginForm.get('password')?.errors?.['minlength'] || loginForm.get('password')?.errors?.['maxlength'] || loginForm.get('password')?.errors?.['pattern'])"
+      style="color: aliceblue;" class="alert alert-danger, border border-danger">Usuario o contraseña incorrectas.</div>
 
-        <div class="user-box">
-          <input type="password"  class="campo"   name="password" placeholder="Contraseña" required>  
-        </div>
         
         <div class="button-form">         
           <!-- <button type="submit" id="submit" (click)="getUser()">Ingresar</button> -->
-          <button type="submit" id="submit">Ingresar</button>
+        <button type="submit" id="submit">Ingresar</button>
             <div id="register">
                 ¿No tienes una cuenta aún? 
                 <a [routerLink]="['/register']" style="color: orange;">Registrate</a>

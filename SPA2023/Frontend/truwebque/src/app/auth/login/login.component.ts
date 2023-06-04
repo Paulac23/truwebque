@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -19,30 +19,58 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
 
-  email= new FormControl('');
+  showIncorrectCredentialsAlert = false;
+
   
+  initForm(): FormGroup{
+    
+    return this.fb.group({
+      email: ['', [Validators.required, Validators.minLength(6), Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]+$')]],
+    })
+  
+  }
+
+  validarCredenciales(): boolean {
+    return true;
+  }
 
 onSubmit(): void{
-    console.log ('Form ->');
+    //console.log ('Form ->');
+
+   
+      if (this.loginForm.valid) {
+        // Realizar la lógica de autenticación
+        if (this.validarCredenciales()) {
+          // Credenciales válidas, continuar con la acción
+          console.log('Credenciales válidas.');
+        } else {
+          // Credenciales incorrectas, mostrar la alerta
+          this.showIncorrectCredentialsAlert = true;
+        }
+      } else {
+        // Formulario inválido, mostrar la alerta
+        this.showIncorrectCredentialsAlert = true;
+      }
+    
+     
+    
+    
+
   }
 
 ngOnInit(): void {
+
   this.authService.getUser().subscribe(resp => {
   console.log('ta corriendo verdad?');
   this.users = resp.data;
 
-  this.loginForm = this.initForm();
-
  })
+ this.loginForm = this.initForm();
 
 }
 
 
-initForm(): FormGroup{
-  return this.fb.group({
-    email: ['', [Validators.required, Validators.minLength(6), Validators.email]],
-  })
 
-}
 
 }

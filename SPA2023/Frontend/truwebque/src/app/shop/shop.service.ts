@@ -19,7 +19,7 @@ export class ShopService {
   }
 
   addPublish(publish: any ){
-    return this.http.post('http://localhost:3000/products', publish)
+    return this.http.post('http://localhost:8000/api/publicacion/', publish)
   }
 
   //Get my product http

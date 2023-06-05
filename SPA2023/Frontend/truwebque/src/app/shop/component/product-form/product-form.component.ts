@@ -35,14 +35,15 @@ export class ProductFormComponent {
     const product = this.form.value
     console.log(product)
     const publish = {
-
-     title: this.form.value.title,
-     price:this.form.value.price,
-     quantity:this.form.value.quantity,
-     description:this.form.value.description,
-     image:this.form.value.image,
-     category:this.form.value.category,
-     preferences:this.form.value.preferences
+      estado: true,
+      titulo: this.form.value.title,
+      descripcion:this.form.value.description,
+      cantidad:this.form.value.quantity,
+      //foto:this.form.value.image,
+      preferencias_de_trueque:this.form.value.preferences,
+      categoria:"VEHI",
+      publicante:1
+      //price:this.form.value.price,
 
     };
 

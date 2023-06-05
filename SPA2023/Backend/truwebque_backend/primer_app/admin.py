@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from  primer_app.models import Persona, Publicacion, Carrito, Suscripcion, Comentarios
 
-# Register your models here.
+# Registrar los modelos acá.
 
 class PersonaAdmin(admin.ModelAdmin):
     list_display= ("id_persona","usuario", "nombres", "apellidos", "correo")

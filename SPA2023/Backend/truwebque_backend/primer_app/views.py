@@ -46,8 +46,10 @@ class SuscripcionViewSet(viewsets.ModelViewSet):
 #    def post(self, request):
 #       pass
 #
+#
 #    def putt(self, request):
 #       pass
+#
 #
 #    def delete(self, request):
 #       pass

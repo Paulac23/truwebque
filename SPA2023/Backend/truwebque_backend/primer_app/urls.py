@@ -3,7 +3,6 @@ from django.urls import path, include
 from rest_framework import routers
 from primer_app  import views
 
-
 #Urls prueba 1
 
 router= routers.DefaultRouter()
@@ -17,11 +16,7 @@ urlpatterns = [
      path('', include(router.urls)),
 ]
 
-
-
-
-
-#Urls prueba 2
+#Urls prueba
 #
 #urlpatterns=[
 #    path('personas/', PersonaView.as_view(), name='personas_list')

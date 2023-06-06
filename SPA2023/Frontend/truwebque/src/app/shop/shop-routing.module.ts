@@ -7,6 +7,7 @@ import { ProductFormComponent } from './component/product-form/product-form.comp
 import { MyProductsComponent } from './component/my-products/my-products.component';
 import { SubscribeComponent } from './component/subscribe/subscribe.component';
 import { PaymentComponent } from './component/payment/payment.component';
+import { PublishTermsComponent } from './component/publish-terms/publish-terms.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path:'newProduct', component:ProductFormComponent},
   { path:'myProducts', component:MyProductsComponent},
   { path:'subscribe', component:SubscribeComponent},
-  { path:'payment', component:PaymentComponent}
+  { path:'payment', component:PaymentComponent},
+  { path:'publishTerms', component:PublishTermsComponent},
 ];
 
 @NgModule({

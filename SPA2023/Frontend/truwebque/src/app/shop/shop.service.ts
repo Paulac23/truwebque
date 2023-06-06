@@ -7,15 +7,16 @@ import { Cart, newPublish, responseProd, singleProduct } from './interface/cart'
 })
 export class ShopService {
 
+  url:string='http://localhost:8000/api/'
   constructor(private http:HttpClient) {}
 
   //Get all products http
   getProducts(){
-    return this.http.get('https://fakestoreapi.com/products?limit=10');
+    return this.http.get(this.url+"publicacion/");
   }
 
   getProductById(id:number){
-    return this.http.get<responseProd>('https://fakestoreapi.com/products/'+id);
+    return this.http.get("http://127.0.0.1:8000/api/publicacion/"+id);
   }
 
   addPublish(publish: any ){

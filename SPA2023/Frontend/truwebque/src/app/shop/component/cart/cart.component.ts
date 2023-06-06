@@ -7,8 +7,8 @@ import { Cart, responseProd } from '../../interface/cart';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit{
-
+export class CartComponent {}// implements OnInit{
+/*
   userId:number=1;
   name?:Cart;
   //products:Products[] = [];
@@ -29,7 +29,7 @@ constructor(private shopService:ShopService){}
         this.hasProducts=false;
       }
 
-      for (const i of products) {
+       for (const i of products) {
         console.log(i)
         let quantity= i.quantity;
         let idProduct=i.productId;
@@ -79,4 +79,4 @@ fillPencil(){
 fillTrash(){
   this.trashFill= !this.trashFill;
 }
-}
+}*/

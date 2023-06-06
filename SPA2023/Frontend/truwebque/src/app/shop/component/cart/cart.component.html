@@ -4,7 +4,7 @@
       <div class="col-6">
         <h6 class="mb-0">Carrito de Compras de usuario</h6>
         <div class="d-flex justify-content-between">
-          <span>Tienes 4 items en tu carrito</span>
+<!--          <span>Tienes 4 items en tu carrito</span>
         </div>
       </div>
       <div class="col-6 d-flex justify-content-end align-items-center">
@@ -20,7 +20,7 @@
       <h4>sigue navegando y encuentra lo que necesitas</h4></div>
 
       <ng-template #elseBlock></ng-template>
-    <!--Items start-->
+    Items start
     <div class="container items rounded"
     *ngFor="let product of productsInCart"
     style="height: 64px">
@@ -45,14 +45,14 @@
         </div>
 
         <div class="col-6 d-flex justify-content-end align-items-center">
- <!--         <i
+         <i
             [ngClass]="{
               'bi bi-pencil': !pencilFill,
               ' bi bi-pencil-fill': pencilFill
             }"
             (mouseover)="fillPencil()"
             (mouseleave)="fillPencil()"
-          ></i>-->
+          ></i>
           <div class="col-1 " ><i  class="bi bi-pencil" ></i></div>
           <div class="col-1 " ><i (click)="borrar(product.id)" class="bi bi-trash" ></i></div>
 
@@ -61,7 +61,7 @@
         </div>
       </div>
     </div>
-    <!--Items end-->
+    Items end
     <hr />
     <div class="container">
       <div class="row">
@@ -75,4 +75,4 @@
     </div>
   </div>
 </div>
-
+-->

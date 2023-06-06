@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from '../../shop.service';
 import { resProduct } from '../../interface/resProduct';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -8,23 +9,27 @@ import { resProduct } from '../../interface/resProduct';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit{
+  id=0;
+  productTitle="producto  ";
+  productDescription="descripcion";
+  productImage="foto";
+  productState?:boolean;
+  productId?: number;
 
-  productTitle="";
-  productDescription="";
-  productImage="";
-  productPrice=0;
-  productRating=0.0;
-  productId:number=1;
 
-  constructor(private shopService:ShopService){}
+  constructor(private shopService:ShopService,private route: ActivatedRoute ){}
 
   ngOnInit() :void {
-    this.shopService.getProductById(this.productId).subscribe((res:any) => {
-      this.productTitle = res.title
-      this.productDescription = res.description
-      this.productImage= res.image
-      this.productPrice= res.price
-      this.productRating= res.rating.rate
+
+    this.route.params.subscribe(params => {
+      this.id = +params['id'];
+    });
+      this.shopService.getProductById(this.id).subscribe((res:any) => {
+      this.productTitle = res.titulo
+      this.productDescription = res.descripcion
+      this.productImage= res.foto
+      this.productState= res.estado
+
       console.log(res)
     })
   }

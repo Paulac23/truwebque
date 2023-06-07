@@ -12,6 +12,8 @@ import { SubscribeComponent } from './component/subscribe/subscribe.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PublishTermsComponent } from './component/publish-terms/publish-terms.component';
+import { EditProductComponent } from './component/edit-product/edit-product.component';
+import { NewProductComponent } from './component/new-product/new-product.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PublishTermsComponent } from './component/publish-terms/publish-terms.c
     MyProductsComponent,
     SubscribeComponent,
     PaymentComponent,
-    PublishTermsComponent
+    PublishTermsComponent,
+    EditProductComponent,
+    NewProductComponent
   ],
   imports: [
     CommonModule,

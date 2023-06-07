@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ShopService } from '../../shop.service';
 
@@ -7,7 +7,18 @@ import { ShopService } from '../../shop.service';
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.css']
 })
-export class ProductFormComponent {
+export class ProductFormComponent implements OnInit{
+
+  publish:any;
+
+  ngOnInit(): void {
+
+  }
+
+  @Output () valueResponse: EventEmitter<string> = new EventEmitter();
+
+
+
   added:Boolean=false;
   deleted:Boolean=false;
   constructor(private shopService:ShopService){}
@@ -42,7 +53,7 @@ export class ProductFormComponent {
   addProduct(): void{
     const product = this.form.value
     console.log(product)
-    const publish = {
+     this.publish = {
       estado: this.form.value.IsNewCheck,
       titulo: this.form.value.title,
       descripcion:this.form.value.description,
@@ -52,10 +63,12 @@ export class ProductFormComponent {
       categoria:"VEHI",
       publicante:5
 
-    };
+    }
+    this.valueResponse.emit(this.publish)
+    ;
 
 
-    this.shopService.addPublish(publish).subscribe(
+   /*  this.shopService.addPublish(publish).subscribe(
       response => {
         this.added=true;
         setTimeout(()=>{
@@ -69,7 +82,9 @@ export class ProductFormComponent {
           }, 3000);
         console.log(error.error.publicante)
       }
-    );
+    ); */
+
+
   }
 
 

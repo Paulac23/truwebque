@@ -6,8 +6,10 @@
         <div class="col-md-3 col-sm-12">
             <div class="row">
                 <div class="vstack gap-1 align-items-center">
-                    <div class="p-2">${{productPrice}}</div>
-                    <div class="">{{productRating}}</div>
+                    <div class="p-2" *ngIf="productState; then thenBlock; else elseBlock"></div>
+          <ng-template #thenBlock>Condicion "Nuevo"</ng-template>
+          <ng-template #elseBlock>Condicion "Usado"</ng-template>
+
                 </div>
             </div>
         </div>
@@ -16,7 +18,7 @@
     <div class="row text-center align-items-center">
         <div class="col-md-4 col-sm-12 p-4">{{productDescription}}</div>
         <div class="col-md-8 col-sm-12">
-          <img src="{{productImage}}" class="img" alt="...">
+          <img src="{{productImage}}" class="img" alt="Imagen de publicacion">
         </div>
     </div>
 

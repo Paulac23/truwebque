@@ -15,3 +15,24 @@ box-shadow: 4px 1px 11px -3px rgba(0,0,0,0.75);}
 .precio{
   align-items: end;
 }
+
+.fill{
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fill:hover{
+  color: blue;
+  border-radius: 50%;
+  background-color: aqua;
+
+}
+
+.cut{
+  overflow: hidden;
+  display: inline-block;
+  width: 230px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

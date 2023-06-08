@@ -5,18 +5,32 @@
     <div class="login" id="login-box">  
     <h2>Login</h2>
 
-    <form class="custom-form" method="post">
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+      
         <div class="user-box">
-          <input type="email"  class="campo"  name="email" placeholder="Email" required>  
+          <input type="email" class="form-group"  placeholder="Email" required formControlName="email">  
         </div>
+        <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']"
+      style="color: aliceblue;"class="alert alert-danger, border border-danger">Ingresa un email</div>
 
-        <div class="user-box">
-          <input type="password"  class="campo"   name="password" placeholder="Contraseña" required>  
-        </div>
+      <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email']"
+      style="color: aliceblue;"class="alert alert-danger, border border-danger">Debe ingresar un email válido.</div>
+
+     
+      <div class="user-box">
+        <input type="password" class="campo" name="password" placeholder="Contraseña" required formControlName="password">
+      </div>
+      
+      <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
+      style="color: aliceblue;"class="alert alert-danger, border border-danger">Ingresa la contraseña</div>
+
+      <div *ngIf="loginForm.get('password')?.touched && (loginForm.get('password')?.errors?.['minlength'] || loginForm.get('password')?.errors?.['maxlength'] || loginForm.get('password')?.errors?.['pattern'])"
+      style="color: aliceblue;" class="alert alert-danger, border border-danger">Usuario o contraseña incorrectas.</div>
+
         
         <div class="button-form">         
           <!-- <button type="submit" id="submit" (click)="getUser()">Ingresar</button> -->
-          <button type="submit" id="submit">Ingresar</button>
+        <button type="submit" id="submit">Ingresar</button>
             <div id="register">
                 ¿No tienes una cuenta aún? 
                 <a [routerLink]="['/register']" style="color: orange;">Registrate</a>

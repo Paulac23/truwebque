@@ -30,6 +30,9 @@ export class ShopService {
   getMyProductById(id:number){
     return this.http.get<responseProd>('https://fakestoreapi.com/products/'+id);
   }
+  editMyProductById(publish:any){
+    return this.http.put<any>(this.url,publish)
+  }
 
 
 

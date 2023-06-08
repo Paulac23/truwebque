@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ShopService } from '../../shop.service';
 
@@ -7,20 +7,39 @@ import { ShopService } from '../../shop.service';
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.css']
 })
-export class ProductFormComponent implements OnInit{
-
+export class ProductFormComponent implements OnChanges{
+  edditing:boolean=false;
   publish:any;
+  producto:any
+  @Input() itemId:any;
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
 
+
+    console.log(this.itemId);
+    this.producto = this.itemId;
+
+
+    this.rellenar()
   }
 
   @Output () valueResponse: EventEmitter<string> = new EventEmitter();
 
-
-
   added:Boolean=false;
   deleted:Boolean=false;
+
+  rellenar(){
+    this.form.get('title')?.patchValue(this.producto.titulo)
+    this.form.get('description')?.patchValue(this.producto.descripcion)
+    this.form.get('quantity')?.patchValue(this.producto.cantidad)
+    this.form.get('preferences')?.patchValue(this.producto.preferencias_de_trueque)
+    this.form.get('category')?.patchValue(this.producto.categoria)
+    this.form.get('image')?.patchValue(this.producto.foto)
+    this.form.get('IsNewCheck')?.patchValue(this.producto.estado)
+
+  }
+
+
   constructor(private shopService:ShopService){}
 
   form = new FormGroup({
@@ -48,6 +67,7 @@ export class ProductFormComponent implements OnInit{
     return this.form.get('preferences') as FormControl;
 
   }
+
 
 
   addProduct(): void{
@@ -86,7 +106,5 @@ export class ProductFormComponent implements OnInit{
 
 
   }
-
-
 
 }

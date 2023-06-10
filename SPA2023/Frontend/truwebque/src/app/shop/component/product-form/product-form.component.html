@@ -1,7 +1,6 @@
 <div class="container pr-5 size">
   <div class="container px-3 py-2 bordes">
-    <form [formGroup]="form" >
-
+    <form [formGroup]="form">
       <div class="form-check mt-3">
         <input
           class="form-check-input"
@@ -15,20 +14,38 @@
 
       <div class="form-group">
         <label for="title">titulo</label>
-        <input type="text" class="form-control"
-        formControlName="title" required>
-        <div class="row" *ngIf="titleControl.invalid && (titleControl.dirty || titleControl.touched)">
-          <p class="col error" *ngIf="titleControl.errors?.['minlength']">Minimo 4 caracteres</p>
-          <p class="col error" *ngIf="titleControl.errors?.['maxlength']">Maximo 25 caracteres</p>
-          <p class="col error" *ngIf="titleControl.errors?.['required']">Campo requerido</p>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="title"
+          required
+        />
+        <div
+          class="row"
+          *ngIf="
+            titleControl.invalid && (titleControl.dirty || titleControl.touched)
+          "
+        >
+          <p class="col error" *ngIf="titleControl.errors?.['minlength']">
+            Minimo 4 caracteres
+          </p>
+          <p class="col error" *ngIf="titleControl.errors?.['maxlength']">
+            Maximo 25 caracteres
+          </p>
+          <p class="col error" *ngIf="titleControl.errors?.['required']">
+            Campo requerido
+          </p>
         </div>
-
-
       </div>
 
       <div class="mb-3">
-        <label for="description" class="form-label" >Descripcion</label>
-        <textarea class="form-control" id="description" rows="3" formControlName="description"></textarea>
+        <label for="description" class="form-label">Descripcion</label>
+        <textarea
+          class="form-control"
+          id="description"
+          rows="3"
+          formControlName="description"
+        ></textarea>
       </div>
 
       <div class="mb-3">
@@ -38,30 +55,58 @@
 
       <div class="form-group">
         <label for="precio">precio</label>
-        <input type="number" class="form-control" formControlName="price" placeholder="$0.00"/>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="price"
+          placeholder="$0.00"
+        />
       </div>
 
       <div class="form-group">
         <label for="cantidad">cantidad</label>
-        <input type="number" class="form-control" formControlName="quantity"
-         required/>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="quantity"
+          required
+        />
       </div>
-      <div class="row" *ngIf="quantityControl.invalid && (quantityControl.dirty || quantityControl.touched)">
-        <p class="col error" *ngIf="quantityControl.errors?.['required']">Campo requerido</p>
-        <p class="col error" *ngIf="quantityControl.errors?.['min']">Cantidad debe ser mayor a cero.<p>
+      <div
+        class="row"
+        *ngIf="
+          quantityControl.invalid &&
+          (quantityControl.dirty || quantityControl.touched)
+        "
+      >
+        <p class="col error" *ngIf="quantityControl.errors?.['required']">
+          Campo requerido
+        </p>
+        <p class="col error" *ngIf="quantityControl.errors?.['min']">
+          Cantidad debe ser mayor a cero.
+        </p>
+        <p></p>
       </div>
 
       <div class="form-group">
         <label for="preferencias">preferencias</label>
-        <input type="text" class="form-control" formControlName="preferences"/>
+        <input type="text" class="form-control" formControlName="preferences" />
       </div>
-      <div class="row" *ngIf="preferencesControl.invalid && (preferencesControl.dirty || preferencesControl.touched)">
-        <p class="col error" *ngIf="preferencesControl.errors?.['required']">Campo requerido</p>
+      <div
+        class="row"
+        *ngIf="
+          preferencesControl.invalid &&
+          (preferencesControl.dirty || preferencesControl.touched)
+        "
+      >
+        <p class="col error" *ngIf="preferencesControl.errors?.['required']">
+          Campo requerido
+        </p>
       </div>
 
       <div class="form-group">
         <label for="category">categoria</label>
-        <input type="text" class="form-control" formControlName="category"/>
+        <input type="text" class="form-control" formControlName="category" />
       </div>
 
       <div class="form-check mt-3">
@@ -73,24 +118,56 @@
           formControlName="readCheck"
         />
         <label class="form-check-label" for="readCheck">
-          Leí y estoy de acuerdo con las <a class="link-primary" [routerLink]="['/shop/publishTerms']"> condiciones de uso </a> de la plataforma.
+          Leí y estoy de acuerdo con las
+          <a class="link-primary" [routerLink]="['/shop/publishTerms']">
+            condiciones de uso
+          </a>
+          de la plataforma.
         </label>
       </div>
-      <button [disabled]="form.invalid || form.pending" type="submit"
-       (click)="addProduct()" class="mt-3 btn btn-primary">Agregar</button>
+      <div class="col" *ngIf="edditing; then thenBlock; else elseBlock"></div>
+      <ng-template #thenBlock>
+        <button
+          [disabled]="form.invalid || form.pending"
+          type="submit"
+          (click)="editProduct()"
+          class="mt-3 btn btn-primary">
+          Editar
+        </button>
+      </ng-template>
+      <ng-template #elseBlock>
+        <button
+          [disabled]="form.invalid || form.pending"
+          type="submit"
+          (click)="addProduct()"
+          class="mt-3 btn btn-primary">
+          Agregar
+        </button>
+      </ng-template>
     </form>
   </div>
 </div>
 
 <!-- Delete alert-->
-<div *ngIf="added"
-    class="fixed-bottom alert alert-success dismiss"
-     role="alert">
-  La publicacion fue agregada.
+<div
+  *ngIf="added"
+  class="fixed-bottom alert alert-success dismiss"
+  role="alert"
+>
+  La publicacion fue agregada con exito.
 </div>
-<div *ngIf="deleted"
-    class="fixed-bottom alert alert-danger dismiss"
-     role="alert">
+<div
+  *ngIf="edited"
+  class="fixed-bottom alert alert-success dismiss"
+  role="alert"
+>
+  La publicacion fue modificada con exito.
+</div>
+<div
+  *ngIf="deleted"
+  class="fixed-bottom alert alert-danger dismiss"
+  role="alert"
+>
   Ocurrio un error.
 </div>
 

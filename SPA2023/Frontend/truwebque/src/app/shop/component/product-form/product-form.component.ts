@@ -9,9 +9,10 @@ import { ShopService } from '../../shop.service';
 })
 export class ProductFormComponent implements OnChanges{
   edditing:boolean=false;
+  edited:boolean=false;
   publish:any;
   producto:any
-  @Input() itemId:any;
+  @Input() itemId:any=[];
 
   ngOnChanges(): void {
 
@@ -20,7 +21,11 @@ export class ProductFormComponent implements OnChanges{
     this.producto = this.itemId;
 
 
-    this.rellenar()
+    setTimeout(()=>{
+
+      this.rellenar()
+
+      }, 3000);
   }
 
   @Output () valueResponse: EventEmitter<string> = new EventEmitter();
@@ -36,8 +41,9 @@ export class ProductFormComponent implements OnChanges{
     this.form.get('category')?.patchValue(this.producto.categoria)
     this.form.get('image')?.patchValue(this.producto.foto)
     this.form.get('IsNewCheck')?.patchValue(this.producto.estado)
-
+    this.edditing= true;
   }
+
 
 
   constructor(private shopService:ShopService){}
@@ -67,6 +73,36 @@ export class ProductFormComponent implements OnChanges{
     return this.form.get('preferences') as FormControl;
 
   }
+
+  editProduct(){
+    const product = this.form.value
+    console.log(product)
+     this.publish = {
+      estado: this.form.value.IsNewCheck,
+      titulo: this.form.value.title,
+      descripcion:this.form.value.description,
+      cantidad:this.form.value.quantity,
+      //foto:this.form.value.image,
+      preferencias_de_trueque:this.form.value.preferences,
+      categoria:"VEHI",
+      publicante:2
+     }
+    this.shopService.editMyProductById(this.producto.id_publicacion, this.publish).subscribe(
+      response => {
+        this.added=true;
+        setTimeout(()=>{
+        this.added=false;
+        }, 3000);
+      },
+      error => {
+        this.deleted=true;
+        setTimeout(()=>{
+          this.deleted=false;
+          }, 3000);
+        console.log(error.error.publicante)
+      }
+    );
+   }
 
 
 

@@ -20,7 +20,7 @@
       <div class="user-box">
         <input type="password" class="campo" name="password" placeholder="Contraseña" required formControlName="password">
       </div>
-      
+
       <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
       style="color: aliceblue;"class="alert alert-danger, border border-danger">Ingresa la contraseña</div>
 
@@ -73,12 +73,6 @@
   </table>
 
 </section>
-
-
-
-
-
-
 
 
 <br>

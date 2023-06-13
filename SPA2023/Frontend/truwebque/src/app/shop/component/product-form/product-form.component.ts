@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ShopService } from '../../shop.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-form',
@@ -16,10 +17,7 @@ export class ProductFormComponent implements OnChanges{
 
   ngOnChanges(): void {
 
-
-    console.log(this.itemId);
     this.producto = this.itemId;
-
 
     setTimeout(()=>{
 
@@ -46,16 +44,24 @@ export class ProductFormComponent implements OnChanges{
 
 
 
-  constructor(private shopService:ShopService){}
+  constructor(private shopService:ShopService, private router:Router){}
+
+  opciones = [
+    { value: 'VEHI', label: 'Vehículos' },
+    { value: 'ELEC', label: 'Electrodomésticos' },
+    { value: 'COME', label: 'Comestibles' },
+    { value: 'HOGA', label: 'Hogar' },
+    { value: 'JUGU', label: 'Juguetes' }
+  ];
 
   form = new FormGroup({
     IsNewCheck:new FormControl(false),
     title: new FormControl('', [Validators.minLength(5), Validators.maxLength(25), Validators.required]),
     description: new FormControl('', Validators.maxLength(250)),
     price: new FormControl('0.00'),
-    quantity: new FormControl('', [Validators.required, Validators.min(1)]),
+    quantity: new FormControl('1', [Validators.required, Validators.min(1)]),
     preferences: new FormControl('',[Validators.required]),
-    category: new FormControl(''),
+    category: new FormControl(['']),
     image:new FormControl(''),
     readCheck:new FormControl(false, Validators.requiredTrue)
   });
@@ -76,7 +82,7 @@ export class ProductFormComponent implements OnChanges{
 
   editProduct(){
     const product = this.form.value
-    console.log(product)
+    //console.log(product)
      this.publish = {
       estado: this.form.value.IsNewCheck,
       titulo: this.form.value.title,
@@ -84,7 +90,7 @@ export class ProductFormComponent implements OnChanges{
       cantidad:this.form.value.quantity,
       //foto:this.form.value.image,
       preferencias_de_trueque:this.form.value.preferences,
-      categoria:"VEHI",
+      categoria:this.form.value.category,
       publicante:2
      }
     this.shopService.editMyProductById(this.producto.id_publicacion, this.publish).subscribe(
@@ -93,6 +99,7 @@ export class ProductFormComponent implements OnChanges{
         setTimeout(()=>{
         this.added=false;
         }, 3000);
+        this.router.navigate(['/shop/myProducts'])
       },
       error => {
         this.deleted=true;
@@ -108,7 +115,7 @@ export class ProductFormComponent implements OnChanges{
 
   addProduct(): void{
     const product = this.form.value
-    console.log(product)
+    //console.log(product)
      this.publish = {
       estado: this.form.value.IsNewCheck,
       titulo: this.form.value.title,
@@ -117,19 +124,15 @@ export class ProductFormComponent implements OnChanges{
       //foto:this.form.value.image,
       preferencias_de_trueque:this.form.value.preferences,
       categoria:"VEHI",
-      publicante:5
-
+      publicante:1
     }
-    this.valueResponse.emit(this.publish)
-    ;
-
-
-   /*  this.shopService.addPublish(publish).subscribe(
+    this.shopService.addPublish(this.publish).subscribe(
       response => {
         this.added=true;
         setTimeout(()=>{
         this.added=false;
         }, 3000);
+        this.router.navigate(['/shop/myProducts'])
       },
       error => {
         this.deleted=true;
@@ -138,7 +141,7 @@ export class ProductFormComponent implements OnChanges{
           }, 3000);
         console.log(error.error.publicante)
       }
-    ); */
+    );
 
 
   }

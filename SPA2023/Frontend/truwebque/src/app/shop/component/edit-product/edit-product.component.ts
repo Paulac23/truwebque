@@ -9,21 +9,23 @@ import { ShopService } from '../../shop.service';
 })
 export class EditProductComponent implements OnInit{
 
-  id!:number;
-  productTitle="producto  ";
+
+  productTitle="producto";
   productDescription="descripcion";
   productImage="foto";
   productState?:boolean;
   productId?: number;
 
-  constructor(private shopService:ShopService,private route: ActivatedRoute ){}
+  constructor(private shopService:ShopService,private route: ActivatedRoute, private activatedRoute: ActivatedRoute ){}
   currentItem:any;
+  id:number | undefined;
 
   ngOnInit() :void {
-    this.route.params.subscribe(params => {
+     this.route.params.subscribe(params => {
       this.id = +params['id'];
 
      this.shopService.getProductById(this.id).subscribe((res:any) => {
+      this.productId=res.id_publicacion
       this.productTitle = res.titulo
       this.productDescription = res.descripcion
       this.productImage= res.foto

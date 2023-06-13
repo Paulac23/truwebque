@@ -1,13 +1,2 @@
 <h1 class="text-center">Carga nueva publicacion</h1>
-<app-product-form (valueResponse)="recibiRespuesta($event)" ></app-product-form>
-<!-- Delete alert-->
-<div *ngIf="added"
-    class="fixed-bottom alert alert-success dismiss"
-     role="alert">
-  La publicacion fue agregada.
-</div>
-<div *ngIf="deleted"
-    class="fixed-bottom alert alert-danger dismiss"
-     role="alert">
-  Ocurrio un error.
-</div>
+<app-product-form ></app-product-form>

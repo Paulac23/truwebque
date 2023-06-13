@@ -10,3 +10,10 @@
 		opacity: 0;
 	}
 }
+
+.btn-1{
+  transition: .3s all;
+}
+.btn-1:hover{
+  transform: scale(1.2);
+}

@@ -106,8 +106,13 @@
 
       <div class="form-group">
         <label for="category">categoria</label>
-        <input type="text" class="form-control" formControlName="category" />
+        <select class="form-select" formControlName="category">
+          <option *ngFor="let opcion of opciones" [value]="opcion.value">{{ opcion.label }}</option>
+        </select>
       </div>
+
+
+
 
       <div class="form-check mt-3">
         <input

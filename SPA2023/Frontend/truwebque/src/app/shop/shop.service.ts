@@ -7,41 +7,39 @@ import { Cart, newPublish, responseProd, singleProduct } from './interface/cart'
 })
 export class ShopService {
 
-  url:string='http://localhost:8000/api/'
+  url:string='http://localhost:8000/api/';
+  publicacion:string= this.url +'publicacion/';
   constructor(private http:HttpClient) {}
 
   //Get all products http
   getProducts(){
-    return this.http.get(this.url+"publicacion/");
+    return this.http.get(this.publicacion);
   }
 
   getProductById(id:number){
-    return this.http.get("http://127.0.0.1:8000/api/publicacion/"+id);
+    return this.http.get(this.publicacion+id);
   }
 
   addPublish(publish: any ){
-    return this.http.post('http://localhost:8000/api/publicacion/', publish)
+    return this.http.post(this.publicacion, publish)
   }
 
   //Get my product http
-  getMyProducts(id:number){
-    return this.http.get('https://fakestoreapi.com/products?limit=10');
+  getMyProducts(){
+    return this.http.get(this.publicacion);
   }
   getMyProductById(id:number){
-    return this.http.get<responseProd>('https://fakestoreapi.com/products/'+id);
+    return this.http.get<responseProd>(this.publicacion+id);
   }
   editMyProductById(id:number, publish:any){
-    return this.http.put('http://localhost:8000/api/publicacion/'+id+'/',publish)
+    return this.http.put(this.publicacion+id+'/',publish)
   }
-
-
-
   deleteMyProductById(id:number){
-    return this.http.delete('https://fakestoreapi.com/carts/'+id);
+    return this.http.delete(this.publicacion+id);
   }
 
 
-
+/*
   //cart http
 
   getCartById(id:number){
@@ -50,5 +48,5 @@ export class ShopService {
 
   deleteProductInCartById(id:number){
     return this.http.delete('https://fakestoreapi.com/carts/'+id);
-  }
+  }*/
 }

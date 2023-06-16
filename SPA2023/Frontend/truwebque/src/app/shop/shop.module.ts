@@ -5,7 +5,7 @@ import { ShopRoutingModule } from './shop-routing.module';
 import { ProductComponent } from './component/product/product.component';
 import { CartComponent } from './component/cart/cart.component';
 import { AllProductsComponent } from './component/all-products/all-products.component';
-import { HttpClientModule} from'@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule} from'@angular/common/http';
 import { ProductFormComponent } from './component/product-form/product-form.component';
 import { MyProductsComponent } from './component/my-products/my-products.component';
 import { SubscribeComponent } from './component/subscribe/subscribe.component';

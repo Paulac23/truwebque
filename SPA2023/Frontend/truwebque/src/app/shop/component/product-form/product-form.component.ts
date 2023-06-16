@@ -126,8 +126,12 @@ export class ProductFormComponent implements OnChanges{
       categoria:"VEHI",
       publicante:1
     }
-    this.shopService.addPublish(this.publish).subscribe(
-      response => {
+    this.shopService.addPublish(this.publish).subscribe({
+      next: (response) => {},
+      error: (error) => {},
+      complete: () => {}
+    }
+      /* response => {
         this.added=true;
         setTimeout(()=>{
         this.added=false;
@@ -140,7 +144,7 @@ export class ProductFormComponent implements OnChanges{
           this.deleted=false;
           }, 3000);
         console.log(error.error.publicante)
-      }
+      } */
     );
 
 

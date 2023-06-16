@@ -5,8 +5,12 @@
     </button></div>
 </div>
 
+<div class="col my-5 py-5" *ngIf="noProducts" >
+  <h1 class="text-center mb-3">No posees publicaciones activas.</h1>
+  <h2 class="text-center">Empieza agregando y vende o cambia tus Productos o servicios</h2>
+</div>
 
-<table class="table table-hover">
+<table class="table table-hover" *ngIf="!noProducts">
   <thead>
     <tr>
       <th scope="col">N°</th>

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Cart, newPublish, responseProd, singleProduct } from './interface/cart';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ export class ShopService {
     return this.http.get(this.publicacion);
   }
 
-  getProductById(id:number){
-    return this.http.get(this.publicacion+id);
+  getProductById(id:number):Observable<any>{
+   return this.http.get(this.publicacion+id);
   }
 
   addPublish(publish: any ){
@@ -38,15 +39,4 @@ export class ShopService {
     return this.http.delete(this.publicacion+id);
   }
 
-
-/*
-  //cart http
-
-  getCartById(id:number){
-    return this.http.get<Cart>('https://fakestoreapi.com/carts/'+id);
-  }
-
-  deleteProductInCartById(id:number){
-    return this.http.delete('https://fakestoreapi.com/carts/'+id);
-  }*/
 }

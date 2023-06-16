@@ -18,10 +18,14 @@ export class MyProductsComponent {
     this.obtenerPublicaciones();
   }
 
+  noProducts:boolean=false;
+
   obtenerPublicaciones(){
     this.shopService.getMyProducts().subscribe((res: any) => {
       this.products = res
-      //console.log(res)
+      console.log(this.noProducts);
+      this.noProducts = this.products.length? false : true;
+
     })
   }
 

@@ -127,24 +127,23 @@ export class ProductFormComponent implements OnChanges{
       publicante:1
     }
     this.shopService.addPublish(this.publish).subscribe({
-      next: (response) => {},
-      error: (error) => {},
-      complete: () => {}
-    }
-      /* response => {
+      next: (response) => {
         this.added=true;
         setTimeout(()=>{
         this.added=false;
         }, 3000);
         this.router.navigate(['/shop/myProducts'])
       },
-      error => {
+      error: (error) => {
         this.deleted=true;
         setTimeout(()=>{
           this.deleted=false;
           }, 3000);
         console.log(error.error.publicante)
-      } */
+      },
+      complete: () => {}
+    }
+
     );
 
 

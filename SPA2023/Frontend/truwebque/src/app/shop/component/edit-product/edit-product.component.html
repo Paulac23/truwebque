@@ -1,3 +1,13 @@
-<h1 class="text-center">Editar Publicacion</h1>
-
-<app-product-form [itemId]="currentItem"></app-product-form>
+<div *ngIf="isLoading" class="d-flex justify-content-center align-items-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<div *ngIf="!isLoading">
+  <div *ngIf="!exist" ><h1 class="text-center">No existe publicacion.</h1></div>
+  <div *ngIf="exist" >
+    <h1 class="text-center">Editar Publicacion</h1>
+    <app-product-form [itemId]="currentItem">
+  </app-product-form>
+</div>
+</div>

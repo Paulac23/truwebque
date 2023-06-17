@@ -13,7 +13,7 @@ export class ShopService {
   constructor(private http:HttpClient) {}
 
   //Get all products http
-  getProducts(){
+  getProducts():Observable<any>{
     return this.http.get(this.publicacion);
   }
 

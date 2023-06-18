@@ -25,7 +25,7 @@ from django.contrib.auth.models import AbstractUser
 #        verbose_name_plural = 'Usuarios'
 
 class Persona(AbstractUser):
-    bio = models.TextField(max_length=250, default="Ingresa tu biografia aqui", blank=True)
+    bio = models.TextField(max_length=250, default="Ingresa tu biografia aqui", blank=True, null=True)
     imagen = models.ImageField(null=True, blank=True, verbose_name="Foto de Perfil")
     suscripto = models.ForeignKey("Suscripcion", on_delete= models.PROTECT, null = True, blank = True)
 

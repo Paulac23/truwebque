@@ -12,6 +12,7 @@ User = get_user_model()
 router = routers.DefaultRouter()
 router.register(r'publicacion',views.PublicacionViewSet)
 router.register(r'suscripcion',views.SuscripcionViewSet)
+router.register(r'usuarios',views.UserViewSet)
 
 
 urlpatterns = [

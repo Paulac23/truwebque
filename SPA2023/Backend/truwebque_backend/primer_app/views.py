@@ -6,8 +6,10 @@ from rest_framework.response import Response
 from rest_framework import permissions, generics, viewsets
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.views import LoginView as KnoxLoginView
+from knox.models import AuthToken
 from .serializer import RegisterSerializer, UserSerializer, PublicacionSerializer, SuscripcionSerializer
 from .models import Publicacion, Suscripcion
+from django.contrib.auth.models import User
 
 from django.contrib.auth import get_user_model
 
@@ -21,9 +23,9 @@ class RegisterAPI(generics.GenericAPIView):
     def post (self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid (raise_exception = True)
-        user= serializer.save
+        user= serializer.save()
         return Response({
-            "user": UserSerializer(user, context=self.get.serializer_context()).data,
+            "user": UserSerializer(user, context=self.get_serializer_context()).data,
             "token": AuthToken.objects.create(user)[1]
         })
 
@@ -46,6 +48,13 @@ class  PublicacionViewSet(viewsets.ModelViewSet):
 class SuscripcionViewSet(viewsets.ModelViewSet):
  queryset=Suscripcion.objects.all()
  serializer_class= SuscripcionSerializer
+
+
+
+class UserViewSet(viewsets.ModelViewSet):
+   queryset=User.objects.all()
+   serializer_class=UserSerializer
+
 
 #### Pruebas para implementar filtros
 #@api_view(['GET'])

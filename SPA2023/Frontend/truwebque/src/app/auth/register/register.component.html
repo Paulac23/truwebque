@@ -1,103 +1,31 @@
 
 <!-- formulario registro -->
-<form novalidate class="text-center border border-light p-5" id="form-registro" [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+<form novalidate class="text-center border border-light p-5"  method="post" id="form-registro" [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
     <p class="h4 mb-4">Registro</p>
 
     <div class="form-row mb-4" id="linea">
-
-       <!-- Nombre -->
-      <div class="col-md-6">      
-        <input type="text" id="defaultRegisterFormFirstName" minlength="3" class="form-control"  placeholder="Nombre" formControlName="nombre">  
+       <!-- Campo username -->
+      <div class="col-md-6 mb-3">
+        <input type="text" id="defaultRegisterFormFirstName" minlength="3" class="form-control"  placeholder="Usuario" formControlName="username">
         <label for="defaultRegisterFormFirstName">Ingrese Nombre correctamente</label>
       </div>
-
-      <!-- Apellido -->
-      <div class="col-md-6">    
-        <input type="text" id="defaultRegisterFormLastName" minlength="3" class="form-control" placeholder="Apellido" formControlName="apellido">
-        <label for="defaultRegisterFormLastNamee">Ingrese Apellido correctamente</label>
-      </div>
-
-    </div>
-
-
-     <!-- mail -->
-    <div class="form-row mb-2" id="linea">       
-        <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Correo" formControlName="correo">
-        <label for="defaultRegisterFormEmail">Ingrese Mail correctamente</label>
-    </div>
- 
-    <!-- Password-->
-    <div class="form-row mb-4" id="linea">       
+       <!--  Campo Password -->
+      <div class="col-md-6 mb-3" >
         <input type="password" id="defaultRegisterFormPassword" minlength="8" class="form-control" placeholder="Password" formControlName="password">
-        <label for="defaultRegisterFormPassword">Incluir Al menos 8 caracteres </label>    
+        <label for="defaultRegisterFormPassword">Incluir Al menos 8 caracteres </label>
+      </div>
     </div>
-   
 
-    <!-- <div class="form-control mb-4">    
-    <label>Fecha de Nacimiento: </label>
-    <input id="fecha" type="date" onclick="this.value = '1980-01-01';"/>
-    </div> -->
-
-    <div class="form-row mb-4" id="linea">      
-      <select class="form-control" id="defaultRegisterFormProvincia" formControlName="provincia">
-        <option value="">Elegir Provincia</option>
-        <option>Buenos Aires
-        <option>Catamarca
-        <option>Chaco
-        <option>Chubut
-        <option>Cordoba
-        <option>Corrientes
-        <option>Entre Rios
-        <option>Formosa
-        <option>Jujuy
-        <option>La Pampa
-        <option>La Rioja
-        <option>Mendoza
-        <option>Misiones
-        <option>Neuquen
-        <option>Rio Negro
-        <option>Salta
-        <option>San Juan
-        <option>San Luis
-        <option>Santa Cruz
-        <option>Santa Fe
-        <option>Santiago del Estero
-        <option>Tierra del Fuego
-        <option>Tucuman     
-      </select>
+     <!--  Campo Email -->
+    <div class="form-row mb-3">
+      <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Correo" formControlName="email">
+      <label for="defaultRegisterFormEmail">Ingrese Mail correctamente</label>
     </div>
-          
-
-    <!-- celular-->
-    <div class="form-row mb-4" id="linea">  
-      <input type="text" id="defaultRegisterFormPhone" minlength="8" class="form-control" placeholder="Celular" aria-describedby="defaultRegisterFormPhoneHelpBlock" formControlName="celular">
-      <label for="defaultRegisterFormPhone">Incluir 8 Numeros </label>  
-    </div>
-    
-
-      <!--  boton -->
-    <button type="submit" name="submit" class="btn btn-secondary btn-sm" block="true" id="form-btn" [disabled]="!registerForm.valid">Registrate ! </button>
+    <!--  boton Registro -->
+    <button type="submit" name="submit" class="btn btn-secondary btn-sm" block="true" id="form-btn" [disabled]="!registerForm.valid">Registrate</button>
     <hr>
     <!-- Terminos y servicios -->
     <p>Al <em>Registrarte</em> estas aceptando nuestros
-  
     <a [routerLink]="['/tyc']">terminos y condiciones</a>
-    
 
 </form>
-
-
-<!-- 
- - prueba si toma los valores -
-<strong>{{registerForm.value.nombre}} </strong>
-<br>
-<strong>{{registerForm.value.apellido}} </strong>
-<br>
-<strong>{{registerForm.value.correo}} </strong>
-<br>
-<strong>{{registerForm.value.password}} </strong>
-<br>
-<strong>{{registerForm.value.provincia}} </strong>
-<br>
-<strong>{{registerForm.value.celular}} </strong> -->
-

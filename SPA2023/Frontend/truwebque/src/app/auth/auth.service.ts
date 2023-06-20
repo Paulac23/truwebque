@@ -5,6 +5,7 @@ import { HttpHeaders } from '@angular/common/http';
 
 
 
+
 const httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -22,7 +23,7 @@ export class AuthService {
 
     constructor( private http: HttpClient){ }
 
-    createUser(form:any) {
+    createUser(form:any):Observable<any> {
         // Conecto desde aca la base de datos
         // esto es llamado desde el componente
         const URL = 'http://127.0.0.1:8000/auth/register';

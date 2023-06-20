@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { AuthService } from '../auth.service';
-
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit{
   registerForm!: FormGroup;
   submitted = false;
 
-  constructor(public authService: AuthService, private registro: FormBuilder){
+  constructor(public authService: AuthService, private registro: FormBuilder, private router: Router){
 
     this.registerForm = this.registro.group({   
       username:['', [Validators.required,Validators.pattern(/^[A-Za-z\s\a-z0-9_\.-]+$/)]],
@@ -35,11 +35,11 @@ export class RegisterComponent implements OnInit{
         console.log(resp);
         });  
       // console.log(this.registerForm.value);
-      alert("Registro OK");
       this.registerForm.reset();
+      this.router.navigateByUrl("/contacto");
     }
     else{
-      alert("Completar todos los campos")
+      alert("Error")
     }
   }
 

@@ -1,44 +1,80 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+ -->
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark" >
-    <div class="container-fluid" id="demo">
-      <a class="nav-link" [routerLink]="['/']" style="color: whitesmoke;"> TRUWEBQUE </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mynavbar">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/shop']"> Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/login']">Ingresar</a>
-          </li>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" id="main-nav">
 
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/register']">Registrarse</a>
-          </li>
+      <div class="container-fluid" id="demo">
+        <a class="nav-link" id="titulo" [routerLink]="['/']" style="color: whitesmoke" >
+          TRUWEBQUE
+        </a>
 
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/']">Carrito
-              <i class="fas fa-shopping-cart"></i>
-            </a>
-          </li>
-        </ul>
+        <button class="navbar-toggler" type="button"data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto" *ngIf="authService.isLoggedIn | async; then thenBlock; else elseBlock"></ul>
+
+          <ng-template #elseBlock>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/shop']"> Productos</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" [routerLink]="['/login']">Ingresar</a>
+            </li>
+
+            <li class="nav-item" >
+              <a class="nav-link" [routerLink]="['/register']">Registrarse</a>
+            </li>
+          </ng-template>
+
+
+          <ng-template #thenBlock>
+
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/shop/myProducts']">
+                <i class="fa-light fa-user"></i>Mis Productos</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/shop']"> Productos</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/']" (click)="LogOut()" style="color:#fdb211;"><i class="bi bi-box-arrow-right">SALIR</i></a>
+            </li>
+
+        
+          </ng-template>
+
+        </div>
+
         <form class="d-flex">
-          <input class="form-control me-2" type="text" placeholder="Buscar">
-          <button class="btn btn-light" type="button">Buscar</button>
-        </form>
-      </div>
-    </div>
-</nav>
+          <input class="form-control me-2" type="text" placeholder="Buscar" />
+          <button class="btn btn-dark" type="button" style="background-color:#1d1d1de7;"><i class="bi bi-search" style="color:#fdb211;"></i></button>
 
-</body>
-</html>
+          
+        </form>
+          
+      
+      </div>
+    
+    </nav>
+
+
+
+
+<!-- 
+  </body>
+</html> -->

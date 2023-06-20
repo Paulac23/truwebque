@@ -1,24 +1,24 @@
 
 <!-- formulario registro -->
 <form novalidate class="text-center border border-light p-5"  method="post" id="form-registro" [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
-    <p class="h4 mb-4">Registro</p>
+    <p class="h3 mb-4">Registro</p>
 
     <div class="form-row mb-4" id="linea">
        <!-- Campo username -->
       <div class="col-md-6 mb-3">
-        <input type="text" id="defaultRegisterFormFirstName" minlength="3" class="form-control"  placeholder="Usuario" formControlName="username">
+        <input type="text" id="defaultRegisterFormFirstName" minlength="4" class="form-control"  placeholder="Usuario" formControlName="username">
         <label for="defaultRegisterFormFirstName">Ingrese Nombre correctamente</label>
       </div>
        <!--  Campo Password -->
       <div class="col-md-6 mb-3" >
-        <input type="password" id="defaultRegisterFormPassword" minlength="8" class="form-control" placeholder="Password" formControlName="password">
+        <input type="password" id="defaultRegisterFormPassword" minlength="8" class="form-control" placeholder="Contraseña" formControlName="password">
         <label for="defaultRegisterFormPassword">Incluir Al menos 8 caracteres </label>
       </div>
     </div>
 
      <!--  Campo Email -->
-    <div class="form-row mb-3">
-      <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Correo" formControlName="email">
+    <div class="col-row mb-3">
+      <input type="email" id="defaultRegisterFormEmail" class="form-control" placeholder="Correo" formControlName="email">
       <label for="defaultRegisterFormEmail">Ingrese Mail correctamente</label>
     </div>
     <!--  boton Registro -->
@@ -26,6 +26,6 @@
     <hr>
     <!-- Terminos y servicios -->
     <p>Al <em >Registrarte</em> estas aceptando nuestros
-    <a [routerLink]="['/tyc']">terminos y condiciones</a>
+    <a [routerLink]="['/tyc']" style="color: orange;">terminos y condiciones</a>
 
 </form>

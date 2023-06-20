@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnDestroy } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -9,6 +9,14 @@ import { BrowserModule } from '@angular/platform-browser';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
   title = 'truwebque';
+
+  @HostListener('window:beforeunload')
+  clearLocalStorage() {
+    localStorage.clear();
   }
+
+}
+
+

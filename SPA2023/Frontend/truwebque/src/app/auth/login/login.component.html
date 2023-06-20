@@ -8,13 +8,13 @@
     <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
       
         <div class="user-box">
-          <input type="email" class="form-group"  placeholder="Email" required formControlName="email">  
+          <input type="username" class="form-group"  placeholder="Usuario" required formControlName="username">  
         </div>
-        <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']"
-      style="color: aliceblue;"class="alert alert-danger, border border-danger">Ingresa un email</div>
+        <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.errors?.['required']"
+      style="color: aliceblue;"class="alert alert-danger, border border-danger">Usuario Requerido</div>
 
-      <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['email']"
-      style="color: aliceblue;"class="alert alert-danger, border border-danger">Debe ingresar un email válido.</div>
+      <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.errors?.['minlength']"
+      style="color: aliceblue;"class="alert alert-danger, border border-danger">Usuario invalido.</div>
 
      
       <div class="user-box">
@@ -24,7 +24,7 @@
       <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
       style="color: aliceblue;"class="alert alert-danger, border border-danger">Ingresa la contraseña</div>
 
-      <div *ngIf="loginForm.get('password')?.touched && (loginForm.get('password')?.errors?.['minlength'] || loginForm.get('password')?.errors?.['maxlength'] || loginForm.get('password')?.errors?.['pattern'])"
+      <div *ngIf="loginForm.get('password')?.touched && (loginForm.get('password')?.errors?.['minlength'])"
       style="color: aliceblue;" class="alert alert-danger, border border-danger">Usuario o contraseña incorrectas.</div>
 
         

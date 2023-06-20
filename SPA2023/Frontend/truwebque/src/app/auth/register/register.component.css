@@ -2,14 +2,27 @@
 
 form{
     margin-top: 200px;
-    margin-bottom: 200px;
+    margin-bottom: 200px;    
+    background-color: #1d1d1de7;
 }
 
-input:focus {outline: unset;}
-  /* agregar borde rojo a los input que estén en estado inválido */
-  .ng-invalid {border: 2px solid rgb(250, 183, 0);}
-  .ng-valid{ border:  3px solid rgba(2, 198, 2, 0.864);}
 
+
+
+input{
+  border: none;
+  border-bottom: 1px solid #fdb211;
+  outline: none;
+
+}
+
+
+
+input:focus {outline: unset;}
+
+/* agregar borde rojo a los input que estén en estado inválido */
+/* .ng-invalid {border: 2px solid rgb(250, 183, 0);} */
+.ng-valid{ border:  3px solid rgba(2, 198, 2, 0.864);}
 input + label {display: none;}
   
 input:invalid + label {
@@ -18,7 +31,7 @@ input:invalid + label {
     border-top-left-radius: 0;
     padding-left: 5px;
     padding-right: 5px;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(170, 4, 4);
     font-size: smaller;
   }
 
@@ -28,7 +41,6 @@ input:invalid + label {
     margin-left: auto;
     margin-right: auto; 
     border-radius: 15px;
-    background-color: #1d1d1de7;
     color: whitesmoke;
 }
 #linea{
@@ -37,24 +49,30 @@ input:invalid + label {
 }
 #linea div{margin-right: 1%;}
 
+
 #form-btn{
-    margin-top: 6px;
-    background-color: rgb(226, 141, 43);
-    border-radius: 8px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 20px;
-    padding-right: 20px;
+  padding: 10px 20px;
+    color: #fdb211;
+    font-size: 16px;
+    letter-spacing: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    background-color: #434249;
+    
+    border: 1px solid #222222;
+    border-radius: 5px;
+    margin: auto;
 }
+
 button:hover{
-  transform: scale(1.1);
-  transition: 0.1s;
-  color:black;
-  box-shadow: 0 0 5px #545352, 0 0 10px #745e2fca,
-    0 0 15px #302c25;
-
+  background-color: rgb(42, 41, 43);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #646360, 0 0 15px #997a37,
+  0 0 40px #302c25;
 }
-
 #fecha{
     border-radius: 4px;
     margin-left: 5px;

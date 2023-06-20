@@ -25,24 +25,17 @@ export class MyProductsComponent {
     this.shopService.getMyProducts().subscribe({
       next: (res:any) => {
         this.products = res
-        console.log(this.noProducts);
         this.noProducts = this.products.length? false : true;
         this.isLoading = false;
       },
       error: (err:any) => {
-        console.log(err);
         this.noProducts = true;
         this.products = [];
         this.isLoading = false;
+        alert("Ocurrio un problema al intentar cargar las publicaciones.")
       }
 
     }
-     /*  (res: any) => {
-      this.products = res
-      console.log(this.noProducts);
-      this.noProducts = this.products.length? false : true;
-
-    } */
     )
   }
 

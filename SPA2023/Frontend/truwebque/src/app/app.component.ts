@@ -12,10 +12,12 @@ import { BrowserModule } from '@angular/platform-browser';
 export class AppComponent{
   title = 'truwebque';
 
+/*  Se utiliza para poder limpiar el local storage cuando se cierra la pagina
+
   @HostListener('window:beforeunload')
   clearLocalStorage() {
     localStorage.clear();
-  }
+  } */
 
 }
 

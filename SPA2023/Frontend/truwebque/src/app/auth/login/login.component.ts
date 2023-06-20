@@ -43,7 +43,6 @@ onSubmit(): void{
       password: this.loginForm.value.password}
     this.authService.login(userData).subscribe({
       next:(res:any)=>{
-        console.log(res)
         this.router.navigate(['shop/myProducts']);
       },
       error: (err:any) => {

@@ -51,7 +51,6 @@ export class MyProductsComponent {
   deleteItem(){
     this.shopService.deleteMyProductById(this.idModal).subscribe((res:any) => {
       this.deleted = true;
-      console.log('publicacion borrada')
       this.obtenerPublicaciones();
     })
   }

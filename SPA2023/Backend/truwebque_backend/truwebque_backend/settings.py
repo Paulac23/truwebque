@@ -56,7 +56,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost',
+    'http://localhost:4200',
     ]
 
 ROOT_URLCONF = 'truwebque_backend.urls'

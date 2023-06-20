@@ -20,16 +20,13 @@ isLoading:boolean = false;
       next:(res: any) => {
       this.products = res;
       this.isLoading=false;
-      localStorage.setItem('ultimaPeticion', Date.now().toString());
-      this.checkLastRequest()
     },
     error:(err: any) => {
       console.log(err.status)
       this.isEmpty = true
       this.isLoading=false;
-      },
-      complete:() => {console.log("complete")}
-      })
+      }
+    })
   };
 
 
@@ -37,23 +34,5 @@ isLoading:boolean = false;
     this.router.navigate(['/shop/product/', id]);
   }
 
-  // Obtener la marca de tiempo actual
-marcaDeTiempoActual = Date.now();
 
-// Obtener la última marca de tiempo almacenada
-ultimaPeticion = localStorage.getItem('ultimaPeticion');
-marcaDeTiempoUltimaPeticion = parseInt(this.ultimaPeticion!);
-
-checkLastRequest() {
-// Verificar si ha pasado menos de 10 minutos
-if (this.marcaDeTiempoActual - this.marcaDeTiempoUltimaPeticion < 10 * 60 * 1000) {
-  // Se hizo la misma petición en los últimos 10 minutos
-  console.log('Ya se realizó la misma petición en los últimos 10 minutos.');
-} else {
-  // No se hizo la misma petición en los últimos 10 minutos
-  console.log('Es una nueva petición.');
-  // Actualizar la marca de tiempo en el localStorage
-  localStorage.setItem('ultimaPeticion', this.marcaDeTiempoActual.toString());
-}
-}
 }

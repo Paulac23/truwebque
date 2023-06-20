@@ -1,78 +1,13 @@
 <div class="container text-center">
-  <h2>Productos</h2>
-
-  <!-- carousel init
-  <div class="container" style=" height: 20rem">
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-
-        <div  class="carousel-item active">
-          <div class="container">
-            <img class="img-fluid"
-            style=" height: 20rem"
-             src="https://th.bing.com/th/id/R.22f61000132613018646a25a0439aa19?rik=zpgt9eVICj2CGA&pid=ImgRaw&r=0"
-            alt="imagen de ofertas">
-          </div>
-        </div>
-        <div *ngFor="let product of products" class="carousel-item">
-          <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-            <div class="col mb-3 mb-sm-0">
-              <div class="card " style=" height: 20rem; width: 10rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card" style=" height: 20rem; width: 10rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-           <div class="col d-none d-md-block">
-              <div class="card" style=" height: 20rem; width: 10rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-            <div class="col d-none d-lg-block">
-              <div class="card" style=" height: 20rem; width: 10rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Special title treatment</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+  <div *ngIf="isEmpty"><h1>No hay publicaciones que mostrar</h1></div>
+  <div *ngIf="isLoading" class="d-flex justify-content-center align-items-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
     </div>
   </div>
-  carousel end -->
-
   <div class="row row-cols-5 align-items-start">
     <div
-      *ngFor="let product of products"
+    *ngFor="let product of products"
       class="card p-3 m-3 text-truncate"
       style="width: 10rem"
     >

@@ -18,14 +18,31 @@
           <p class="col error" *ngIf="titleControl.errors?.['minlength']">
             Minimo 4 caracteres
           </p>
-          <p class="col error" *ngIf="titleControl.errors?.['maxlength']">
-            Maximo 25 caracteres
+          <p class="col error" *ngIf="quantityControl.errors?.['min']">
+            Cantidad debe ser mayor a cero.
           </p>
-          <p class="col error" *ngIf="titleControl.errors?.['required']">
+          <p></p>
+        </div>
+
+        <div class="form-group">
+          <label for="preferencias">preferencias</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="preferences"
+          />
+        </div>
+        <div
+          class="row"
+          *ngIf="
+            preferencesControl.invalid &&
+            (preferencesControl.dirty || preferencesControl.touched)
+          "
+        >
+          <p class="col error" *ngIf="preferencesControl.errors?.['required']">
             Campo requerido
           </p>
         </div>
-
       </div>
 
 
@@ -99,11 +116,7 @@
       </ng-template>
 
     </form>
-
-
   </div>
-</div>
-
 <!-- Delete alert-->
 <div *ngIf="added" class="fixed-bottom alert alert-success dismiss" role="alert">
   La publicacion fue agregada con exito.
@@ -116,4 +129,3 @@
   Ocurrio un error.
 </div>
 
-<!--<pre> {{form.value | json}}</pre>-->

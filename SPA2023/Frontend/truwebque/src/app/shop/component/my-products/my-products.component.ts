@@ -11,18 +11,32 @@ export class MyProductsComponent {
 
   idModal!:number;
   products:any[] = [];
-
+  isLoading:boolean=false;
   constructor(private shopService:ShopService, private router: Router){}
 
   ngOnInit() :void {
     this.obtenerPublicaciones();
+    this.isLoading = true;
   }
 
+  noProducts:boolean=false;
+
   obtenerPublicaciones(){
-    this.shopService.getMyProducts().subscribe((res: any) => {
-      this.products = res
-      //console.log(res)
-    })
+    this.shopService.getMyProducts().subscribe({
+      next: (res:any) => {
+        this.products = res
+        this.noProducts = this.products.length? false : true;
+        this.isLoading = false;
+      },
+      error: (err:any) => {
+        this.noProducts = true;
+        this.products = [];
+        this.isLoading = false;
+        alert("Ocurrio un problema al intentar cargar las publicaciones.")
+      }
+
+    }
+    )
   }
 
   publishById(id:number): void{

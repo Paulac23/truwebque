@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   constructor(public authService: AuthService, private readonly fb: FormBuilder) {};
 
   loginForm!: FormGroup;
-
   showIncorrectCredentialsAlert = false;
 
   
@@ -36,9 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
 onSubmit(): void{
-    //console.log ('Form ->');
-
-   
+    //console.log ('Form ->');  
       if (this.loginForm.valid) {
         // Realizar la lógica de autenticación
         if (this.validarCredenciales()) {

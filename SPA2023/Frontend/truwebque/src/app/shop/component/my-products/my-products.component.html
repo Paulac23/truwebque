@@ -1,6 +1,21 @@
-<h1>Mis publicaciones</h1>
+<div class="row">
+  <div class="col-sm-8 col-xs-12 justify-content-xs-center"><h1>Mis publicaciones</h1></div>
+  <div class="col-sm-4 col-xs-12 d-flex justify-content-sm-end justify-content-xs-center">
+    <button class="btn btn-primary btn-1" [routerLink]="['/shop/newProduct']">Agregar publicacion
+    </button></div>
+</div>
+<div *ngIf="isLoading" class="d-flex justify-content-center align-items-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
 
-<table class="table table-hover">
+<div class="col my-5 py-5" *ngIf="noProducts" >
+  <h1 class="text-center mb-3">No posees publicaciones activas.</h1>
+  <h2 class="text-center">Empieza agregando y vende o cambia tus Productos o servicios</h2>
+</div>
+
+<table class="table table-hover" *ngIf="!noProducts && !isLoading">
   <thead>
     <tr>
       <th scope="col">N°</th>
@@ -10,32 +25,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>{{articulo}}</td>
-      <td>{{cantidad}}</td>
+    <tr *ngFor="let product of products">
+      <th>{{product.id_publicacion}}</th>
+      <td>{{product.titulo}}</td>
+      <td>{{product.cantidad}}</td>
+      <td>{{product.preferencias_de_trueque}}</td>
       <td>
-        <button class="btn btn-warning">
-          <i
-            [ngClass]="{
-              'bi bi-pencil': !pencilFill,
-              ' bi bi-pencil-fill': pencilFill
-            }"
-            (mouseover)="fillPencil()"
-            (mouseleave)="fillPencil()"
-            [routerLink]="['/shop/newProduct']"
-          ></i>
+        <button class="btn btn-warning btn-1">
+          <i class="bi bi-pencil" [routerLink]="['/shop/editProduct/',product.id_publicacion]">
+          </i>
         </button>
-        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
-          <i style="color:black"
-            [ngClass]="{
-              'bi bi-trash': !trashFill,
-              ' bi bi-trash-fill': trashFill
-            }"
-            (mouseover)="fillTrash()"
-            (mouseleave)="fillTrash()"
-
-          ></i>
+        <button class="btn btn-danger btn-1" data-bs-toggle="modal" data-bs-target="#deleteModal">
+          <i style="color:black" class="bi-trash-fill" (click)="setId(product.id_publicacion)"></i>
         </button>
 
       </td>

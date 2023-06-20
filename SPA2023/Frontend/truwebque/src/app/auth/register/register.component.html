@@ -1,82 +1,31 @@
 
 <!-- formulario registro -->
-<form class="text-center border border-light p-5" id="form-registro">
+<form novalidate class="text-center border border-light p-5"  method="post" id="form-registro" [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
     <p class="h4 mb-4">Registro</p>
 
     <div class="form-row mb-4" id="linea">
-      <div class="col-md-6">
-        <!-- usuario -->
-        <input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="Nombre" required>
+       <!-- Campo username -->
+      <div class="col-md-6 mb-3">
+        <input type="text" id="defaultRegisterFormFirstName" minlength="3" class="form-control"  placeholder="Usuario" formControlName="username">
+        <label for="defaultRegisterFormFirstName">Ingrese Nombre correctamente</label>
       </div>
-
-      <div class="col-md-6">
-        <!-- nombre -->
-        <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Apellido" required>
+       <!--  Campo Password -->
+      <div class="col-md-6 mb-3" >
+        <input type="password" id="defaultRegisterFormPassword" minlength="8" class="form-control" placeholder="Password" formControlName="password">
+        <label for="defaultRegisterFormPassword">Incluir Al menos 8 caracteres </label>
       </div>
-
     </div>
 
-    <!-- mail -->
-    <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Correo" required>
-    <!-- Password-->
-    <input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password"
-      aria-describedby="defaultRegisterFormPasswordHelpBlock" required>
-    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">  
-      <label> Recomendable incluir al menos 8 caracteres</label>
-      
-    </small>
-
-    <!-- <div class="form-control mb-4">    
-    <label>Fecha de Nacimiento: </label>
-    <input id="fecha" type="date" onclick="this.value = '1980-01-01';"/>
-    </div> -->
-
-    <div >
-      <select class="form-control">
-        <option>Buenos Aires
-        <option>Catamarca
-        <option>Chaco
-        <option>Chubut
-        <option>Cordoba
-        <option>Corrientes
-        <option>Entre Rios
-        <option>Formosa
-        <option>Jujuy
-        <option>La Pampa
-        <option>La Rioja
-        <option>Mendoza
-        <option>Misiones
-        <option>Neuquen
-        <option>Rio Negro
-        <option>Salta
-        <option>San Juan
-        <option>San Luis
-        <option>Santa Cruz
-        <option>Santa Fe
-        <option>Santiago del Estero
-        <option>Tierra del Fuego
-        <option>Tucuman     
-      </select>
+     <!--  Campo Email -->
+    <div class="form-row mb-3">
+      <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="Correo" formControlName="email">
+      <label for="defaultRegisterFormEmail">Ingrese Mail correctamente</label>
     </div>
-    
-       
-    <br>
-
-    <!-- celular-->
-    <input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Celular"
-      aria-describedby="defaultRegisterFormPhoneHelpBlock" required>
-
-
-    <br>
-      <!--  boton -->
-    <input type="submit" name="submit" class="btn btn-secondary btn-sm" block="true" value="Registrate!" id="form-btn" />
-     <hr>
+    <!--  boton Registro -->
+    <button type="submit" name="submit" class="btn btn-secondary btn-sm" block="true" id="form-btn" [disabled]="!registerForm.valid">Registrate <i class="bi bi-person-fill-add"></i></button>
+    <hr>
     <!-- Terminos y servicios -->
-    <p>Al <em>Registrarte</em> estas aceptando nuestros
-  
+    <p>Al <em >Registrarte</em> estas aceptando nuestros
     <a [routerLink]="['/tyc']">terminos y condiciones</a>
-    
 
 </form>
-
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->

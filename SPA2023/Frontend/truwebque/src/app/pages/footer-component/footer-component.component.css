@@ -1,21 +1,21 @@
 footer{
-    background-color: black;
-    color: #c41a1a;
+  background-color: black;
+  color: #c41a1a;
 }
 
 footer a{
-    text-decoration: none;
+  text-decoration: none;
 }
 .col-md-2 a{
-    background-color: rgb(226, 141, 43);
-    border-radius: 5px;
+  background-color: rgb(226, 141, 43);
+  border-radius: 5px;
 }
 
 #titulo-pie a{
-    color: whitesmoke;
-    font-size: 130%;
+  color: whitesmoke;
+  font-size: 130%;
 }
 
 section ul li a i{
-    filter: invert(100%);
+  filter: invert(100%);
 }

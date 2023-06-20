@@ -1,27 +1,42 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Cart } from './interface/cart';
+import { Cart, newPublish, responseProd, singleProduct } from './interface/cart';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopService {
 
+  url:string='http://localhost:8000/api/';
+  publicacion:string= this.url +'publicacion/';
   constructor(private http:HttpClient) {}
 
-  //products http
-  getProducts(){
-    return this.http.get('https://fakestoreapi.com/products?limit=10');
+  //Get all products http
+  getProducts():Observable<any>{
+    return this.http.get(this.publicacion);
   }
 
-  getProductById(){
-    return this.http.get('https://fakestoreapi.com/products/1');
+  getProductById(id:number):Observable<any>{
+   return this.http.get(this.publicacion+id);
   }
 
-
-  //cart http
-
-  getCartById(id:number){
-    return this.http.get<Cart>('https://fakestoreapi.com/carts/'+id);
+  addPublish(publish: any ){
+    return this.http.post(this.publicacion, publish)
   }
+
+  //Get my product http
+  getMyProducts(){
+    return this.http.get(this.publicacion);
+  }
+  getMyProductById(id:number){
+    return this.http.get<responseProd>(this.publicacion+id);
+  }
+  editMyProductById(id:number, publish:any){
+    return this.http.put(this.publicacion+id+'/',publish)
+  }
+  deleteMyProductById(id:number){
+    return this.http.delete(this.publicacion+id);
+  }
+
 }

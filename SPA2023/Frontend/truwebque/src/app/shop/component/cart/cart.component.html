@@ -4,7 +4,7 @@
       <div class="col-6">
         <h6 class="mb-0">Carrito de Compras de usuario</h6>
         <div class="d-flex justify-content-between">
-          <span>Tienes 4 items en tu carrito</span>
+<!--          <span>Tienes 4 items en tu carrito</span>
         </div>
       </div>
       <div class="col-6 d-flex justify-content-end align-items-center">
@@ -16,13 +16,19 @@
 
     <h1 class="text-center fw-bold">Mis articulos</h1>
 
-    <!--Items start-->
-    <div class="container items rounded" style="height: 64px">
+    <div class="container text-center"  *ngIf="hasProducts;else elseBlock"><h1>No tienes productos en el carrito,</h1>
+      <h4>sigue navegando y encuentra lo que necesitas</h4></div>
+
+      <ng-template #elseBlock></ng-template>
+    Items start
+    <div class="container items rounded"
+    *ngFor="let product of productsInCart"
+    style="height: 64px">
       <div class="row pt-2">
         <div class="col-2 d-flex justify-content-center align-items-center">
           <img
             class="rounded"
-            src="https://th.bing.com/th/id/OIP.2bNUJ-z5UnaJfuclcYMWAgHaEK?pid=ImgDet&rs=1"
+            src="{{product.image}}"
             alt="Img"
             srcset=""
             style="height: 48px; width: 48"
@@ -31,15 +37,15 @@
 
         <div class="col-4">
           <div class="row">
-            <div class="col-6 product text-nowrap">1</div>
+            <div class="col-6 product cut text-nowrap">{{product.title}}</div>
           </div>
           <div>
-            <div class="col-6 description text-nowrap">Descripcion corta</div>
+            <div class="col-6 description text-nowrap">Cantidad {{product.quantity}}</div>
           </div>
         </div>
 
         <div class="col-6 d-flex justify-content-end align-items-center">
-          <i
+         <i
             [ngClass]="{
               'bi bi-pencil': !pencilFill,
               ' bi bi-pencil-fill': pencilFill
@@ -47,20 +53,26 @@
             (mouseover)="fillPencil()"
             (mouseleave)="fillPencil()"
           ></i>
-          <i
-            [ngClass]="{
-              'bi bi-trash': !trashFill,
-              ' bi bi-trash-fill': trashFill
-            }"
-            (mouseover)="fillTrash()"
-            (mouseleave)="fillTrash()"
-          ></i>
-          <h6 class="">$Precio</h6>
+          <div class="col-1 " ><i  class="bi bi-pencil" ></i></div>
+          <div class="col-1 " ><i (click)="borrar(product.id)" class="bi bi-trash" ></i></div>
+
+          <div class="col-2"><h6>${{product.price}}</h6></div>
+
         </div>
       </div>
     </div>
-    <!--Items end-->
+    Items end
     <hr />
-    <div class="container"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-10"><h2>Total</h2>
+        <button class="btn btn-primary" (click)="suma()">sum</button></div>
+        <div class="col-2"><h6 >suma</h6></div>
+
+
+      </div>
+
+    </div>
   </div>
 </div>
+-->

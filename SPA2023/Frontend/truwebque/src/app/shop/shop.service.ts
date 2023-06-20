@@ -7,8 +7,8 @@ import { Cart, newPublish, responseProd, singleProduct } from './interface/cart'
 })
 export class ShopService {
 
-  url:string='http://localhost:8000/api/';
-  publicacion:string= this.url +'publicacion/';
+  url:string='http://127.0.0.1:8000';
+  publicacion:string= this.url +'/api/publicacion/';
   constructor(private http:HttpClient) {}
 
   //Get all products http

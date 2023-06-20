@@ -27,8 +27,8 @@ export class LoginComponent implements OnInit {
   initForm(): FormGroup{
 
     return this.fb.group({
-      email: ['', [Validators.required, Validators.minLength(6), Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]+$')]],
+      username: ['', [Validators.required, Validators.minLength(4)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     })
 
   }
@@ -39,15 +39,16 @@ export class LoginComponent implements OnInit {
 
 onSubmit(): void{
     let userData = {
-      username: this.loginForm.value.email,
+      username: this.loginForm.value.username,
       password: this.loginForm.value.password}
     this.authService.login(userData).subscribe({
       next:(res:any)=>{
-        alert("Inicio de sesión exitoso");
-        this.router.navigate(['/shop']);
+        console.log(res)
+        this.router.navigate(['shop/myProducts']);
       },
       error: (err:any) => {
-        alert("Error al intentar iniciar sesión")
+        this.loginForm.reset();
+        alert("Error al Iniciar sesión");
         console.log(err);
       }
 
@@ -78,7 +79,6 @@ onSubmit(): void{
 ngOnInit(): void {
 
 /*   this.authService.getUser().subscribe(resp => {
-  console.log('ta corriendo verdad?');
   this.users = resp.data;
 
  }) */

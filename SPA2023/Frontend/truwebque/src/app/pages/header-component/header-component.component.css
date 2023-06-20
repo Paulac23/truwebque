@@ -1,3 +1,25 @@
+
+#titulo{
+    text-decoration: underline;
+    text-decoration-color: #EF9708;
+}
+#main-nav{display:flex;}
+
+#mynavbar{
+  justify-content:right ;
+  list-style:none;
+  margin-right: 5px;
+}
+
+.nav-item{
+  padding-right: 15px;
+  text-align: center;
+}
+.nav-item:hover{ 
+  border-bottom: 1px solid grey;
+
+}
+
 .navbar-custom {
     background-color: #EF9708; /* Color de fondo personalizado */
     color: #fff; /* Color de texto personalizado */

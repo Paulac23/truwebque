@@ -12,8 +12,18 @@
 }
 
 .btn-1{
-  transition: .3s all;
+  transition: .1s all;
+  background-color: orange;
+  border: black;
+  color: black;
 }
 .btn-1:hover{
-  transform: scale(1.2);
+  transform: scale(0.9);
+}
+
+#main-productos{
+	margin-top: 50px;
+	margin-bottom: 150px;
+	margin-left: 1%;
+	margin-right: 1%;
 }

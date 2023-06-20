@@ -35,7 +35,8 @@ export class RegisterComponent implements OnInit{
         console.log(resp);
         });  
       // console.log(this.registerForm.value);
-      // alert("Login OK")
+      alert("Registro OK");
+      this.registerForm.reset();
     }
     else{
       alert("Completar todos los campos")

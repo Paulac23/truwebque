@@ -42,7 +42,6 @@ export class AuthService {
             localStorage.setItem('token',JSON.stringify(res.token));
             localStorage.setItem('user', JSON.stringify(username));
             this.isUserLoggedIn.next(true);
-            console.log(res)
           }),
           catchError((err) => this.handlerError(err))
         )
@@ -52,8 +51,6 @@ export class AuthService {
       localStorage.removeItem('token');
       localStorage.removeItem('user');
       this.isUserLoggedIn.next(false);
-      console.log("Logout");
-      console.log(this.isUserLoggedIn.value);
     }
 
     private handlerError(err:any): Observable<never> {

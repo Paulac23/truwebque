@@ -1,0 +1,29 @@
+
+#tarjeta{
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.card{
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    border: none;
+    box-shadow: 0 0 1px #fea900, 0 0 0px #faad06,
+    0 0 3px #f79e04;
+}
+
+button{
+    background-color: rgba(0, 0, 0, 0.89);
+    color: orange;
+    border-radius: 5px;
+
+}
+button:hover{
+    background-color: black;
+    transition: 0.3s;
+    border-radius: 25px;
+}

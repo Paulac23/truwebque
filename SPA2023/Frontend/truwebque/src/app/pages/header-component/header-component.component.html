@@ -51,18 +51,25 @@
               <a class="nav-link" [routerLink]="['/shop']"> Productos</a>
             </li>
 
-           
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/']" (click)="LogOut()">Salir <i class="bi bi-box-arrow-right"></i></a>
+              <a class="nav-link" [routerLink]="['/']" (click)="LogOut()" style="color:#fdb211;"><i class="bi bi-box-arrow-right">SALIR</i></a>
             </li>
+
+        
           </ng-template>
 
         </div>
+
         <form class="d-flex">
           <input class="form-control me-2" type="text" placeholder="Buscar" />
-          <button class="btn btn-warning" type="button"><i class="bi bi-search"></i></button>
+          <button class="btn btn-dark" type="button" style="background-color:#1d1d1de7;"><i class="bi bi-search" style="color:#fdb211;"></i></button>
+
+          
         </form>
+          
+      
       </div>
+    
     </nav>
 
 

@@ -45,6 +45,7 @@ onSubmit(): void{
     console.log(userData);
     this.authService.login(userData).subscribe({
       next:(res:any)=>{
+        console.log(res)
         this.router.navigate(['shop/myProducts']);
       },
       error: (err:any) => {

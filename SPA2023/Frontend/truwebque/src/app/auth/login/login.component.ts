@@ -45,6 +45,7 @@ onSubmit(): void{
     console.log(userData);
     this.authService.login(userData).subscribe({
       next:(res:any)=>{
+        alert("Inicio de sesión exitoso");
         this.router.navigate(['/shop']);
       },
       error: (err:any) => {

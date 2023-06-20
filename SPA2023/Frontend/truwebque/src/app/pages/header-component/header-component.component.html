@@ -41,14 +41,17 @@
 
 
           <ng-template #thenBlock>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/shop']"> Productos</a>
-            </li>
 
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/shop/myProducts']">
                 <i class="fa-light fa-user"></i>Mis Productos</a>
             </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/shop']"> Productos</a>
+            </li>
+
+           
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/']" (click)="LogOut()">Salir <i class="bi bi-box-arrow-right"></i></a>
             </li>

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, map } from "rxjs";
+import { BehaviorSubject, Observable, catchError, map, throwError } from "rxjs";
 import { HttpHeaders } from '@angular/common/http';
 
 
@@ -35,21 +35,34 @@ export class AuthService {
     }
 
     login(user:any): Observable<any | void> {
+        let username = user.username;
         return this.http.post("http://127.0.0.1:8000/auth/login",user)
         .pipe(
           map((res:any) => {
             localStorage.setItem('token',JSON.stringify(res.token));
-            //localStorage.setItem('user', JSON.stringify(res.user));
+            localStorage.setItem('user', JSON.stringify(username));
             this.isUserLoggedIn.next(true);
             console.log(res)
-          }))
-    }
+          }),
+          catchError((err) => this.handlerError(err))
+        )
+      }
 
     logout():void{
       localStorage.removeItem('token');
+      localStorage.removeItem('user');
       this.isUserLoggedIn.next(false);
       console.log("Logout");
       console.log(this.isUserLoggedIn.value);
+    }
+
+    private handlerError(err:any): Observable<never> {
+      let errorMessage = 'An errror occured retrienving data';
+      if (err) {
+        errorMessage = `Error: code ${err.message}`;
+      }
+      window.alert(errorMessage);
+      return throwError(errorMessage);
     }
 
 }

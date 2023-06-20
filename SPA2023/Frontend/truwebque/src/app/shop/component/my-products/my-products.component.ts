@@ -11,22 +11,39 @@ export class MyProductsComponent {
 
   idModal!:number;
   products:any[] = [];
-
+  isLoading:boolean=false;
   constructor(private shopService:ShopService, private router: Router){}
 
   ngOnInit() :void {
     this.obtenerPublicaciones();
+    this.isLoading = true;
   }
 
   noProducts:boolean=false;
 
   obtenerPublicaciones(){
-    this.shopService.getMyProducts().subscribe((res: any) => {
+    this.shopService.getMyProducts().subscribe({
+      next: (res:any) => {
+        this.products = res
+        console.log(this.noProducts);
+        this.noProducts = this.products.length? false : true;
+        this.isLoading = false;
+      },
+      error: (err:any) => {
+        console.log(err);
+        this.noProducts = true;
+        this.products = [];
+        this.isLoading = false;
+      }
+
+    }
+     /*  (res: any) => {
       this.products = res
       console.log(this.noProducts);
       this.noProducts = this.products.length? false : true;
 
-    })
+    } */
+    )
   }
 
   publishById(id:number): void{

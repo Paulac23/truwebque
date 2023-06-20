@@ -11,20 +11,22 @@ export class AllProductsComponent implements OnInit{
 
   products:any[] = [];
   isEmpty:boolean = false;
-
+isLoading:boolean = false;
   constructor(private shopService:ShopService, private router: Router){}
 
   ngOnInit() :void {
-
+    this.isLoading=true;
     this.shopService.getProducts().subscribe({
       next:(res: any) => {
       this.products = res;
+      this.isLoading=false;
       localStorage.setItem('ultimaPeticion', Date.now().toString());
       this.checkLastRequest()
     },
     error:(err: any) => {
       console.log(err.status)
       this.isEmpty = true
+      this.isLoading=false;
       },
       complete:() => {console.log("complete")}
       })

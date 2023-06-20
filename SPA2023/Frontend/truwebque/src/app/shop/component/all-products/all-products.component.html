@@ -1,5 +1,10 @@
 <div class="container text-center">
   <div *ngIf="isEmpty"><h1>No hay publicaciones que mostrar</h1></div>
+  <div *ngIf="isLoading" class="d-flex justify-content-center align-items-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
   <div class="row row-cols-5 align-items-start">
     <div
     *ngFor="let product of products"

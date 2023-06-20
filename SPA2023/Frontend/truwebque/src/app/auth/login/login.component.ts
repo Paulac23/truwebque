@@ -27,8 +27,8 @@ export class LoginComponent implements OnInit {
   initForm(): FormGroup{
 
     return this.fb.group({
-      email: ['', [Validators.required, Validators.minLength(6), Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(20), Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]+$')]],
+      username: ['', [Validators.required, Validators.minLength(4)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     })
 
   }
@@ -38,17 +38,18 @@ export class LoginComponent implements OnInit {
   }
 
 onSubmit(): void{
-    console.log ('Form ->'+ this.loginForm.value.email);
+    console.log ('Form : '+ this.loginForm.value.username);
     let userData = {
-      username: this.loginForm.value.email,
+      username: this.loginForm.value.username,
       password: this.loginForm.value.password}
     console.log(userData);
     this.authService.login(userData).subscribe({
       next:(res:any)=>{
-        this.router.navigate(['/shop']);
+        this.router.navigate(['shop/myProducts']);
       },
       error: (err:any) => {
-        alert("Error al intentar iniciar sesión")
+        this.loginForm.reset();
+        alert("Error al Iniciar sesión");
         console.log(err);
       }
 
@@ -79,7 +80,6 @@ onSubmit(): void{
 ngOnInit(): void {
 
 /*   this.authService.getUser().subscribe(resp => {
-  console.log('ta corriendo verdad?');
   this.users = resp.data;
 
  }) */

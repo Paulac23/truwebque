@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,24 +9,22 @@
     />
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+ -->
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" id="main-nav">
+
       <div class="container-fluid" id="demo">
-        <a class="nav-link" [routerLink]="['/']" style="color: whitesmoke">
+        <a class="nav-link" id="titulo" [routerLink]="['/']" style="color: whitesmoke" >
           TRUWEBQUE
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mynavbar"
-        >
+
+        <button class="navbar-toggler" type="button"data-bs-toggle="collapse" data-bs-target="#mynavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        
         <div class="collapse navbar-collapse" id="mynavbar">
-          <ul
-            class="navbar-nav me-auto"
-            *ngIf="authService.isLoggedIn | async; then thenBlock; else elseBlock"
-          ></ul>
+          <ul class="navbar-nav me-auto" *ngIf="authService.isLoggedIn | async; then thenBlock; else elseBlock"></ul>
 
           <ng-template #elseBlock>
             <li class="nav-item">
@@ -41,23 +39,30 @@
             </li>
           </ng-template>
 
+
           <ng-template #thenBlock>
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/shop']"> Productos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/']" (click)="LogOut()"
-                >LogOut
-              </a>
+              <a class="nav-link" [routerLink]="['/shop/myProducts']">Mis Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/']" (click)="LogOut()">Salir <i class="bi bi-box-arrow-right"></i></a>
             </li>
           </ng-template>
 
-          <form class="d-flex">
-            <input class="form-control me-2" type="text" placeholder="Buscar" />
-            <button class="btn btn-light" type="button">Buscar</button>
-          </form>
         </div>
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Buscar" />
+          <button class="btn btn-warning" type="button"><i class="bi bi-search"></i></button>
+        </form>
       </div>
     </nav>
+
+
+
+
+<!-- 
   </body>
-</html>
+</html> -->

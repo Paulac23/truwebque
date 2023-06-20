@@ -1,7 +1,7 @@
 
 <!-- formulario registro -->
 <form novalidate class="text-center border border-light p-5"  method="post" id="form-registro" [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
-    <p class="h4 mb-4">Registro</p>
+    <p class="h3 mb-4">Registro</p>
 
     <div class="form-row mb-4" id="linea">
        <!-- Campo username -->
@@ -11,7 +11,7 @@
       </div>
        <!--  Campo Password -->
       <div class="col-md-6 mb-3" >
-        <input type="password" id="defaultRegisterFormPassword" minlength="8" class="form-control" placeholder="Password" formControlName="password">
+        <input type="password" id="defaultRegisterFormPassword" minlength="8" class="form-control" placeholder="Contraseña" formControlName="password">
         <label for="defaultRegisterFormPassword">Incluir Al menos 8 caracteres </label>
       </div>
     </div>

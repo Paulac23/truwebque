@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit{
   constructor(public authService: AuthService, private registro: FormBuilder, private router: Router){
 
     this.registerForm = this.registro.group({   
-      username:['', [Validators.required,Validators.pattern(/^[A-Za-z\s\a-z0-9_\.-]+$/)]],
+      username:['', [Validators.required,Validators.minLength(4),Validators.pattern(/^[A-Za-z\s\a-z0-9_\.-]+$/)]],
       email: ['',[ Validators.required,Validators.pattern(/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/)]],
       password:['', [Validators.required, Validators.minLength(8)]],
     }); 

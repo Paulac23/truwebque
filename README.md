@@ -9,6 +9,12 @@
   <li>Daniel Vargas</li>
   <li>Roberto Carlos Osores</li>
 </ul>
+
+<h3>Demo del producto Junio 2023</h3>
+
+https://youtu.be/pM85X2K3p8g
+
+
 <p>Descripción: </p>
 
 >Consta de una página para realizar trueques entre personas de la misma zona. En ella se podrán publicar objetos o productos para ser intercambiados; siempre enmarcados en normas que deben ser cumplidas para tal fin.

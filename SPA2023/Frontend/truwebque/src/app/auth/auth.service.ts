@@ -18,10 +18,14 @@ const httpOptions = {
 })
 
 
-export class AuthService {
+export class AuthService{
   private isUserLoggedIn = new BehaviorSubject<boolean>(false);
 
-    constructor( private http: HttpClient){ }
+    constructor( private http: HttpClient){
+      if(localStorage.getItem('token')){
+        this.isUserLoggedIn.next(true);
+      }
+    }
 
     createUser(form:any):Observable<any> {
         // Conecto desde aca la base de datos

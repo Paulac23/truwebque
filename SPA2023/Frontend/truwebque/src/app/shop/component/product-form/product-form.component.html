@@ -24,25 +24,7 @@
           <p></p>
         </div>
 
-        <div class="form-group">
-          <label for="preferencias">preferencias</label>
-          <input
-            type="text"
-            class="form-control"
-            formControlName="preferences"
-          />
-        </div>
-        <div
-          class="row"
-          *ngIf="
-            preferencesControl.invalid &&
-            (preferencesControl.dirty || preferencesControl.touched)
-          "
-        >
-          <p class="col error" *ngIf="preferencesControl.errors?.['required']">
-            Campo requerido
-          </p>
-        </div>
+
       </div>
 
 
